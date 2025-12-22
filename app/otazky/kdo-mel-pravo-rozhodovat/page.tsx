@@ -192,6 +192,16 @@ export default function KdoMelPravoRozhodovat() {
             title="Byly schůze legitimní?"
             href="/otazky/byly-schuze-legitimni"
           />
+          <RelatedNode
+            type="person"
+            title="Tomáš Syryčanský - pokus o převrat"
+            href="/akteri/tomas-syrycansky"
+          />
+          <RelatedNode
+            type="person"
+            title="Miroslav Brožek - legitimní předseda"
+            href="/akteri/miroslav-brozek"
+          />
         </div>
       </section>
 

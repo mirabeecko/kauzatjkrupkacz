@@ -99,6 +99,22 @@ export default function AkteriPage() {
       ],
       relatedEvents: 4,
     },
+    {
+      slug: 'tomas-syrycansky',
+      name: 'Tomáš Syryčanský',
+      role: 'Sportovní manažer SPORT Krupka s.r.o.',
+      category: 'Zástupci města',
+      status: 'negative' as const,
+      summary: 'Koordinoval pokus o převzetí kontroly nad spolkem. Měl být zvolen jako nový předseda na nelegálních schůzích. Vyměnil zámky na Pinčesárně 2 dny po zaslání nové nájemní smlouvy.',
+      keyActions: [
+        'Koordinoval nelegální schůze s vyloučenými členy',
+        'Vyměnil zámky na Pinčesárně (19.1.2024)',
+        'Umožnil přístup vyloučeným členům, zablokoval legitimního předsedu',
+        'Měl být "zvolen" jako nový předseda na nelegálních schůzích',
+        'Tlačil na Karla Roučka na schůzce s Kuzmou a Vítůem',
+      ],
+      relatedEvents: 8,
+    },
   ];
 
   const categories = Array.from(new Set(actors.map(a => a.category)));
@@ -153,6 +169,7 @@ export default function AkteriPage() {
             <p><strong>Celkem osob:</strong> {actors.length}</p>
             <p><strong>Vyloučení členové:</strong> 2 (Vaniš, Pivoňka)</p>
             <p><strong>Zánik členství:</strong> 2 (Vlach, Kulík)</p>
+            <p><strong>Zástupci města:</strong> 1 (Syryčanský)</p>
           </div>
         </div>
         <div className="p-6 bg-slate-50 rounded-lg border border-slate-200">
