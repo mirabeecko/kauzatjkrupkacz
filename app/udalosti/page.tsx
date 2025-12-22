@@ -152,38 +152,6 @@ export default function UdalostiPage() {
       slug: 'shromazdeni-delegatu-2024',
     },
     {
-      date: '3.1.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Oznámení skutečností ČAST',
-      icon: '📨',
-      importance: 'critical' as const,
-      description: 'TJ Krupka oficiálně informovala ČAST o vyloučení Vaniše a Pivoňky. Požadavek na odstranění ze soupisek a změnu správce klubu.',
-      details: [
-        'Oznámeno: Vyloučení Vaniše a Pivoňky k 28.11.2023',
-        'Požadavek: Odstranění ze soupisek a registru ČAST',
-        'Požadavek: Změna správce klubu',
-        'Účel: Zabránění neoprávněné manipulaci s členskou základnou',
-      ],
-      slug: 'oznameni-skutecnosti-cast',
-    },
-    {
-      date: '22.1.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Stanovisko ČAST - První selhání',
-      icon: '📄',
-      importance: 'high' as const,
-      description: 'ČAST vydala pouze "stanovisko", nikoli rozhodnutí. Uvedla, že musí počkat na zveřejnění ve Sbírce listin. Žádná akce nebyla provedena.',
-      details: [
-        'Vydáno: Pouze stanovisko (ne rozhodnutí)',
-        'Argument: "Počkáme na Sbírku listin"',
-        'Realita: Dokumenty již byly ve Sbírce listin',
-        'Důsledek: Vaniš a Pivoňka zůstali jako správci klubu',
-      ],
-      slug: 'stanovisko-cast',
-    },
-    {
       date: '28.2.2024',
       phase: 3,
       phaseName: 'Právní boj',
@@ -198,87 +166,6 @@ export default function UdalostiPage() {
         'Po tomto datu: Žaloba by měla být odmítnuta',
       ],
       slug: 'vyprseni-prekluzivni-lhuty',
-    },
-    {
-      date: '28.3.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Druhá žádost ČAST - Úplné mlčení',
-      icon: '📨',
-      importance: 'critical' as const,
-      description: 'Opakovaná žádost doručena datovou schránkou s přiloženými dokumenty ze Sbírky listin. ČAST VŮBEC NEREAGOVALA.',
-      details: [
-        'Doručeno: Datovou schránkou (prokázané doručení)',
-        'Přiloženo: Všechny dokumenty ze Sbírky listin',
-        'Přiloženo: Rozhodnutí o vyloučení, zápisy schůzí',
-        'Reakce ČAST: ŽÁDNÁ - úplné ignorování',
-      ],
-      slug: 'druha-zadost-cast',
-    },
-    {
-      date: '10.5.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Telefonický hovor s Henželem',
-      icon: '📞',
-      importance: 'medium' as const,
-      description: 'Pokus o telefonickou komunikaci s ředitelem soutěží ČAST Miroslavem Henželem. Henžel vyzval k zaslání třetí žádosti.',
-      details: [
-        'Jednání s: Miroslav Henžel (ředitel soutěží ČAST)',
-        'Výzva: Zaslat další žádost o změnu správce',
-        'Problém: Žádost již byla zaslána 2x a ignorována',
-      ],
-      slug: 'hovor-s-henzelem',
-    },
-    {
-      date: '11.5.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Třetí žádost ČAST - Poslední pokus',
-      icon: '📨',
-      importance: 'high' as const,
-      description: 'Třetí pokus o oficiální komunikaci s ČAST. Henžel nejprve vyzval k zaslání žádosti, následně ji zamítl s odkazem na původní stanovisko.',
-      details: [
-        'Henžel vyzval: "Zašlete žádost o změnu správce"',
-        'TJ Krupka zaslala: Třetí oficiální žádost',
-        'Henžel zamítl: S odkazem na stanovisko z ledna',
-        'Problém: Stanovisko není rozhodnutí',
-      ],
-      slug: 'treti-zadost-cast',
-    },
-    {
-      date: 'Léto 2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Neoprávněné přestupy hráčů',
-      icon: '🔄',
-      importance: 'critical' as const,
-      description: 'SKANDÁL: Vaniš (vyloučený člen) jako stále aktivní správce klubu neoprávněně schválil přestupy VŠECH hráčů do nově založeného KST Krupka z.s.',
-      details: [
-        'Pivoňka: Odstraněn jako správce TJ, stal se správcem KST Krupka',
-        'Vaniš: Zůstal správcem TJ (neoprávněně)',
-        'Vaniš schválil: Přestupy všech hráčů včetně mládeže',
-        'Střet zájmů: Jedna osoba spravuje dva konkurenční kluby',
-        'Ztráta výchovného: 33.000 Kč za mládež',
-      ],
-      slug: 'neopravnene-prestupy',
-    },
-    {
-      date: '17.10.2024',
-      phase: 3,
-      phaseName: 'Právní boj',
-      title: 'Henžel přestal komunikovat',
-      icon: '🚫',
-      importance: 'high' as const,
-      description: 'Ředitel soutěží ČAST Miroslav Henžel přestal odpovídat na telefonní hovory. Situace zůstala nevyřešená.',
-      details: [
-        'Henžel nebere telefon',
-        'ČAST nereaguje na žádné další komunikace',
-        'Vaniš stále správce klubu (6 měsíců po vyloučení)',
-        'Všichni hráči již přestoupili do KST Krupka',
-        'TJ Krupka znemožněna jakákoliv činnost',
-      ],
-      slug: 'henzel-prestal-komunikovat',
     },
     {
       date: '8.4.2024',
@@ -404,6 +291,36 @@ export default function UdalostiPage() {
         ))}
       </div>
 
+      {/* ČAST Callout */}
+      <div className="container mx-auto px-8 max-w-6xl mb-16">
+        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-white shadow-2xl">
+          <div className="flex items-start gap-6">
+            <div className="text-7xl">🏓</div>
+            <div className="flex-1">
+              <h2 className="text-3xl font-black mb-3">
+                Separátní timeline: Kauza ČAST
+              </h2>
+              <p className="text-xl mb-4 opacity-90">
+                Systematické selhání České asociace stolního tenisu zaslouží vlastní chronologii.
+                Celkem 9 událostí dokumentující ignorování žádostí, porušování vlastních pravidel a umožnění neoprávněných přestupů.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="/cast"
+                  className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105 inline-block"
+                >
+                  🏓 Zobrazit timeline ČAST
+                </a>
+                <div className="px-6 py-4 bg-white/20 backdrop-blur rounded-xl">
+                  <div className="text-3xl font-black">9</div>
+                  <div className="text-sm opacity-90">událostí ČAST</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom CTA */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
         <div className="container mx-auto px-8 max-w-4xl text-center text-white">
@@ -413,7 +330,7 @@ export default function UdalostiPage() {
           <p className="text-xl mb-8 opacity-90">
             Každá událost je podložena dokumenty a důkazy
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="/akteri"
               className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105"
@@ -425,6 +342,12 @@ export default function UdalostiPage() {
               className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
             >
               💰 Finanční přehled
+            </a>
+            <a
+              href="/cast"
+              className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
+            >
+              🏓 Timeline ČAST
             </a>
           </div>
         </div>
