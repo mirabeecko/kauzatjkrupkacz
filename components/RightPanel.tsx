@@ -14,7 +14,7 @@ interface RightPanelProps {
 
 export default function RightPanel({ relatedNodes = [], currentNodeTitle }: RightPanelProps) {
   return (
-    <aside className="w-80 bg-slate-50 border-l border-slate-200 h-full overflow-y-auto">
+    <aside className="hidden xl:block w-80 bg-slate-50 border-l border-slate-200 h-full overflow-y-auto">
       <div className="p-4">
         <h3 className="text-sm font-semibold text-slate-600 uppercase mb-4">
           Kontext
