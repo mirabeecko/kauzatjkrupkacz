@@ -64,38 +64,38 @@ export default function MarekVanisPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-red-600 via-red-700 to-red-900 py-16">
+      <div className="bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 py-16 border-b border-slate-600">
         <div className="container mx-auto px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium">
+                <span className="px-3 py-1 bg-slate-600/50 backdrop-blur rounded-full text-slate-200 text-sm font-medium border border-slate-500/30">
                   {actor.departmentIcon} {actor.department}
                 </span>
-                <span className="px-3 py-1 bg-red-900/50 backdrop-blur rounded-full text-white text-sm font-bold">
+                <span className="px-3 py-1 bg-slate-800/70 backdrop-blur rounded-full text-slate-300 text-sm font-medium border border-slate-600/30">
                   ❌ Vyloučen z členství
                 </span>
               </div>
               <h1 className="text-5xl font-black text-white mb-3">
                 {actor.name}
               </h1>
-              <p className="text-xl text-red-100 font-medium">
+              <p className="text-xl text-slate-300 font-medium">
                 {actor.role}
               </p>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-8 mt-8">
+          <div className="bg-slate-800/40 backdrop-blur border border-slate-600/50 rounded-2xl p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-red-100 text-sm font-medium mb-2">Celková způsobená škoda</div>
+                <div className="text-slate-300 text-sm font-medium mb-2">Celková způsobená škoda</div>
                 <div className="text-5xl font-black text-white">
                   {actor.totalDamage.toLocaleString('cs-CZ')} Kč
                 </div>
               </div>
-              <div className="text-8xl opacity-20">
+              <div className="text-8xl opacity-10 text-slate-400">
                 💸
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function MarekVanisPage() {
       <div className="container mx-auto px-8 py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-red-200">
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-slate-300">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
               <span>Shrnutí</span>
@@ -125,14 +125,14 @@ export default function MarekVanisPage() {
           <div className="space-y-4">
             {actor.breakdown.map((item, index) => {
               const severityColors = {
-                critical: 'border-red-400 bg-red-50',
-                high: 'border-orange-400 bg-orange-50',
-                medium: 'border-yellow-400 bg-yellow-50',
+                critical: 'border-slate-400 bg-slate-50',
+                high: 'border-slate-300 bg-gray-50',
+                medium: 'border-slate-200 bg-white',
               };
               const severityLabels = {
-                critical: '🔴 Kritické',
-                high: '🟠 Vysoké',
-                medium: '🟡 Střední',
+                critical: '⬤ Kritické',
+                high: '⬤ Vysoké',
+                medium: '⬤ Střední',
               };
 
               return (
@@ -158,9 +158,9 @@ export default function MarekVanisPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full bg-white/60 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-red-500 to-red-700 transition-all duration-500"
+                      className="h-full bg-gradient-to-r from-slate-600 to-slate-700 transition-all duration-500"
                       style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
                     />
                   </div>
@@ -185,12 +185,12 @@ export default function MarekVanisPage() {
           <h2 className="text-3xl font-bold text-slate-900 mb-6">
             ⚖️ Předžalobní výzva
           </h2>
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl border-2 border-amber-300 p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl border border-slate-300 p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <span className="text-4xl">📨</span>
               <div>
-                <div className="text-sm text-amber-700 font-medium">Dokument ze dne</div>
-                <div className="text-2xl font-bold text-amber-900">{actor.predzalobniVyzva.date}</div>
+                <div className="text-sm text-slate-700 font-medium">Dokument ze dne</div>
+                <div className="text-2xl font-bold text-slate-900">{actor.predzalobniVyzva.date}</div>
               </div>
             </div>
 
@@ -198,38 +198,38 @@ export default function MarekVanisPage() {
               <h3 className="text-lg font-bold text-slate-900 mb-4">Požadované plnění</h3>
               <div className="space-y-3">
                 {actor.predzalobniVyzva.items.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <div key={index} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div>
                       <div className="font-bold text-slate-900">{item.label}</div>
                       <div className="text-sm text-slate-600">{item.detail}</div>
                     </div>
-                    <div className="text-2xl font-black text-amber-900">
+                    <div className="text-2xl font-black text-slate-900">
                       {item.amount.toLocaleString('cs-CZ')} Kč
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 pt-4 border-t-2 border-amber-300 flex items-center justify-between">
+              <div className="mt-4 pt-4 border-t-2 border-slate-300 flex items-center justify-between">
                 <span className="text-lg font-bold text-slate-900">Celkem požadováno</span>
-                <span className="text-3xl font-black text-amber-900">
+                <span className="text-3xl font-black text-slate-900">
                   {actor.predzalobniVyzva.totalDemanded.toLocaleString('cs-CZ')} Kč
                 </span>
               </div>
             </div>
 
-            <div className="bg-amber-100 border-l-4 border-amber-500 p-4 rounded">
+            <div className="bg-slate-100 border-l-4 border-slate-500 p-4 rounded">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">⏱️</span>
                 <div>
-                  <div className="font-bold text-amber-900 mb-1">Lhůta k plnění</div>
-                  <div className="text-sm text-amber-800">{actor.predzalobniVyzva.deadline}</div>
+                  <div className="font-bold text-slate-900 mb-1">Lhůta k plnění</div>
+                  <div className="text-sm text-slate-800">{actor.predzalobniVyzva.deadline}</div>
                 </div>
               </div>
             </div>
 
             {actor.predzalobniVyzva.note && (
-              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
                 <div className="flex items-start gap-2">
                   <span className="text-lg">ℹ️</span>
                   <p className="text-sm text-blue-900">
@@ -246,9 +246,9 @@ export default function MarekVanisPage() {
           <h2 className="text-3xl font-bold text-slate-900 mb-6">
             ⚠️ Další porušení povinností a podvodné jednání
           </h2>
-          <div className="bg-red-50 rounded-xl border-2 border-red-300 p-8">
+          <div className="bg-slate-50 rounded-xl border-2 border-slate-300 p-8">
             <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">📋</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">Odmítl předat seznam členů</h3>
@@ -261,7 +261,7 @@ export default function MarekVanisPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">💰</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">Odmítl zaplatit prokazatelně vzniklé náklady oddílu</h3>
@@ -273,7 +273,7 @@ export default function MarekVanisPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">🧾</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">Žádal proplácení dokladů bez skutečné platby</h3>
@@ -285,7 +285,7 @@ export default function MarekVanisPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">🎯</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">V rámci dotací chtěl proplácet nesprávné náklady</h3>
@@ -297,7 +297,7 @@ export default function MarekVanisPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">📝</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">Sám vytvářel a proplácet požadoval falešné doklady</h3>
@@ -309,7 +309,7 @@ export default function MarekVanisPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200">
                 <span className="text-2xl flex-shrink-0">👩</span>
                 <div>
                   <h3 className="font-bold text-slate-900 mb-2">Požadoval dohody pro svou manželku za více než 70.000 Kč</h3>
@@ -337,8 +337,8 @@ export default function MarekVanisPage() {
                   key={index}
                   className={`flex items-start gap-4 p-4 rounded-lg border-2 ${
                     action.type === 'consequence'
-                      ? 'bg-blue-50 border-blue-300'
-                      : 'bg-red-50 border-red-300'
+                      ? 'bg-slate-50 border-slate-300'
+                      : 'bg-slate-50 border-slate-300'
                   }`}
                 >
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center font-bold text-sm text-slate-600">
@@ -367,19 +367,19 @@ export default function MarekVanisPage() {
             📄 Dokumenty a důkazy
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-6 bg-amber-50 rounded-xl border-2 border-amber-300 hover:shadow-lg transition">
+            <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-300 hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📨</span>
                 <div>
-                  <h3 className="text-lg font-bold text-amber-900 mb-2">Předžalobní výzva</h3>
-                  <p className="text-sm text-amber-800 mb-3">Dokument ze dne 6.11.2023</p>
-                  <div className="text-sm text-amber-700 space-y-1">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Předžalobní výzva</h3>
+                  <p className="text-sm text-slate-800 mb-3">Dokument ze dne 6.11.2023</p>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <div>• Požadováno: 387.460 Kč</div>
                     <div>• Energie + oddílové příspěvky</div>
                     <div>• Lhůta: 8 dnů</div>
                   </div>
                   <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-amber-600 text-white rounded-lg text-sm font-bold hover:bg-amber-700 transition cursor-pointer">
+                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
                       📥 Stáhnout PDF
                     </span>
                   </div>
@@ -387,7 +387,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-blue-50 rounded-xl border-2 border-blue-300 hover:shadow-lg transition">
+            <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-300 hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">⚖️</span>
                 <div>
@@ -407,7 +407,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-green-50 rounded-xl border-2 border-green-300 hover:shadow-lg transition">
+            <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-300 hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📊</span>
                 <div>
@@ -419,7 +419,7 @@ export default function MarekVanisPage() {
                     <div>• Všechny položky detailně</div>
                   </div>
                   <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-bold hover:bg-green-700 transition cursor-pointer">
+                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
                       📥 Stáhnout PDF
                     </span>
                   </div>
@@ -427,7 +427,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-purple-50 rounded-xl border-2 border-purple-300 hover:shadow-lg transition">
+            <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-300 hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📧</span>
                 <div>
@@ -439,7 +439,7 @@ export default function MarekVanisPage() {
                     <div>• Žádné odpovědi</div>
                   </div>
                   <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-bold hover:bg-purple-700 transition cursor-pointer">
+                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
                       📥 Zobrazit všechny
                     </span>
                   </div>
@@ -459,7 +459,7 @@ export default function MarekVanisPage() {
               <a
                 key={index}
                 href={link.href}
-                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-lg transition"
+                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-slate-500 hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{link.icon}</span>
