@@ -241,6 +241,90 @@ export default function MarekVanisPage() {
           </div>
         </section>
 
+        {/* Další porušení povinností a podvodné jednání */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            ⚠️ Další porušení povinností a podvodné jednání
+          </h2>
+          <div className="bg-red-50 rounded-xl border-2 border-red-300 p-8">
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">📋</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">Odmítl předat seznam členů</h3>
+                  <p className="text-sm text-slate-700">
+                    Marek Vaniš opakovaně <strong>odmítl předat seznam členů oddílu stolního tenisu</strong>.
+                    Tento seznam je klíčový pro kontrolu finančního hospodaření a ověření odvodu členských
+                    příspěvků. Bez něj nelze zjistit, kolik členů oddíl skutečně měl a kolik příspěvků mělo
+                    být odvedeno do spolkové pokladny.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">💰</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">Odmítl zaplatit prokazatelně vzniklé náklady oddílu</h3>
+                  <p className="text-sm text-slate-700">
+                    Vaniš <strong>odmítl zaplatit náklady oddílu, které prokazatelně vznikly činností jeho oddílu</strong>.
+                    Jedná se zejména o energie (elektřina a plyn) za používání sportovních prostor, které jeho
+                    oddíl využíval, ale náklady odmítl uhradit. Celková výše nezaplacených energií činí 43.466 Kč.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">🧾</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">Žádal proplácení dokladů bez skutečné platby</h3>
+                  <p className="text-sm text-slate-700">
+                    Vaniš <strong>požadoval proplacení dokladů, u kterých bylo zjištěno, že platby ve skutečnosti neproběhly</strong>.
+                    Tímto způsobem se pokoušel získat finanční prostředky ze spolkové pokladny za výdaje,
+                    které ve skutečnosti neuskutečnil. Šlo o podvodný pokus o získání peněz.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">🎯</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">V rámci dotací chtěl proplácet nesprávné náklady</h3>
+                  <p className="text-sm text-slate-700">
+                    V rámci dotačního financování <strong>požadoval proplácení nákladů, které neodpovídaly
+                    podmínkám dotace nebo byly nesprávné</strong>. Porušoval tak pravidla pro čerpání
+                    dotačních prostředků a vystavoval spolek riziku vrácení dotace včetně sankcí.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">📝</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">Sám vytvářel a proplácet požadoval falešné doklady</h3>
+                  <p className="text-sm text-slate-700">
+                    Marek Vaniš <strong>sám vytvářel doklady, které následně požadoval proplatit</strong>.
+                    Jednalo se o falšování dokumentů za účelem získání finančních prostředků ze spolkové
+                    pokladny. Toto jednání naplňuje znaky trestného činu podvodu a zneužití pravomoci.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
+                <span className="text-2xl flex-shrink-0">👩</span>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-2">Požadoval dohody pro svou manželku za více než 70.000 Kč</h3>
+                  <p className="text-sm text-slate-700">
+                    Vaniš <strong>na svou manželku Denisu Vanišovou žádal proplatit dohody o provedení práce
+                    za více než 70.000 Kč</strong>. Šlo o další pokus o neoprávněné získání finančních prostředků
+                    ze spolkové pokladny prostřednictvím fingovaných pracovních dohod pro osobu blízkou,
+                    což představuje konflikt zájmů a zneužití funkce.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Klíčové kroky */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">
