@@ -34,7 +34,7 @@ export default function TomasSyrycanskyPage() {
       },
       {
         title: 'Tlak na svolání shromáždění',
-        description: 'Na schůzce s Kuzmou a Vítůem tlačili na Karla Roučka, aby se konalo shromáždění do konce ledna 2024. Když proběhlo legitimní shromáždění 25.1.2024, ignorovali ho.',
+        description: 'Na schůzce s Kuzmou a Vítůem tlačili na Miroslava Brožka, aby se konalo shromáždění do konce ledna 2024. Když proběhlo legitimní shromáždění 25.1.2024, ignorovali ho.',
         severity: 'high' as const,
         evidence: 'Poznámky Karel Rouček, zápis ze schůzky',
       },
@@ -50,7 +50,7 @@ export default function TomasSyrycanskyPage() {
       {
         date: 'Prosinec 2023',
         event: 'Tlak na svolání shromáždění',
-        description: 'Schůzka Kuzma, Syryčanský, Vítů - tlak na Karla Roučka, aby se konalo shromáždění do konce ledna 2024.',
+        description: 'Schůzka Kuzma, Syryčanský, Vítů - tlak na Miroslava Brožka, aby se konalo shromáždění do konce ledna 2024.',
         type: 'violation' as const,
       },
       {

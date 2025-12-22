@@ -50,7 +50,7 @@ export default function JanKuzmaPage() {
       {
         date: 'Prosinec 2023',
         event: 'Koordinační schůzky',
-        description: 'Schůzky Kuzma, Bokoč, Syryčanský, Vítů. Tlak na Karla Roučka, aby se konalo shromáždění do konce ledna 2024.',
+        description: 'Schůzky Kuzma, Bokoč, Syryčanský, Vítů. Tlak na Miroslava Brožka, aby se konalo shromáždění do konce ledna 2024.',
         type: 'violation' as const,
       },
       {

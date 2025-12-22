@@ -143,7 +143,7 @@ export default function AkteriPage() {
         'Vyměnil zámky na Pinčesárně (19.1.2024)',
         'Umožnil přístup vyloučeným členům, zablokoval legitimního předsedu',
         'Měl být "zvolen" jako nový předseda na nelegálních schůzích',
-        'Tlačil na Karla Roučka na schůzce s Kuzmou a Vítůem',
+        'Tlačil na Miroslava Brožka na schůzce s Kuzmou a Vítůem',
       ],
       relatedEvents: 8,
     },

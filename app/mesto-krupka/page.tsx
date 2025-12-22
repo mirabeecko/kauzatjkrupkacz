@@ -85,12 +85,12 @@ export default function MestoKrupkaPage() {
     },
     {
       date: 'Prosinec 2023',
-      title: 'Schůzka Kuzma, Syryčanský, Vítů s Roučkem',
-      description: 'Starosta Kuzma, sportovní manažer Syryčanský a další představitelé města tlačili na Karla Roučka, aby se konalo shromáždění do konce ledna 2024.',
+      title: 'Koordinační schůzka - tlak na předsedu Brožka',
+      description: 'Starosta Kuzma, sportovní manažer Syryčanský a další představitelé města tlačili na Miroslava Brožka, aby se konalo shromáždění do konce ledna 2024.',
       type: 'coordination' as const,
       details: [
         'Účastníci: Jan Kuzma (starosta), Tomáš Syryčanský, Vítů',
-        'Tlak na Karla Roučka: "Svolejte schůzi do konce ledna"',
+        'Tlak na Miroslava Brožka: "Svolejte schůzi do konce ledna"',
         'Důvod tlaku: pokus o převzetí kontroly nad spolkem',
         'Koordinace mezi městem a vyloučenými členy',
       ],
