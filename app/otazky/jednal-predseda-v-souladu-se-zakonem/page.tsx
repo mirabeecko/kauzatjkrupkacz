@@ -1,15 +1,25 @@
 export default function JednalPredsedaVSouladuSeZakonemPage() {
   return (
-    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
-      <nav className="text-sm text-slate-600 mb-6">
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-4xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s. ohledně postupů předsedy spolku. Uvedené informace nejsou pravomocným soudním rozhodnutím. Všechny zúčastněné osoby mají právo na odlišný právní názor.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
+        <nav className="text-sm text-slate-600 mb-6">
         <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
         <span className="mx-2">/</span>
         <span>Odpovědnost</span>
       </nav>
 
       <div className="mb-8">
-        <div className="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-4">
-          🔥 Klíčová otázka
+        <div className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
+          ⚖️ Právní pozice spolku
         </div>
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
           Jednal předseda v souladu se zákonem?
@@ -41,28 +51,28 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">✅</span>
-          Co předseda Brožek udělal správně
+          <span className="text-2xl mr-2">📋</span>
+          Kroky předsedy Brožka (dle pozice spolku)
         </h2>
         <div className="space-y-4">
           <FactBox
-            status="proven"
+            status="spolek"
             title="Svolal řádné shromáždění delegátů (25.1.2024)"
             evidence={['Zápis ze shromáždění', 'Pozvánky', 'Prezenční listina']}
           >
             <p>
-              Předseda svolal shromáždění delegátů v souladu se stanovami, s řádnou pozvánkou
-              a programem. Shromáždění se konalo v lednu 2024.
+              Podle právní pozice spolku svolal předseda shromáždění delegátů v souladu se stanovami,
+              s řádnou pozvánkou a programem. Shromáždění se konalo v lednu 2024.
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
+            status="spolek"
             title="Opakovaně vyzýval k předání seznamů členů"
             evidence={['Email 13.9.2021', 'Email 10.12.2021', 'Předžalobní výzvy 11/2023']}
           >
             <p>
-              Předseda opakovaně vyzýval předsedy oddílů k předání seznamů členů:
+              Spolek eviduje, že předseda opakovaně vyzýval předsedy oddílů k předání seznamů členů:
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
               <li>13.9.2021 - První výzva s lhůtou do 26.9.2021</li>
@@ -70,18 +80,17 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
               <li>11/2023 - Předžalobní výzvy</li>
             </ul>
             <p className="mt-2">
-              Všechny výzvy byly ignorovány.
+              Podle pozice spolku nebyly výzvy vyslyšeny.
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Vyloučil problémové členy po řádném procesu"
+            status="soud"
+            title="Vyloučil členy po procesu (potvrzeno rozhodčí komisí)"
             evidence={['Doručenky 28.11.2023', 'Rozhodčí komise ČAST', 'Předžalobní výzvy']}
           >
             <p>
-              Po 3+ letech ignorování výzev a po předžalobních výzvách předseda vyloučil
-              Vaniše a Pivoňku (28.11.2023).
+              Po výzvách předseda vyloučil Vaniše a Pivoňku (28.11.2023).
             </p>
             <p className="mt-2">
               <strong>Rozhodčí komise ČAST potvrdila:</strong> Vyloučení bylo provedeno v souladu
@@ -90,29 +99,29 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
           </FactBox>
 
           <FactBox
-            status="proven"
+            status="spolek"
             title="Podal trestní oznámení"
             evidence={['Trestní oznámení', 'Policie ČR']}
           >
             <p>
-              Předseda podal trestní oznámení na Vaniše, Vlacha a Kulíka pro podezření ze
-              zpronevěry (§ 206 TZ).
+              Spolek eviduje, že předseda podal trestní oznámení na Vaniše, Vlacha a Kulíka
+              pro podezření ze zpronevěry (§ 206 TZ).
             </p>
             <p className="mt-2">
-              To je povinnost předsedy - chránit majetek spolku a vymáhat pohledávky.
+              Právní pozice spolku: Předseda plnil povinnost chránit majetek spolku.
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Řádně platil členské příspěvky"
+            status="spolek"
+            title="Platil členské příspěvky za TJ Krupka"
             evidence={['Doklad o platbě', 'ČAST potvrzení']}
           >
             <p>
-              Předseda řádně platil členské příspěvky za TJ Krupka do ČAST (2.400 Kč/rok).
+              Spolek eviduje, že předseda platil členské příspěvky za TJ Krupka do ČAST (2.400 Kč/rok).
             </p>
             <p className="mt-2">
-              Na rozdíl od Vaniše, Vlacha a Kulíka, kteří neplatili příspěvky za své oddíly.
+              Právní pozice spolku: Oddíly OLH, TTC, SKP neevidují doložení příspěvků za své oddíly.
             </p>
           </FactBox>
         </div>
@@ -188,31 +197,48 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
         </div>
       </section>
 
-      <section className="-mx-3 md:-mx-8 px-3 md:px-8 py-8 md:py-12 bg-gradient-to-r from-blue-600 to-blue-700">
-        <h3 className="text-xl font-bold text-white mb-4">
-          📌 Shrnutí
+      <section className="p-4 md:p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg border-2 border-orange-300">
+        <h3 className="text-xl font-bold text-orange-900 mb-4">
+          📌 Shrnutí právní pozice spolku
         </h3>
-        <div className="text-white space-y-3">
+        <div className="text-orange-900 space-y-3 text-sm">
           <p>
-            <strong>ANO</strong> - Předseda Brožek jednal v souladu se zákonem a stanovami.
+            <strong>Právní pozice spolku:</strong> Předseda Brožek jednal v souladu se zákonem a stanovami.
           </p>
           <p>
-            <strong>Prokázáno:</strong> Opakovaně vyzýval k nápravě, dal možnost reakce,
-            teprve po 3+ letech vyloučil problémové členy. Podal trestní oznámení.
+            <strong>Evidované kroky:</strong> Opakovaně vyzýval k nápravě, dal možnost reakce,
+            teprve po 3+ letech vyloučil členy. Podal trestní oznámení.
             Svolal řádné shromáždění.
           </p>
           <p>
-            <strong>Rozhodčí komise ČAST i Krajský soud</strong> potvrdily, že předseda
-            jednal v souladu se zákonem.
+            <strong>Soudní potvrzení:</strong> Rozhodčí komise ČAST i Krajský soud v Ústí nad Labem
+            rozhodly, že předseda jednal v souladu se zákonem.
+          </p>
+          <p className="mt-3 pt-3 border-t-2 border-orange-300">
+            <strong>Upozornění:</strong> Toto shrnutí představuje právní argumentaci spolku TJ Krupka z.s. a soudní rozhodnutí, která byla vydána.
+            Všechny zúčastněné osoby mají právo na odlišný právní názor.
           </p>
         </div>
       </section>
+
+      <section className="mt-8 p-4 md:p-6 bg-slate-50 border-2 border-slate-200 rounded-lg">
+        <h3 className="text-lg font-bold text-slate-900 mb-2">
+          ⚖️ Námitky k uvedeným údajům
+        </h3>
+        <p className="text-sm text-slate-700">
+          Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás prostřednictvím stránky{' '}
+          <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+            Právní rámec a kontakt
+          </a>.
+        </p>
+      </section>
+      </div>
     </div>
   );
 }
 
 interface FactBoxProps {
-  status: 'proven' | 'claimed' | 'disputed';
+  status: 'spolek' | 'soud' | 'spor';
   title: string;
   evidence: string[];
   children: React.ReactNode;
@@ -220,15 +246,15 @@ interface FactBoxProps {
 
 function FactBox({ status, title, evidence, children }: FactBoxProps) {
   const statusColors = {
-    proven: 'bg-green-50 border-green-300',
-    claimed: 'bg-yellow-50 border-yellow-300',
-    disputed: 'bg-red-50 border-red-300',
+    spolek: 'bg-blue-50 border-blue-300',
+    soud: 'bg-green-50 border-green-300',
+    spor: 'bg-amber-50 border-amber-300',
   };
 
   const statusLabels = {
-    proven: '✅ Prokázáno',
-    claimed: '⚠️ Tvrzeno',
-    disputed: '❌ Sporné',
+    spolek: '📋 Pozice spolku',
+    soud: '⚖️ Soudní rozhodnutí',
+    spor: '⚠️ Předmět sporu',
   };
 
   return (

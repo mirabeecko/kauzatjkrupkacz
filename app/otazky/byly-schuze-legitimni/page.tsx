@@ -1,34 +1,43 @@
 export default function BylySchuzeLegitimnPage() {
   return (
-    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
-      {/* Breadcrumb */}
-      <nav className="text-sm text-slate-600 mb-6">
-        <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
-        <span className="mx-2">/</span>
-        <span>Schůze</span>
-      </nav>
-
-      {/* Hlavička otázky */}
-      <div className="mb-8">
-        <div className="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-4">
-          🔥 Klíčová otázka
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-4xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s. Uvedené informace nejsou pravomocným soudním rozhodnutím. Všechny zúčastněné osoby mají právo na odlišný právní názor.
+          </p>
         </div>
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          Byly schůze legitimní?
-        </h1>
       </div>
 
-      {/* Proč je důležitá */}
-      <section className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
-        <h2 className="text-xl font-bold text-blue-900 mb-3 flex items-center">
-          <span className="text-2xl mr-2">💡</span>
-          Proč je otázka důležitá
-        </h2>
-        <div className="text-blue-900 space-y-2">
-          <p>
-            Legitimita schůzí určuje, zda rozhodnutí přijatá na těchto schůzích jsou platná.
-            Nelegitimní schůze = neplatná rozhodnutí.
-          </p>
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-slate-600 mb-6">
+          <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
+          <span className="mx-2">/</span>
+          <span>Schůze</span>
+        </nav>
+
+        {/* Hlavička otázky */}
+        <div className="mb-8">
+          <div className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-4">
+            ⚖️ Právní pozice spolku
+          </div>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">
+            Byly schůze legitimní?
+          </h1>
+        </div>
+
+        {/* Proč je důležitá */}
+        <section className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+          <h2 className="text-xl font-bold text-blue-900 mb-3 flex items-center">
+            <span className="text-2xl mr-2">💡</span>
+            Proč je otázka důležitá
+          </h2>
+          <div className="text-blue-900 space-y-2">
+            <p>
+              Legitimita schůzí určuje, zda rozhodnutí přijatá na těchto schůzích jsou platná.
+            </p>
           <p className="mt-3">
             <strong>Klíčové požadavky pro legitimní schůzi:</strong>
           </p>
@@ -41,22 +50,22 @@ export default function BylySchuzeLegitimnPage() {
         </div>
       </section>
 
-      {/* Legitimní schůze */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">✅</span>
-          Prokázané legitimní schůze
-        </h2>
-        <div className="space-y-4">
-          <FactBox
-            status="proven"
-            title="24.8.2021 - Shromáždění delegátů (zvolení Brožka)"
-            evidence={['Zápis ze shromáždění', 'Prezenční listina', 'Rozhodčí komise ČAST']}
-          >
-            <p>
-              Shromáždění delegátů svolané v souladu se stanovami. Účast řádně zvolených delegátů.
-              <strong> Legitimita potvrzena Rozhodčí komisí ČAST.</strong>
-            </p>
+        {/* Legitimní schůze */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+            <span className="text-2xl mr-2">✅</span>
+            Podle pozice spolku: Legitimní schůze
+          </h2>
+          <div className="space-y-4">
+            <FactBox
+              status="spolek"
+              title="24.8.2021 - Shromáždění delegátů (zvolení Brožka)"
+              evidence={['Zápis ze shromáždění', 'Prezenční listina', 'Rozhodčí komise ČAST']}
+            >
+              <p>
+                Shromáždění delegátů svolané v souladu se stanovami. Účast řádně zvolených delegátů.
+                <strong> Legitimita potvrzena Rozhodčí komisí ČAST.</strong>
+              </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
               <li>Svoláno oprávněnou osobou (tehdejším předsedou)</li>
               <li>Dodržena poz vánková lhůta</li>
@@ -65,79 +74,74 @@ export default function BylySchuzeLegitimnPage() {
             </ul>
           </FactBox>
 
-          <FactBox
-            status="proven"
-            title="25.1.2024 - Shromáždění delegátů (Brožkovo svolání)"
-            evidence={['Zápis ze shromáždění', 'Pozvánky', 'Prezenční listina']}
-          >
-            <p>
-              Shromáždění svolané legitimním předsedou Miroslavem Brožkem. Účast oprávněných delegátů.
-            </p>
-            <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>Svoláno předsedou Brožkem</li>
-              <li>Řádná pozvánka s programem</li>
-              <li>Účast členů s hlasovacím právem</li>
-              <li>Rozhodnuto o vyloučení problémových členů</li>
-            </ul>
-            <p className="mt-2 font-semibold">
-              Město Krupka toto shromáždění ignorovalo a den po té podporovalo nelegální schůze.
-            </p>
-          </FactBox>
-        </div>
-      </section>
+            <FactBox
+              status="spolek"
+              title="25.1.2024 - Shromáždění delegátů (Brožkovo svolání)"
+              evidence={['Zápis ze shromáždění', 'Pozvánky', 'Prezenční listina']}
+            >
+              <p>
+                Shromáždění svolané legitimním předsedou Miroslavem Brožkem. Účast oprávněných delegátů.
+              </p>
+              <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>Svoláno předsedou Brožkem</li>
+                <li>Řádná pozvánka s programem</li>
+                <li>Účast členů s hlasovacím právem</li>
+                <li>Rozhodnuto o vyloučení členů</li>
+              </ul>
+            </FactBox>
+          </div>
+        </section>
 
-      {/* Nelegitimní schůze */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">❌</span>
-          Prokázané nelegitimní schůze
-        </h2>
-        <div className="space-y-4">
-          <FactBox
-            status="proven"
-            title="Schůze svolávané Vanišem a Pivoňkou po vyloučení"
-            evidence={['Doručenka vyloučení 28.11.2023', 'Rozhodčí komise ČAST', 'Datová schránka města']}
-          >
-            <p>
-              Po vyloučení 28.11.2023 Vaniš a Pivoňka pokračovali ve svolávání schůzí a tvrdili,
-              že jsou stále předsedové oddílů.
-            </p>
-            <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-red-700 font-semibold">
-              <li>Vyloučení členové nemají právo svolávat schůze spolku</li>
-              <li>Nemají žádnou funkci v organizační struktuře</li>
-              <li>Jejich "rozhodnutí" nejsou právně závazná</li>
-            </ul>
+        {/* Sporné schůze */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+            <span className="text-2xl mr-2">❌</span>
+            Podle pozice spolku: Sporné schůze
+          </h2>
+          <div className="space-y-4">
+            <FactBox
+              status="spor"
+              title="Schůze svolávané Vanišem a Pivoňkou po vyloučení"
+              evidence={['Doručenka vyloučení 28.11.2023', 'Rozhodčí komise ČAST', 'Datová schránka města']}
+            >
+              <p>
+                Podle evidence spolku: Po vyloučení 28.11.2023 Vaniš a Pivoňka pokračovali ve svolávání schůzí.
+              </p>
+              <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>Spolek tvrdí, že vyloučení členové nemají právo svolávat schůze</li>
+                <li>Podle spolku nemají funkci v organizační struktuře</li>
+                <li>Spolek považuje jejich rozhodnutí za právně nezávazná</li>
+              </ul>
             <p className="mt-3">
               <strong>Rozhodčí komise ČAST:</strong> Vyloučení bylo provedeno v souladu se stanovami
               a zákonem. Vaniš a Pivoňka nejsou členové TJ Krupka od 28.11.2023.
             </p>
           </FactBox>
 
-          <FactBox
-            status="proven"
-            title="Schůze podporované městem Krupka (prosinec 2023 - leden 2024)"
-            evidence={['Email Kuzmy', 'Koordinační schůzky', 'Datová schránka']}
-          >
-            <p>
-              Město Krupka a SPORT Krupka podporovaly schůze svolávané vyloučenými členy:
-            </p>
-            <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>Umožnily přístup vyloučeným členům (výměna zámků)</li>
-              <li>Zablokovaly přístup legitimnímu předsedovi</li>
-              <li>Ignorovaly oficiální notifikaci o vyloučení (26.1.2024)</li>
-              <li>Tlačily na svolání shromáždění do konce ledna</li>
-            </ul>
-            <p className="mt-3 font-semibold text-red-700">
-              Tyto schůze byly nelegitimní, protože:
-            </p>
-            <ul className="list-disc list-inside ml-4 space-y-1 text-red-700">
-              <li>Svolány nečleny spolku</li>
-              <li>Bez účasti legitimního vedení</li>
-              <li>V rozporu se stanovami a zákonem</li>
-            </ul>
-          </FactBox>
-        </div>
-      </section>
+            <FactBox
+              status="spor"
+              title="Schůze konané v období prosinec 2023 - leden 2024"
+              evidence={['Komunikace města', 'Koordinační schůzky', 'Datová schránka']}
+            >
+              <p>
+                Podle pozice spolku: V tomto období probíhaly schůze, které spolek považuje za sporné:
+              </p>
+              <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                <li>Přístup k prostorám byl změněn (výměna zámků)</li>
+                <li>Podle spolku neměl legitimní předseda přístup</li>
+                <li>Město obdrželo notifikaci o vyloučení (26.1.2024)</li>
+                <li>Konaly se koordinační schůzky</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Právní pozice spolku:</strong> Tyto schůze považuje za sporné z důvodu:
+              </p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Podle spolku svolány vyloučenými členy</li>
+                <li>Bez účasti legitimního vedení spolku</li>
+              </ul>
+            </FactBox>
+          </div>
+        </section>
 
       {/* Právní kontext */}
       <section className="mb-8 p-4 md:p-6 bg-slate-50 rounded-lg border-2 border-slate-200">
@@ -208,62 +212,83 @@ export default function BylySchuzeLegitimnPage() {
         </div>
       </section>
 
-      {/* Shrnutí */}
-      <section className="-mx-3 md:-mx-8 px-3 md:px-8 py-8 md:py-12 bg-gradient-to-r from-blue-600 to-blue-700">
-        <h3 className="text-xl font-bold text-white mb-4">
-          📌 Shrnutí
-        </h3>
-        <div className="text-white space-y-3">
-          <p>
-            <strong>Legitimní:</strong> Shromáždění 24.8.2021 a 25.1.2024 svolané oprávněnými orgány
-            spolku v souladu se stanovami.
+        {/* Shrnutí */}
+        <section className="p-4 md:p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg border-2 border-orange-300">
+          <h3 className="text-xl font-bold text-orange-900 mb-4">
+            📌 Shrnutí právní pozice spolku
+          </h3>
+          <div className="text-orange-900 space-y-3 text-sm">
+            <p>
+              <strong>Podle spolku legitimní:</strong> Shromáždění 24.8.2021 a 25.1.2024 svolané oprávněnými orgány
+              spolku v souladu se stanovami.
+            </p>
+            <p>
+              <strong>Podle spolku sporné:</strong> Schůze svolávané Vanišem a Pivoňkou po jejich vyloučení
+              28.11.2023 jsou podle spolku sporné, protože vyloučení členové podle spolku nemají právo svolávat schůze.
+            </p>
+            <p>
+              <strong>Rozhodčí komise ČAST:</strong> Potvrdila legitimitu vyloučení.
+            </p>
+            <p className="mt-3 pt-3 border-t-2 border-orange-300">
+              <strong>Upozornění:</strong> Toto shrnutí představuje právní argumentaci spolku a není pravomocným soudním rozhodnutím.
+              Všechny zúčastněné osoby mají právo na odlišný právní názor.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-8 p-4 md:p-6 bg-slate-50 border-2 border-slate-200 rounded-lg">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">
+            ⚖️ Námitky k uvedeným údajům
+          </h3>
+          <p className="text-sm text-slate-700">
+            Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás prostřednictvím stránky{' '}
+            <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+              Právní rámec a kontakt
+            </a>.
           </p>
-          <p>
-            <strong>Nelegitimní:</strong> Všechny schůze svolávané Vanišem a Pivoňkou po jejich vyloučení
-            28.11.2023 jsou nelegitimní a jejich rozhodnutí nejsou právně závazná.
-          </p>
-          <p>
-            <strong>Klíč:</strong> Vyloučení členové nemají právo svolávat schůze ani jednat jménem spolku.
-            Rozhodčí komise ČAST potvrdila legitimitu vyloučení.
-          </p>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
 
 interface FactBoxProps {
-  status: 'proven' | 'claimed' | 'disputed';
+  status: 'spolek' | 'soud' | 'spor';
   title: string;
   evidence: string[];
   children: React.ReactNode;
 }
 
 function FactBox({ status, title, evidence, children }: FactBoxProps) {
-  const statusColors = {
-    proven: 'bg-green-50 border-green-300',
-    claimed: 'bg-yellow-50 border-yellow-300',
-    disputed: 'bg-red-50 border-red-300',
+  const statusConfig = {
+    spolek: {
+      color: 'bg-blue-50 border-blue-300',
+      label: '📋 Pozice spolku',
+    },
+    soud: {
+      color: 'bg-green-50 border-green-300',
+      label: '⚖️ Soudní rozhodnutí',
+    },
+    spor: {
+      color: 'bg-orange-50 border-orange-300',
+      label: '❗ Spor',
+    },
   };
 
-  const statusLabels = {
-    proven: '✅ Prokázáno',
-    claimed: '⚠️ Tvrzeno',
-    disputed: '❌ Sporné',
-  };
+  const config = statusConfig[status];
 
   return (
-    <div className={`p-4 rounded-lg border ${statusColors[status]}`}>
+    <div className={`p-4 rounded-lg border-2 ${config.color}`}>
       <div className="flex items-start justify-between mb-2">
         <h3 className="font-semibold text-slate-900">{title}</h3>
-        <span className="text-xs font-semibold ml-2">{statusLabels[status]}</span>
+        <span className="text-xs font-semibold ml-2 whitespace-nowrap">{config.label}</span>
       </div>
       <div className="text-sm text-slate-700 space-y-2">
         {children}
       </div>
       {evidence.length > 0 && (
         <div className="mt-3 pt-3 border-t border-slate-300">
-          <div className="text-xs font-semibold text-slate-600 mb-1">Důkazy:</div>
+          <div className="text-xs font-semibold text-slate-600 mb-1">Zdroje informací:</div>
           <ul className="text-xs text-slate-600 space-y-1">
             {evidence.map((e, i) => (
               <li key={i}>📎 {e}</li>

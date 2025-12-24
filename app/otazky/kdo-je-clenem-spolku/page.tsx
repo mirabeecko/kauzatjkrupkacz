@@ -1,8 +1,18 @@
 export default function KdoJeClenemSpolkuPage() {
   return (
-    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
-      {/* Breadcrumb */}
-      <nav className="text-sm text-slate-600 mb-6">
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-4xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s. ohledně členství ve spolku. Uvedené informace nejsou pravomocným soudním rozhodnutím. Všechny zúčastněné osoby mají právo na odlišný právní názor.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-slate-600 mb-6">
         <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
         <span className="mx-2">/</span>
         <span>Členství</span>
@@ -49,60 +59,57 @@ export default function KdoJeClenemSpolkuPage() {
       {/* Co víme */}
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">✅</span>
-          Co víme (prokázaná fakta)
+          <span className="text-2xl mr-2">📋</span>
+          Evidence spolku
         </h2>
         <div className="space-y-4">
           <FactBox
-            status="proven"
+            status="spolek"
             title="Členská základna byla neaktuální"
             evidence={['24.8.2021 - Zápis ze shromáždění delegátů', '13.9.2021 - Email předsedy s výzvou']}
           >
             <p>
-              K datu zvolení nového předsedy (24.8.2021) obsahovala členská evidence osoby starší
-              100 let. Všichni účastníci shromáždění se shodli, že je nutná aktualizace.
+              Podle evidence spolku obsahovala členská evidence k datu zvolení nového předsedy (24.8.2021) zastaralé údaje.
+              Účastníci shromáždění se shodli na nutnosti aktualizace.
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Předsedové oddílů nepředali seznamy členů"
+            status="spolek"
+            title="K datu neeviduje doložení seznamů členů"
             evidence={['Email 13.9.2021', 'Email 10.12.2021', 'Předžalobní výzvy 11/2023']}
           >
             <p>
-              Marek Vaniš, Gustav Vlach a Martin Kulík <strong>nikdy nepředali</strong> aktualizované
-              seznamy členů svých oddílů, přestože:
+              Spolek k datu neeviduje doložení aktualizovaných seznamů členů od předsedů oddílů (Vaniš, Vlach, Kulík), přestože:
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>Přislíbili to na schůzi 24.8.2021</li>
-              <li>Byli vyzváni emailem 13.9.2021 se lhůtou do 26.9.2021</li>
-              <li>Byli opakovaně upomínáni v prosinci 2021</li>
-              <li>Obdrželi předžalobní výzvy v listopadu 2023</li>
+              <li>Byly zaslány výzvy emailem (13.9.2021, 10.12.2021)</li>
+              <li>Byly zaslány předžalobní výzvy (11/2023)</li>
             </ul>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Turistický oddíl jako jediný doložil členy"
+            status="spolek"
+            title="Turistický oddíl doložil členy"
             evidence={['Seznam členů turistického oddílu', 'Oznámení o vystoupení z TJ']}
           >
             <p>
-              Turistický oddíl jako jediný zaslal požadovaný seznam členů. Následně požádal
+              Spolek eviduje, že turistický oddíl zaslal požadovaný seznam členů. Následně požádal
               o ukončení členství v TJ Krupka (leden 2022).
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Hráči stolního tenisu nebyli vedeni jako členové"
+            status="spolek"
+            title="Spor o členství hráčů stolního tenisu"
             evidence={['28.11.2023 - Zápis ze setkání', 'WhatsApp zpráva 8.12.2023']}
           >
             <p>
-              Na schůzce 28.11.2023 bylo hráčům stolního tenisu sděleno, že <strong>nejsou vedeni
-              jako členové oddílu</strong>, protože Vaniš nikdy nepředal seznamy.
+              Spolek eviduje, že na schůzce 28.11.2023 bylo hráčům stolního tenisu sděleno, že nejsou vedeni
+              v evidenci členů.
             </p>
             <p className="mt-2">
-              8.12.2023 byl zaslán odkaz na formulář s výzvou k vyplnění údajů pro řádné členství.
+              8.12.2023 byl zaslán odkaz na formulář s výzvou k vyplnění údajů pro členství.
             </p>
           </FactBox>
         </div>
@@ -212,31 +219,41 @@ export default function KdoJeClenemSpolkuPage() {
       </section>
 
       {/* Shrnutí */}
-      <section className="-mx-3 md:-mx-8 px-3 md:px-8 py-8 md:py-12 bg-gradient-to-r from-blue-600 to-blue-700">
-        <h3 className="text-xl font-bold text-white mb-4">
-          📌 Shrnutí
+      <section className="p-4 md:p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg border-2 border-orange-300">
+        <h3 className="text-xl font-bold text-orange-900 mb-4">
+          📌 Shrnutí právní pozice spolku
         </h3>
-        <div className="text-white space-y-3">
+        <div className="text-orange-900 space-y-3 text-sm">
           <p>
-            <strong>Prokázáno:</strong> Předsedové oddílů (Vaniš, Vlach, Kulík) nepředali seznamy
-            členů přes opakované výzvy v období 2021-2023.
+            <strong>Evidence spolku:</strong> Spolek k datu neeviduje doložení seznamů členů od předsedů oddílů (Vaniš, Vlach, Kulík) přes opakované výzvy v období 2021-2023.
           </p>
           <p>
-            <strong>Důsledek:</strong> Spolek neví, kdo je skutečným členem oddílů, což znemožňuje
-            legitimní rozhodování a vymáhání příspěvků.
+            <strong>Důsledek:</strong> Podle právní pozice spolku není možné ověřit členství osob v dotčených oddílech.
           </p>
-          <p>
-            <strong>Právní implikace:</strong> Osoby, které nejsou prokázanými členy, nemají právo
-            žalovat spolek ani účastnit se rozhodování.
+          <p className="mt-3 pt-3 border-t-2 border-orange-300">
+            <strong>Upozornění:</strong> Toto shrnutí představuje právní argumentaci spolku. Všechny zúčastněné osoby mají právo na odlišný právní názor.
           </p>
         </div>
       </section>
+
+      <section className="mt-8 p-4 md:p-6 bg-slate-50 border-2 border-slate-200 rounded-lg">
+        <h3 className="text-lg font-bold text-slate-900 mb-2">
+          ⚖️ Námitky k uvedeným údajům
+        </h3>
+        <p className="text-sm text-slate-700">
+          Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás prostřednictvím stránky{' '}
+          <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+            Právní rámec a kontakt
+          </a>.
+        </p>
+      </section>
+      </div>
     </div>
   );
 }
 
 interface FactBoxProps {
-  status: 'proven' | 'claimed' | 'disputed';
+  status: 'spolek' | 'soud' | 'spor';
   title: string;
   evidence: string[];
   children: React.ReactNode;
@@ -244,15 +261,15 @@ interface FactBoxProps {
 
 function FactBox({ status, title, evidence, children }: FactBoxProps) {
   const statusColors = {
-    proven: 'bg-green-50 border-green-300',
-    claimed: 'bg-yellow-50 border-yellow-300',
-    disputed: 'bg-red-50 border-red-300',
+    spolek: 'bg-blue-50 border-blue-300',
+    soud: 'bg-green-50 border-green-300',
+    spor: 'bg-amber-50 border-amber-300',
   };
 
   const statusLabels = {
-    proven: '✅ Prokázáno',
-    claimed: '⚠️ Tvrzeno',
-    disputed: '❌ Sporné',
+    spolek: '📋 Pozice spolku',
+    soud: '⚖️ Soudní rozhodnutí',
+    spor: '⚠️ Předmět sporu',
   };
 
   return (

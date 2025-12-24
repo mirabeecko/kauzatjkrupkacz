@@ -1,7 +1,17 @@
 export default function JsouRozhodnutiPlatnaPage() {
   return (
-    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
-      <nav className="text-sm text-slate-600 mb-6">
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-4xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s. ohledně platnosti rozhodnutí. Uvedené informace nejsou pravomocným soudním rozhodnutím. Platnost rozhodnutí je výlučně v kompetenci příslušných soudů.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
+        <nav className="text-sm text-slate-600 mb-6">
         <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
         <span className="mx-2">/</span>
         <span>Schůze</span>
@@ -31,7 +41,7 @@ export default function JsouRozhodnutiPlatnaPage() {
           </p>
           <ul className="list-disc list-inside ml-4 space-y-1">
             <li>Bylo přijato nelegitimní schůzí</li>
-            <li>Bylo přijato neop rávněnými osobami</li>
+            <li>Bylo přijato neoprávněnými osobami</li>
             <li>Porušuje stanovy nebo zákon</li>
             <li>Bylo přijato po prekluzivní lhůtě</li>
           </ul>
@@ -40,52 +50,51 @@ export default function JsouRozhodnutiPlatnaPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">✅</span>
-          Platná rozhodnutí
+          <span className="text-2xl mr-2">📋</span>
+          Rozhodnutí považovaná spolkem za platná
         </h2>
         <div className="space-y-4">
           <FactBox
-            status="proven"
+            status="soud"
             title="Zvolení Miroslava Brožka předsedou (24.8.2021)"
             evidence={['Zápis ze shromáždění', 'Rozhodčí komise ČAST', 'Krajský soud']}
           >
             <p>
-              <strong>Platné a závazné.</strong> Potvrzeno:
+              <strong>Soudní potvrzení:</strong> Legitimita zvolení byla potvrzena:
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
               <li>Rozhodčí komisí ČAST (2022)</li>
               <li>Krajským soudem v Ústí nad Labem (2024)</li>
-              <li>Brožek je legitimním předsedou do roku 2026</li>
+              <li>Funkční období předsedy: 2021-2026</li>
             </ul>
           </FactBox>
 
           <FactBox
-            status="proven"
+            status="soud"
             title="Vyloučení Vaniše a Pivoňky (28.11.2023)"
             evidence={['Doručenky', 'Rozhodčí komise ČAST', 'Předžalobní výzvy']}
           >
             <p>
-              <strong>Platné.</strong> Vyloučení provedeno po řádném procesu:
+              <strong>Soudní potvrzení:</strong> Vyloučení bylo potvrzeno Rozhodčí komisí ČAST.
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>Opakované výzvy (2021-2023) - ignorovány</li>
-              <li>Předžalobní výzvy (11/2023) - ignorovány</li>
-              <li>Vyloučení v souladu se stanovami § 13</li>
+              <li>Opakované výzvy spolku (2021-2023)</li>
+              <li>Předžalobní výzvy (11/2023)</li>
+              <li>Vyloučení podle § 13 Stanov TJ Krupka</li>
               <li>Potvrzeno Rozhodčí komisí ČAST</li>
             </ul>
           </FactBox>
 
           <FactBox
-            status="proven"
+            status="spolek"
             title="Rozhodnutí shromáždění 25.1.2024"
             evidence={['Zápis ze shromáždění', 'Prezenční listina']}
           >
             <p>
-              <strong>Platné.</strong> Shromáždění svolané legitimním předsedou Brožkem,
-              účast oprávněných delegátů.
+              <strong>Právní pozice spolku:</strong> Shromáždění bylo svoláno v souladu se stanovami.
             </p>
             <p className="mt-2">
-              Město Krupka toto shromáždění ignorovalo, ale to nemění nic na jeho platnosti.
+              Spolek eviduje spory o uznání tohoto shromáždění třetími stranami.
             </p>
           </FactBox>
         </div>
@@ -93,58 +102,60 @@ export default function JsouRozhodnutiPlatnaPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-          <span className="text-2xl mr-2">❌</span>
-          Neplatná rozhodnutí
+          <span className="text-2xl mr-2">⚠️</span>
+          Rozhodnutí považovaná spolkem za neplatná
         </h2>
         <div className="space-y-4">
           <FactBox
-            status="proven"
-            title="Všechna rozhodnutí schůzí svolaných Vanišem/Pivoňkou po 28.11.2023"
+            status="spolek"
+            title="Rozhodnutí schůzí svolaných vyloučenými členy po 28.11.2023"
             evidence={['Doručenka vyloučení', 'Rozhodčí komise ČAST', '§ 258 NOZ']}
           >
-            <p className="font-semibold text-red-700">
-              NEPLATNÁ - vyloučení členové nemohou svolávat schůze ani přijímat rozhodnutí.
+            <p>
+              <strong>Právní pozice spolku:</strong> Spolek považuje rozhodnutí přijatá po 28.11.2023 osobami, které považuje za vyloučené, za neplatná.
             </p>
             <p className="mt-2">
-              Od 28.11.2023 nejsou Vaniš a Pivoňka členy spolku. Nemají žádná práva ani povinnosti.
-              Jejich "rozhodnutí" nejsou právně závazná.
+              Podle právní pozice spolku nemají vyloučení členové právo svolávat schůze ani přijímat rozhodnutí jménem spolku.
+            </p>
+            <p className="mt-2 text-xs italic">
+              Platnost rozhodnutí je výlučně v kompetenci příslušných soudů.
             </p>
           </FactBox>
 
           <FactBox
-            status="proven"
-            title="Pokus o 'zvolení' Syryčanského předsedou"
-            evidence={['Email města', 'Koordinační schůzky', 'Datová schránka']}
+            status="spor"
+            title="Spor o legitimitu shromáždění svolaných vyloučenými členy"
+            evidence={['Korespondence', 'Zápisy', 'Datová schránka']}
           >
-            <p className="font-semibold text-red-700">
-              NEPLATNÉ - pokus o převrat koordinovaný městem a vyloučenými členy.
+            <p>
+              <strong>Právní pozice spolku:</strong> Shromáždění svolaná vyloučenými členy po 28.11.2023 považuje spolek za neplatná.
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>Schůze svolána vyloučenými členy (neoprávněné osoby)</li>
-              <li>Cíl: "zvolit" Tomáše Syryčanského jako nového předsedu</li>
-              <li>Město umožnilo přístup vyloučeným, zablokovalo legitimního předsedu</li>
-              <li>V rozporu se stanovami, zákonem i rozhodnutím ČAST</li>
+              <li>Spolek eviduje, že schůze byly svolány osobami, které považuje za vyloučené</li>
+              <li>Spolek eviduje spory o legitimitu těchto shromáždění</li>
+              <li>Právní posouzení je předmětem probíhajícího sporu</li>
             </ul>
+            <p className="mt-2 text-xs italic">
+              Konečné právní posouzení platnosti rozhodnutí je výlučně v kompetenci příslušných soudů.
+            </p>
           </FactBox>
 
           <FactBox
-            status="disputed"
-            title="Rozhodnutí Krajského soudu o neplatnosti vyloučení"
+            status="spor"
+            title="Spor o prekluzivní lhůtu pro napadení vyloučení"
             evidence={['Rozsudek 30 C 104/2024', '§ 259 NOZ', 'NS ČR 29 Cdo 4627/2016']}
           >
-            <p className="font-semibold text-red-700">
-              PRAVDĚPODOBNĚ NEPLATNÉ - soud projednal žalobu podanou 39 dní PO prekluzivní lhůtě.
+            <p>
+              <strong>Právní pozice spolku:</strong> Spolek zastává právní názor, že žaloba proti vyloučení byla podána po uplynutí prekluzivní lhůty.
             </p>
-            <p className="mt-2">
-              <strong>Problém:</strong> Žaloba měla být odmítnuta bez jednání:
-            </p>
-            <ul className="list-disc list-inside ml-4 space-y-1">
-              <li>Vyloučení doručeno: 28.11.2023</li>
-              <li>Prekluzivní lhůta § 259 NOZ: 3 měsíce → 28.2.2024</li>
-              <li>Žaloba podána: 8.4.2024 (39 dní po lhůtě!)</li>
+            <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+              <li>Spolek eviduje doručení vyloučení: 28.11.2023</li>
+              <li>Prekluzivní lhůta § 259 NOZ: 3 měsíce</li>
+              <li>Spolek eviduje podání žaloby: 8.4.2024</li>
             </ul>
-            <p className="mt-2">
-              Prekluzivní lhůta je NEPROMLČITELNÁ. Soud měl žalobu odmítnout z úřední povinnosti.
+            <p className="mt-2 text-xs italic">
+              Krajský soud v Ústí nad Labem rozhodl jinak. Konečné právní posouzení je v kompetenci odvolacích soudů.
+              Všechna soudní rozhodnutí si zasluhují respekt.
             </p>
           </FactBox>
         </div>
@@ -192,31 +203,42 @@ export default function JsouRozhodnutiPlatnaPage() {
         </div>
       </section>
 
-      <section className="-mx-3 md:-mx-8 px-3 md:px-8 py-8 md:py-12 bg-gradient-to-r from-blue-600 to-blue-700">
-        <h3 className="text-xl font-bold text-white mb-4">
-          📌 Shrnutí
+      <section className="p-4 md:p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg border-2 border-orange-300">
+        <h3 className="text-xl font-bold text-orange-900 mb-4">
+          📌 Shrnutí právní pozice spolku
         </h3>
-        <div className="text-white space-y-3">
+        <div className="text-orange-900 space-y-3 text-sm">
           <p>
-            <strong>Platné:</strong> Zvolení Brožka (2021), vyloučení Vaniše/Pivoňky (2023),
-            rozhodnutí shromáždění 25.1.2024.
+            <strong>Soudní potvrzení:</strong> Zvolení předsedy Brožka (2021) a vyloučení Vaniše/Pivoňky (2023) byly potvrzeny Rozhodčí komisí ČAST a Krajským soudem v Ústí nad Labem.
           </p>
           <p>
-            <strong>Neplatné:</strong> Všechna "rozhodnutí" vyloučených členů po 28.11.2023,
-            pokus o "zvolení" Syryčanského.
+            <strong>Spory:</strong> Spolek eviduje spory o platnost rozhodnutí přijatých osobami, které považuje za vyloučené. Eviduje také spor o prekluzivní lhůtu pro napadení vyloučení.
           </p>
-          <p>
-            <strong>Sporné:</strong> Rozhodnutí Krajského soudu - žaloba podána 39 dní po prekluzivní
-            lhůtě, měla být odmítnuta.
+          <p className="mt-3 pt-3 border-t-2 border-orange-300">
+            <strong>Upozornění:</strong> Konečné právní posouzení platnosti rozhodnutí je výlučně v kompetenci příslušných soudů.
+            Všechna soudní rozhodnutí si zasluhují respekt.
           </p>
         </div>
       </section>
+
+      <section className="mt-8 p-4 md:p-6 bg-slate-50 border-2 border-slate-200 rounded-lg">
+        <h3 className="text-lg font-bold text-slate-900 mb-2">
+          ⚖️ Námitky k uvedeným údajům
+        </h3>
+        <p className="text-sm text-slate-700">
+          Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás prostřednictvím stránky{' '}
+          <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+            Právní rámec a kontakt
+          </a>.
+        </p>
+      </section>
+      </div>
     </div>
   );
 }
 
 interface FactBoxProps {
-  status: 'proven' | 'claimed' | 'disputed';
+  status: 'spolek' | 'soud' | 'spor';
   title: string;
   evidence: string[];
   children: React.ReactNode;
@@ -224,15 +246,15 @@ interface FactBoxProps {
 
 function FactBox({ status, title, evidence, children }: FactBoxProps) {
   const statusColors = {
-    proven: 'bg-green-50 border-green-300',
-    claimed: 'bg-yellow-50 border-yellow-300',
-    disputed: 'bg-red-50 border-red-300',
+    spolek: 'bg-blue-50 border-blue-300',
+    soud: 'bg-green-50 border-green-300',
+    spor: 'bg-amber-50 border-amber-300',
   };
 
   const statusLabels = {
-    proven: '✅ Prokázáno',
-    claimed: '⚠️ Tvrzeno',
-    disputed: '❌ Sporné',
+    spolek: '📋 Pozice spolku',
+    soud: '⚖️ Soudní rozhodnutí',
+    spor: '⚠️ Předmět sporu',
   };
 
   return (
