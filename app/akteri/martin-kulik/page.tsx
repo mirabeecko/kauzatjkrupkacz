@@ -1,71 +1,113 @@
+import ClassificationBadge from '@/components/ClassificationBadge';
+
 export default function MartinKulikPage() {
   const actor = {
     name: 'Martin Kulík',
-    role: 'Údajný předseda oddílu karate',
+    role: 'Činnost v oddílu karate',
     department: 'Oddíl karate',
     departmentIcon: '🥋',
     status: 'negative' as const,
     totalDamage: 350598,
     membershipStatus: 'Zánik členství neplacením příspěvků',
-    summary: 'Celková škoda oddílu karate: 350.598 Kč. Nikdy nebyl předsedou oddílu karate (dle zápisu byl předsedou Jiří Kulík). Nedodal seznamy členů.',
     breakdown: [
       {
-        label: 'Zapřené oddílové příspěvky',
+        label: 'Neodvedené oddílové příspěvky',
         amount: 316800,
-        description: '40 členů × 3.600 Kč/rok (období 2020-2023). Vybíral příspěvky členů oddílu, ale spolku je neodvedl.',
-        severity: 'critical' as const,
+        description: 'Oddíl karate neeviduje odvod příspěvků za období 2020-2023. 40 členů × 3.600 Kč/rok × 4 roky.',
+        classification: 'evidovano' as const,
+        note: 'Výpočet založen na odhadech počtu členů (seznamy nebyly doloženy). Oddíl karate měl nejvyšší roční příspěvek ze všech oddílů.',
       },
       {
         label: 'Nezaplacené členské příspěvky',
         amount: 32000,
-        description: '40 členů × 200 Kč/rok × 4 roky (2021-2024). Úhrada svazům ČSTV, Ústeckému kraji, obci.',
-        severity: 'high' as const,
+        description: 'Členské příspěvky za období 2021-2024 (200 Kč × 4 roky × 40 členů). Úhrada svazům ČSTV, Ústeckému kraji, obci.',
+        classification: 'evidovano' as const,
+        note: 'Účetní evidence spolku.',
       },
       {
         label: 'Pokladna oddílu k 31.12.2020',
         amount: 1798,
-        description: 'Hotovost v pokladně oddílu k 31.12.2020 nebyla předána ani vyúčtována.',
-        severity: 'medium' as const,
+        description: 'Hotovost v pokladně oddílu k 31.12.2020 ve výši 1.798 Kč nebyla předána ani vyúčtována.',
+        classification: 'evidovano' as const,
+        note: 'Účetní evidence spolku.',
       },
     ],
-    keyActions: [
-      { text: 'Nedodal seznamy členů', date: '2021-2024', type: 'violation' },
-      { text: 'Zapíral oddílové příspěvky', amount: 316800, date: '2020-2023', type: 'violation' },
-      { text: 'Neuhradil členské příspěvky', amount: 32000, date: '2021-2024', type: 'violation' },
-      { text: 'Pokladna oddílu nebyla předána', amount: 1798, date: '31.12.2020', type: 'violation' },
-      { text: 'Zánik členství neplacením příspěvků', date: '2024', type: 'consequence' },
-    ],
-    criticalFacts: [
+    legitimacyDispute: {
+      status: 'spor' as const,
+      description: 'V této věci existuje nesoulad v evidenci.',
+      details: [
+        {
+          label: 'Oficiální zápis',
+          description: 'Podle oficiálního zápisu ze schůze oddílu byl předsedou oddílu karate Jiří Kulík.',
+          classification: 'dolozeno' as const,
+        },
+        {
+          label: 'Komunikace s Martin Kulíkem',
+          description: 'Martin Kulík v komunikaci se spolkem vystupoval jako předseda oddílu karate.',
+          classification: 'dolozeno' as const,
+        },
+        {
+          label: 'Zápis potvrzující zvolení',
+          description: 'K datu zveřejnění spolek neeviduje doložení zápisu, který by potvrzoval zvolení Martina Kulíka do funkce předsedy oddílu.',
+          classification: 'dolozeno' as const,
+        },
+      ],
+    },
+    keyFacts: [
       {
-        icon: '❓',
-        title: 'Sporná legitimita funkce',
-        description: 'Martin Kulík se označoval za předsedu oddílu karate, avšak podle oficiálního zápisu byl předsedou oddílu Jiří Kulík. Legitimita funkce Martina Kulíka nebyla prokázána.',
-        severity: 'critical' as const,
+        icon: '⚖️',
+        title: 'Nesoulad v evidenci funkce',
+        description: 'Existuje nesoulad mezi oficiálním zápisem (předseda: Jiří Kulík) a komunikací (Martin Kulík vystupoval jako předseda). Věc označujeme jako spor.',
+        classification: 'spor' as const,
       },
       {
         icon: '📋',
-        title: 'Nedodané seznamy členů',
-        description: 'Přes opakované výzvy nikdy nedodal aktualizované seznamy členů, což znemožnilo kontrolu hospodaření oddílu a ověření členství.',
-        severity: 'high' as const,
+        title: 'Seznamy členů nebyly doloženy',
+        description: 'K datu zveřejnění spolek neeviduje doložení aktualizovaných seznamů členů oddílu karate, přestože byly zaslány opakované výzvy (2021-2024).',
+        classification: 'dolozeno' as const,
       },
       {
         icon: '💰',
-        title: 'Vysoké oddílové příspěvky',
-        description: 'Oddíl karate měl nejvyšší roční příspěvek na člena (3.600 Kč/rok), celkem zapřel příspěvky ve výši 316.800 Kč.',
-        severity: 'high' as const,
+        title: 'Nejvyšší roční příspěvek',
+        description: 'Oddíl karate měl nejvyšší roční příspěvek na člena ze všech oddílů (3.600 Kč/rok). Z evidence vyplývá nesoulad ve výši 316.800 Kč.',
+        classification: 'evidovano' as const,
       },
     ],
+    keyEvents: [
+      { text: 'Činnost v oddílu karate', date: '2020-2024', classification: 'dolozeno' as const },
+      { text: 'Nesoulad v evidenci funkce předsedy (spor)', date: '2020-2024', classification: 'spor' as const },
+      { text: 'K datu zveřejnění neevidováno doložení seznamů členů', date: '2021-2024', classification: 'dolozeno' as const },
+      { text: 'K datu zveřejnění neevidováno doložení oddílových příspěvků', amount: 316800, date: '2020-2023', classification: 'evidovano' as const },
+      { text: 'Členské příspěvky nebyly uhrazeny', amount: 32000, date: '2021-2024', classification: 'evidovano' as const },
+      { text: 'Pokladna oddílu nebyla předána', amount: 1798, date: '31.12.2020', classification: 'evidovano' as const },
+      { text: 'Zánik členství neplacením členských příspěvků', date: '2024', classification: 'dolozeno' as const },
+    ],
     relatedLinks: [
-      { label: 'Události s účastí Kulíka', href: '/udalosti?actor=martin-kulik', icon: '📅' },
-      { label: 'Finanční přehled', href: '/cisla', icon: '💰' },
+      { label: 'Právní rámec a kontakt', href: '/pravni-ramec', icon: '⚖️' },
+      { label: 'Metodika výpočtu škody', href: '/metodika', icon: '📊' },
+      { label: 'Rozpad škody podle kategorií', href: '/rozpad-skody', icon: '💰' },
+      { label: 'Události s účastí', href: '/udalosti?actor=martin-kulik', icon: '📅' },
       { label: 'Téma: Finance a majetek', href: '/temata/finance-a-majetek', icon: '📚' },
       { label: 'Téma: Členství a evidence', href: '/temata/clenstvi-a-evidence', icon: '📋' },
-      { label: 'Pointa: Legitimita funkcí', href: '/pointy/legitimita-funkci', icon: '💡' },
     ],
   };
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-3">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
+          <p className="text-sm">
+            ⚖️ <strong>Právní upozornění:</strong> Osoba je uvedena výhradně v souvislosti s činností v oddílu spolku TJ Krupka z.s., nikoliv soukromě.
+            Uvedené informace vycházejí z dokumentů, které spolek eviduje. Nejde o pravomocné soudní rozhodnutí.
+            {' '}
+            <a href="/pravni-ramec" className="underline hover:text-blue-200">
+              Více informací o právním rámci →
+            </a>
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 py-8 md:py-16">
         <div className="container mx-auto px-3 md:px-8 max-w-5xl">
@@ -76,7 +118,7 @@ export default function MartinKulikPage() {
                   {actor.departmentIcon} {actor.department}
                 </span>
                 <span className="px-3 py-1 bg-teal-900/50 backdrop-blur rounded-full text-white text-sm font-bold">
-                  ⛔ {actor.membershipStatus}
+                  {actor.membershipStatus}
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
@@ -85,8 +127,9 @@ export default function MartinKulikPage() {
               <p className="text-xl text-green-100 font-medium">
                 {actor.role}
               </p>
-              <div className="mt-3 px-4 py-2 bg-yellow-500/30 backdrop-blur rounded-lg border border-yellow-300 inline-block">
-                <span className="text-sm text-white font-bold">⚠️ Sporná legitimita funkce</span>
+              <div className="mt-3 flex items-center gap-2">
+                <ClassificationBadge type="spor" />
+                <span className="text-sm text-green-100">Nesoulad v evidenci funkce</span>
               </div>
             </div>
           </div>
@@ -94,9 +137,12 @@ export default function MartinKulikPage() {
           <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-green-100 text-sm font-medium mb-2">Celková způsobená škoda</div>
+                <div className="text-green-100 text-sm font-medium mb-2">Evidovaná škoda oddílu</div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
                   {actor.totalDamage.toLocaleString('cs-CZ')} Kč
+                </div>
+                <div className="mt-3">
+                  <ClassificationBadge type="evidovano" />
                 </div>
               </div>
               <div className="text-8xl opacity-20">
@@ -108,149 +154,234 @@ export default function MartinKulikPage() {
       </div>
 
       <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
-        {/* Shrnutí */}
+        {/* Kontext */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
-              <span>Shrnutí</span>
+              <span>Kontext</span>
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {actor.summary}
-            </p>
+            <div className="text-slate-700 leading-relaxed space-y-3">
+              <p>
+                Martin Kulík byl činný v oddílu karate v období 2020-2024.
+                Spolek eviduje nesoulad ve finančním hospodaření oddílu ve výši <strong>350.598 Kč</strong>.
+              </p>
+              <p>
+                V této věci existuje nesoulad v evidenci funkce předsedy oddílu (viz sekce níže).
+                K datu zveřejnění spolek neeviduje doložení seznamů členů ani oddílových příspěvků.
+              </p>
+              <p>
+                Členství ve spolku zaniklo neplacením členských příspěvků (2024).
+              </p>
+              <p className="text-sm text-slate-600 italic">
+                Více o metodice výpočtu škody a právních podkladech na stránkách{' '}
+                <a href="/metodika" className="text-blue-600 hover:underline font-semibold">Metodika</a>
+                {' '}a{' '}
+                <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">Právní rámec</a>.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Kritická fakta */}
+        {/* Nesoulad v evidenci funkce - SPOR */}
         <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            🚨 Kritická fakta
-          </h2>
-          <div className="grid gap-4">
-            {actor.criticalFacts.map((fact, index) => {
-              const severityColors = {
-                critical: 'bg-red-50 border-red-400',
-                high: 'bg-orange-50 border-orange-400',
-                medium: 'bg-yellow-50 border-yellow-400',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{fact.icon}</span>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{fact.title}</h3>
-                      <p className="text-sm text-slate-700 leading-relaxed">
-                        {fact.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Otázka legitimity */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-300 p-4 md:p-8">
             <div className="flex items-start gap-4 mb-4">
-              <span className="text-5xl">⚠️</span>
-              <div>
-                <h2 className="text-2xl font-bold text-amber-900 mb-3">Otázka legitimity funkce</h2>
-                <div className="space-y-3 text-slate-700">
-                  <p className="leading-relaxed">
-                    <strong>Martin Kulík</strong> se označoval jako <strong>předseda oddílu karate</strong> a vystupoval
-                    v této roli, avšak podle oficiálního zápisu byl předsedou oddílu <strong>Jiří Kulík</strong>.
+              <span className="text-5xl">⚖️</span>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <h2 className="text-2xl font-bold text-amber-900">Nesoulad v evidenci funkce</h2>
+                  <ClassificationBadge type="spor" />
+                </div>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {actor.legitimacyDispute.description} V této věci existují rozdílná tvrzení; stav označujeme jako spor.
+                </p>
+                <div className="space-y-4">
+                  {actor.legitimacyDispute.details.map((detail, index) => (
+                    <div key={index} className="p-4 bg-white rounded-lg border-2 border-orange-200">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="font-bold text-slate-900">{detail.label}</h3>
+                        <ClassificationBadge type={detail.classification} />
+                      </div>
+                      <p className="text-sm text-slate-700">{detail.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-orange-100 border-l-4 border-orange-600 rounded">
+                  <p className="text-sm text-orange-900">
+                    <strong>Upozornění:</strong> Spolek eviduje nesoulad mezi oficiálním zápisem a faktickou
+                    komunikací. Tato skutečnost neupravuje výši evidované škody oddílu, ale uvádíme ji pro úplnost.
+                    Námitky k těmto údajům lze zaslat prostřednictvím stránky{' '}
+                    <a href="/pravni-ramec" className="underline font-semibold">Právní rámec</a>.
                   </p>
-                  <p className="leading-relaxed">
-                    Martin Kulík nikdy nedoložil zápis ze schůze, která by potvrzovala jeho legitimní zvolení do funkce předsedy.
-                  </p>
-                  <div className="mt-4 p-4 bg-white/70 rounded-lg border border-amber-300">
-                    <div className="font-bold text-amber-900 mb-2">Důsledky</div>
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-start gap-2">
-                        <span>•</span>
-                        <span>Všechna jeho rozhodnutí jako předsedy mohou být zpochybněna</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span>•</span>
-                        <span>Legitimita vybírání příspěvků je nejasná</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span>•</span>
-                        <span>Právo jednat jménem oddílu nebylo prokázáno</span>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Klíčová fakta */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            📌 Klíčová fakta
+          </h2>
+          <div className="grid gap-4">
+            {actor.keyFacts.map((fact, index) => (
+              <div
+                key={index}
+                className="p-4 md:p-6 rounded-xl bg-white border-2 border-slate-200 hover:shadow-lg transition"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl">{fact.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{fact.title}</h3>
+                      <ClassificationBadge type={fact.classification} />
+                    </div>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      {fact.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Rozpad škody */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            💰 Detailní rozpad škody
+            💰 Rozpad evidované škody oddílu
           </h2>
-          <div className="space-y-4">
-            {actor.breakdown.map((item, index) => {
-              const severityColors = {
-                critical: 'border-red-400 bg-red-50',
-                high: 'border-orange-400 bg-orange-50',
-                medium: 'border-yellow-400 bg-yellow-50',
-              };
-              const severityLabels = {
-                critical: '🔴 Kritické',
-                high: '🟠 Vysoké',
-                medium: '🟡 Střední',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
-                        <span className="px-2 py-1 bg-white/60 rounded text-xs font-bold text-slate-700">
-                          {severityLabels[item.severity]}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                        {item.description}
-                      </p>
+          <div className="space-y-6">
+            {actor.breakdown.map((item, index) => (
+              <div
+                key={index}
+                className="p-4 md:p-6 rounded-xl bg-white border-2 border-slate-200 hover:shadow-lg transition"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
+                      <ClassificationBadge type={item.classification} />
                     </div>
-                    <div className="text-right ml-6">
-                      <div className="text-2xl font-black text-slate-900">
-                        {item.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
+                    <p className="text-sm text-slate-700 leading-relaxed mb-2">
+                      {item.description}
+                    </p>
+                    <p className="text-xs text-slate-600 italic">
+                      <strong>Poznámka:</strong> {item.note}
+                    </p>
+                  </div>
+                  <div className="text-right ml-6">
+                    <div className="text-2xl font-black text-slate-900">
+                      {item.amount.toLocaleString('cs-CZ')} Kč
                     </div>
-                  </div>
-                  <div className="w-full bg-white/60 rounded-full h-3 overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-green-500 to-teal-700 transition-all duration-500"
-                      style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
-                    />
-                  </div>
-                  <div className="text-xs text-slate-600 mt-1 text-right">
-                    {((item.amount / actor.totalDamage) * 100).toFixed(1)}% z celkové škody
                   </div>
                 </div>
-              );
-            })}
+                <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-green-500 to-teal-700 transition-all duration-500"
+                    style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
+                  />
+                </div>
+                <div className="text-xs text-slate-600 mt-1 text-right">
+                  {((item.amount / actor.totalDamage) * 100).toFixed(1)}% z celkové škody oddílu
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
-              <span className="text-lg font-bold">CELKOVÁ ŠKODA</span>
+              <span className="text-lg font-bold">CELKOVÁ EVIDOVANÁ ŠKODA ODDÍLU</span>
               <span className="text-3xl font-black">{actor.totalDamage.toLocaleString('cs-CZ')} Kč</span>
+            </div>
+            <p className="text-sm text-slate-300 mt-2">
+              Metodika výpočtu je popsána na stránce{' '}
+              <a href="/rozpad-skody" className="underline hover:text-white">
+                Rozpad škody podle kategorií
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+
+        {/* Evidovaná nesouladná plnění */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            📊 Evidovaná nesouladná plnění
+          </h2>
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
+            <div className="space-y-6">
+              {/* 1. Seznamy členů */}
+              <div className="p-4 rounded-lg border-2 bg-orange-50 border-orange-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Seznamy členů nebyly doloženy</h3>
+                  <ClassificationBadge type="dolozeno" />
+                </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  K datu zveřejnění spolek neeviduje doložení aktualizovaných seznamů členů oddílu karate,
+                  přestože byly zaslány opakované výzvy (2021-2024).
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Výzvy ze dne 13.9.2021, 10.12.2021, 11/2023.
+                </p>
+              </div>
+
+              {/* 2. Oddílové příspěvky */}
+              <div className="p-4 rounded-lg border-2 bg-orange-50 border-orange-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Neodvedené oddílové příspěvky</h3>
+                  <ClassificationBadge type="evidovano" />
+                </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z účetních podkladů za období 2020-2023 vyplývá, že oddílové příspěvky ve výši 316.800 Kč
+                  nebyly zaúčtovány jako příjem spolku.
+                </p>
+                <p className="text-sm text-slate-900 mb-2">
+                  <strong>Výpočet:</strong> 40 členů × 3.600 Kč/rok × 4 roky (2020-2023).
+                  <br />
+                  <strong>Metoda:</strong> Odhad počtu členů (seznamy nebyly doloženy) × sazba dle stanov × období.
+                  <br />
+                  <strong>Výhrada:</strong> Skutečná částka může být jiná bez doložených seznamů členů.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Účetní evidence TJ Krupka, odhady členské základny.
+                </p>
+              </div>
+
+              {/* 3. Členské příspěvky */}
+              <div className="p-4 rounded-lg border-2 bg-yellow-50 border-yellow-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Nezaplacené členské příspěvky</h3>
+                  <ClassificationBadge type="evidovano" />
+                </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z evidence vyplývá, že členské příspěvky za období 2021-2024 ve výši 32.000 Kč
+                  (200 Kč × 4 roky × 40 členů) nebyly uhrazeny.
+                </p>
+                <p className="text-sm text-slate-900 mb-2">
+                  Tyto příspěvky měly být odvedeny svazům ČSTV, Ústeckému kraji a obci.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Účetní evidence spolku.
+                </p>
+              </div>
+
+              {/* 4. Pokladna */}
+              <div className="p-4 rounded-lg border-2 bg-yellow-50 border-yellow-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Nepředaná pokladna oddílu</h3>
+                  <ClassificationBadge type="evidovano" />
+                </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z evidence vyplývá, že hotovost v pokladně oddílu k 31.12.2020 ve výši 1.798 Kč
+                  nebyla předána ani vyúčtována.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Účetní evidence spolku.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -260,20 +391,20 @@ export default function MartinKulikPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             📊 Srovnání ročních příspěvků oddílů
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-green-100 shadow rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-green-100 border-2 border-green-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🥋</span>
                   <div>
                     <div className="font-bold text-slate-900">Oddíl karate</div>
-                    <div className="text-sm text-slate-600">Nejvyšší příspěvek</div>
+                    <div className="text-sm text-slate-600">Nejvyšší příspěvek ze všech oddílů</div>
                   </div>
                 </div>
                 <div className="text-2xl font-black text-green-700">3.600 Kč/člen/rok</div>
               </div>
 
-              <div className="flex items-center justify-between p-4 bg-slate-50 border border-slate-300 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-slate-50 border-2 border-slate-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🏓</span>
                   <div className="font-bold text-slate-900">Stolní tenis</div>
@@ -281,7 +412,7 @@ export default function MartinKulikPage() {
                 <div className="text-xl font-bold text-slate-700">2.400 Kč/člen/rok</div>
               </div>
 
-              <div className="flex items-center justify-between p-4 bg-slate-50 border border-slate-300 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-slate-50 border-2 border-slate-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">⛷️</span>
                   <div className="font-bold text-slate-900">Lyžařský oddíl</div>
@@ -290,44 +421,43 @@ export default function MartinKulikPage() {
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="mt-6 p-4 bg-blue-50 border-2 border-blue-200 rounded-lg">
               <p className="text-sm text-blue-900">
-                <strong>Poznámka:</strong> Oddíl karate měl nejvyšší roční příspěvek na člena, přesto příspěvky
-                nebyly odváděny spolku. Celkem bylo zapřeno <strong>316.800 Kč</strong>.
+                <strong>Poznámka:</strong> Oddíl karate měl nejvyšší roční příspěvek na člena ze všech oddílů.
+                Z evidence vyplývá nesoulad ve výši <strong>316.800 Kč</strong> za období 2020-2023.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Klíčové kroky */}
+        {/* Časová osa */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Časová osa klíčových kroků
+            📊 Časová osa klíčových událostí
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              {actor.keyActions.map((action, index) => (
+              {actor.keyEvents.map((event, index) => (
                 <div
                   key={index}
-                  className={`flex items-start gap-4 p-4 rounded-lg shadow ${
-                    action.type === 'consequence'
-                      ? 'bg-blue-50 border-blue-300'
-                      : 'bg-red-50 border-red-300'
-                  }`}
+                  className="flex items-start gap-4 p-4 rounded-lg border-2 border-slate-200 hover:shadow-md transition"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow flex items-center justify-center font-bold text-sm text-slate-600">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center font-bold text-sm">
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-slate-900">{action.text}</div>
-                    {action.amount && (
-                      <div className="text-lg font-bold text-red-700 mt-1">
-                        {action.amount.toLocaleString('cs-CZ')} Kč
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-bold text-slate-900">{event.text}</div>
+                      <ClassificationBadge type={event.classification} />
+                    </div>
+                    {event.amount && (
+                      <div className="text-lg font-bold text-green-700 mt-1">
+                        {event.amount.toLocaleString('cs-CZ')} Kč
                       </div>
                     )}
                   </div>
                   <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
-                    {action.date}
+                    {event.date}
                   </div>
                 </div>
               ))}
@@ -345,7 +475,7 @@ export default function MartinKulikPage() {
               <a
                 key={index}
                 href={link.href}
-                className="block p-5 bg-white rounded-xl shadow hover:border-blue-500 hover:shadow-lg transition"
+                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{link.icon}</span>
@@ -353,6 +483,29 @@ export default function MartinKulikPage() {
                 </div>
               </a>
             ))}
+          </div>
+        </section>
+
+        {/* CTA for corrections */}
+        <section className="mb-12">
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-4 md:p-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">
+              Máte námitku k uvedeným údajům?
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Pokud máte podloženou námitku k jakémukoli údaji na této stránce (včetně sporu o funkci předsedy),
+              kontaktujte nás prostřednictvím stránky{' '}
+              <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+                Právní rámec a kontakt
+              </a>
+              . Po prověření provedeme opravu nebo upřesníme metodiku výpočtu.
+            </p>
+            <a
+              href="/oprava-nepravd"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              → Jak funguje proces opravy nepravd
+            </a>
           </div>
         </section>
 
@@ -364,6 +517,12 @@ export default function MartinKulikPage() {
           >
             <span>←</span>
             <span>Gustav Vlach</span>
+          </a>
+          <a
+            href="/akteri"
+            className="flex items-center gap-2 px-4 py-3 bg-slate-100 hover:bg-slate-200 rounded-lg font-semibold text-slate-700 transition"
+          >
+            <span>Přehled aktérů</span>
           </a>
           <a
             href="/akteri/jitka-illesova"
