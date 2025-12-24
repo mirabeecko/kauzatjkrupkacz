@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { showCityContent } from '@/lib/config';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const cityContentEnabled = showCityContent();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -20,8 +22,15 @@ export default function Header({ onMenuToggle }: HeaderProps) {
     }
   };
 
+  // Different colors for different versions
+  const headerBg = cityContentEnabled ? 'bg-blue-900' : 'bg-green-900';
+  const borderColor = cityContentEnabled ? 'border-blue-700' : 'border-green-700';
+  const versionBadge = cityContentEnabled
+    ? { text: 'FULL', color: 'bg-blue-700 text-blue-100', icon: '🏛️' }
+    : { text: 'LITE', color: 'bg-green-700 text-green-100', icon: '✓' };
+
   return (
-    <header className="bg-slate-900 text-white border-b border-slate-700 sticky top-0 z-50">
+    <header className={`${headerBg} text-white border-b ${borderColor} sticky top-0 z-50`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo + Hamburger Menu */}
@@ -40,6 +49,12 @@ export default function Header({ onMenuToggle }: HeaderProps) {
             <Link href="/" className="text-lg md:text-xl font-bold hover:text-blue-400 transition">
               Kauza TJ Krupka
             </Link>
+
+            {/* Version Badge */}
+            <span className={`hidden sm:inline-flex items-center px-2 py-1 rounded text-xs font-semibold ${versionBadge.color}`}>
+              <span className="mr-1">{versionBadge.icon}</span>
+              {versionBadge.text}
+            </span>
           </div>
 
           {/* Desktop Navigation */}
