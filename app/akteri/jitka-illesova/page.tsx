@@ -1,79 +1,115 @@
+import ClassificationBadge from '@/components/ClassificationBadge';
+
 export default function JitkaIllesovaPage() {
   const actor = {
     name: 'Jitka Illéšová',
     role: 'Účetní spolku',
     department: 'Administrativa',
     departmentIcon: '📊',
-    status: 'negative' as const,
-    financialIssue: 30000,
-    summary: 'Obdržela 30.000 Kč za účetnictví roku 2021. Odmítla uzavřít rok 2021, předala dokumenty městu Krupka (neoprávněně), zadržovala účetní dokumentaci.',
-    breakdown: [
+    status: 'service_provider' as const,
+
+    context: {
+      description: 'Jitka Illéšová poskytovala spolku TJ Krupka z.s. účetní služby v období 2021-2022. Spolek eviduje spor týkající se dokončení účetnictví roku 2021 a předání účetní dokumentace.',
+      classification: 'dolozeno' as const,
+    },
+
+    payment: {
+      amount: 30000,
+      description: 'Spolek eviduje platbu 30.000 Kč (6 plateb × 5.000 Kč) za vedení účetnictví za rok 2021.',
+      classification: 'dolozeno' as const,
+    },
+
+    keyEvents: [
       {
-        label: 'Obdržená odměna za účetnictví 2021',
-        amount: 30000,
-        description: '6 plateb × 5.000 Kč. Odměna byla vyplacena za vedení účetnictví spolku za rok 2021.',
-        severity: 'medium' as const,
-        type: 'payment' as const,
+        date: '2021',
+        event: 'Platba za účetní služby',
+        description: 'Spolek vyplatil Jitce Illéšové 30.000 Kč (6 plateb × 5.000 Kč) za vedení účetnictví roku 2021.',
+        classification: 'dolozeno' as const,
+      },
+      {
+        date: '2022',
+        event: 'Spor o dokončení účetnictví',
+        description: 'Spolek eviduje spor ohledně dokončení a uzavření účetnictví za rok 2021. K datu zveřejnění spolek neeviduje předání uzavřeného účetnictví.',
+        classification: 'spor' as const,
+      },
+      {
+        date: '2022-2023',
+        event: 'Spor o účetní dokumentaci',
+        description: 'Spolek eviduje spor týkající se předání účetní dokumentace a okolností jejího zpřístupnění třetím stranám.',
+        classification: 'spor' as const,
       },
     ],
-    keyActions: [
-      { text: 'Obdržela odměnu za účetnictví 2021', amount: 30000, date: '2021', type: 'payment' as const, detail: '6 plateb × 5.000 Kč' },
-      { text: 'Odmítla uzavřít účetnictví roku 2021', date: '2022', type: 'violation', detail: 'Přes opakované výzvy nepředala uzavřené účetnictví' },
-      { text: 'Předala dokumenty městu Krupka', date: '2022-2023', type: 'violation', detail: 'Neoprávněně předala účetní dokumentaci třetí straně' },
-      { text: 'Zadržovala účetní dokumentaci', date: '2022-2023', type: 'violation', detail: 'Odmítla vrátit dokumenty spolku' },
-    ],
-    criticalFacts: [
-      {
-        icon: '❌',
-        title: 'Neuzavřené účetnictví',
-        description: 'Přestože obdržela odměnu 30.000 Kč za vedení účetnictví roku 2021, účetnictví neuzavřela a odmítla ho předat spolku. Tím znemožnila kontrolu hospodaření a podání výkazů.',
-        severity: 'critical' as const,
-      },
-      {
-        icon: '🔒',
-        title: 'Neoprávněné předání dokumentů',
-        description: 'Účetní dokumentaci spolku neoprávněně předala městu Krupka místo legitimnímu vedení spolku. Porušení důvěrnosti a povinnosti mlčenlivosti.',
-        severity: 'high' as const,
-      },
-      {
-        icon: '📋',
-        title: 'Zadržování dokumentace',
-        description: 'Dlouhodobě zadržovala účetní dokumentaci, která patří spolku. Odmítala předat dokumenty legitimnímu vedení přes opakované výzvy.',
-        severity: 'high' as const,
-      },
-    ],
-    impacts: [
-      {
-        icon: '⚠️',
-        title: 'Nemožnost kontroly hospodaření',
-        description: 'Bez uzavřeného účetnictví nemohl spolek ověřit finanční stav, provést audit ani identifikovat nesrovnalosti v hospodaření.',
-      },
-      {
-        icon: '📊',
-        title: 'Nemožnost podání výkazů',
-        description: 'Spolek nemohl splnit zákonnou povinnost podat účetní závěrku a výkazy finančnímu úřadu a dalším orgánům.',
-      },
-      {
-        icon: '🔍',
-        title: 'Ztížené dokazování',
-        description: 'Předání dokumentů třetí straně (městu) ztížilo spolku prokázání svých nároků a přístup k důležitým dokumentům.',
-      },
-      {
-        icon: '💰',
-        title: 'Finanční ztráta',
-        description: 'Spolek vyplatil 30.000 Kč za službu, která nebyla řádně dokončena a dodána.',
-      },
-    ],
+
+    spolekPosition: {
+      title: 'Právní pozice spolku',
+      description: 'Spolek zastává právní názor, že účetní služby nebyly řádně dokončeny přes obdržení plné odměny. Spolek eviduje situace týkající se přístupu k účetní dokumentaci. Jedná se o spor mezi poskytovatelem služeb a klientem.',
+      classification: 'spor' as const,
+      points: [
+        {
+          title: 'Dokončení účetnictví roku 2021',
+          description: 'Spolek vyplatil 30.000 Kč za vedení účetnictví roku 2021. K datu zveřejnění spolek neeviduje předání uzavřeného účetnictví a účetní závěrky za rok 2021.',
+          classification: 'spor' as const,
+        },
+        {
+          title: 'Přístup k účetní dokumentaci',
+          description: 'Spolek eviduje situace týkající se přístupu k účetní dokumentaci spolku. Spolek zastává názor, že účetní dokumenty patří spolku a měly být předány legitimnímu vedení.',
+          classification: 'spor' as const,
+        },
+        {
+          title: 'Dopad na hospodaření spolku',
+          description: 'Bez uzavřeného účetnictví spolek evidoval ztíženou možnost kontroly hospodaření, podání výkazů a provedení auditu za rok 2021.',
+          classification: 'evidovano' as const,
+        },
+      ],
+    },
+
+    legalContext: {
+      title: 'Právní kontext poskytování účetních služeb',
+      points: [
+        {
+          title: 'Smluvní vztah',
+          description: 'Vztah mezi účetním a klientem je smluvní. Klient platí za účetní služby, účetní má povinnost služby řádně dokončit a předat výstupy.',
+          classification: 'dolozeno' as const,
+        },
+        {
+          title: 'Vlastnictví účetní dokumentace',
+          description: 'Účetní dokumenty patří klientovi (spolku), nikoli účetnímu. Účetní má povinnost předat dokumentaci klientovi.',
+          classification: 'dolozeno' as const,
+        },
+        {
+          title: 'Povinnost mlčenlivosti',
+          description: 'Účetní má povinnost mlčenlivosti ohledně finančních informací klienta. Předání dokumentů třetím stranám bez souhlasu klienta může být předmětem sporu.',
+          classification: 'dolozeno' as const,
+        },
+      ],
+    },
+
     relatedLinks: [
-      { label: 'Události s účastí Illéšové', href: '/udalosti?actor=jitka-illesova', icon: '📅' },
-      { label: 'Role města Krupka', href: '/temata/role-mesta-krupka', icon: '🏛️' },
+      { label: 'Právní rámec a kontakt', href: '/pravni-ramec', icon: '⚖️' },
       { label: 'Téma: Finance a majetek', href: '/temata/finance-a-majetek', icon: '📚' },
-      { label: 'Všichni aktéři', href: '/akteri', icon: '👥' },
+      { label: 'Miroslav Brožek (předseda spolku)', href: '/akteri/miroslav-brozek', icon: '⚖️' },
+      { label: 'Události', href: '/udalosti', icon: '📅' },
+      { label: 'Přehled aktérů', href: '/akteri', icon: '👥' },
     ],
   };
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Osoba je uvedena jako poskytovatel účetních služeb v souvislosti se spory spolku TJ Krupka z.s.
+            Uvedené informace představují právní pozici spolku ve sporu mezi poskytovatelem služeb a klientem.
+            Nejde o pravomocné soudní rozhodnutí. Obě strany mají právo na odlišný právní názor.
+            {' '}
+            <a href="/pravni-ramec" className="underline hover:text-blue-200 font-semibold">
+              Více o právním rámci →
+            </a>
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-purple-600 via-violet-700 to-indigo-800 py-8 md:py-16">
         <div className="container mx-auto px-3 md:px-8 max-w-5xl">
@@ -84,7 +120,7 @@ export default function JitkaIllesovaPage() {
                   {actor.departmentIcon} {actor.department}
                 </span>
                 <span className="px-3 py-1 bg-violet-900/50 backdrop-blur rounded-full text-white text-sm font-bold">
-                  📊 Účetní spolku
+                  Poskytovatel účetních služeb
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
@@ -97,18 +133,16 @@ export default function JitkaIllesovaPage() {
           </div>
 
           <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-purple-100 text-sm font-medium mb-2">Obdržená odměna za neuzavřené účetnictví</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
-                  {actor.financialIssue.toLocaleString('cs-CZ')} Kč
+            <div className="flex items-center gap-4">
+              <div className="text-6xl opacity-70">📊</div>
+              <div className="flex-1">
+                <div className="text-purple-100 text-sm font-medium mb-2">Kontext v kauze</div>
+                <div className="text-2xl font-black text-white mb-2">
+                  Spor mezi poskytovatelem účetních služeb a spolkem
                 </div>
-                <div className="text-sm text-purple-200 mt-3 italic">
-                  6 plateb × 5.000 Kč za rok 2021
-                </div>
-              </div>
-              <div className="text-8xl opacity-20">
-                📊
+                <p className="text-purple-100 text-sm leading-relaxed">
+                  Poskytovala účetní služby spolku v období 2021-2022. Spolek eviduje spor týkající se dokončení účetnictví a předání dokumentace.
+                </p>
               </div>
             </div>
           </div>
@@ -116,188 +150,80 @@ export default function JitkaIllesovaPage() {
       </div>
 
       <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
-        {/* Shrnutí */}
+        {/* Kontext */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
-              <span>Shrnutí</span>
+              <span>Kontext</span>
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {actor.summary}
-            </p>
-          </div>
-        </section>
-
-        {/* Info box o roli účetního */}
-        <section className="mb-12">
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 rounded-lg">
-            <div className="flex items-start gap-4">
-              <span className="text-3xl">ℹ️</span>
-              <div>
-                <h3 className="text-lg font-bold text-blue-900 mb-2">Role účetního spolku</h3>
-                <p className="text-sm text-blue-800 leading-relaxed mb-3">
-                  Účetní má odpovědnost za řádné vedení účetnictví, uzavření účetního období,
-                  přípravu účetní závěrky a předání dokumentace spolku. Má povinnost mlčenlivosti
-                  ohledně finančních informací spolku.
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <p className="text-slate-700 leading-relaxed flex-1">
+                  {actor.context.description}
                 </p>
-                <p className="text-sm text-blue-900 font-semibold">
-                  Jitka Illéšová obdržela plnou odměnu, ale práci nedokončila a dokumenty předala neoprávněně třetí straně.
+                <ClassificationBadge type={actor.context.classification} />
+              </div>
+              <div className="p-4 bg-blue-50 rounded-lg border-2 border-blue-200 mt-4">
+                <p className="text-sm text-blue-900">
+                  <strong>Poznámka:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s.
+                  ve sporu s poskytovatelem účetních služeb. Jedná se o spor mezi klientem a poskytovatelem služeb.
+                  Uvedené informace nejsou pravomocným soudním rozhodnutím.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Kritická fakta */}
+        {/* Platba za služby */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            🚨 Kritická fakta
+            💰 Platba za účetní služby
           </h2>
-          <div className="grid gap-4">
-            {actor.criticalFacts.map((fact, index) => {
-              const severityColors = {
-                critical: 'bg-red-50 border-red-400',
-                high: 'bg-orange-50 border-orange-400',
-                medium: 'bg-yellow-50 border-yellow-400',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{fact.icon}</span>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{fact.title}</h3>
-                      <p className="text-sm text-slate-700 leading-relaxed">
-                        {fact.description}
-                      </p>
-                    </div>
-                  </div>
+          <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border-2 border-purple-300 p-4 md:p-8">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <h3 className="text-xl font-bold text-slate-900">Evidovaná platba za rok 2021</h3>
+                  <ClassificationBadge type={actor.payment.classification} />
                 </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Finanční detail */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            💰 Finanční detail
-          </h2>
-          <div className="space-y-4">
-            {actor.breakdown.map((item, index) => {
-              const typeColors = {
-                payment: 'border-purple-400 bg-purple-50',
-              };
-              const typeLabels = {
-                payment: '💵 Platba',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${typeColors[item.type]} transition hover:shadow-lg`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
-                        <span className="px-2 py-1 bg-white/60 rounded text-xs font-bold text-slate-700">
-                          {typeLabels[item.type]}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="text-right ml-6">
-                      <div className="text-3xl font-black text-slate-900">
-                        {(item.amount / 1000).toFixed(0)}k
-                      </div>
-                      <div className="text-xs text-slate-600">
-                        {item.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
-                    </div>
-                  </div>
+                <p className="text-slate-700 leading-relaxed">
+                  {actor.payment.description}
+                </p>
+              </div>
+              <div className="text-right ml-6">
+                <div className="text-4xl font-black text-purple-700">
+                  {actor.payment.amount.toLocaleString('cs-CZ')} Kč
                 </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-6 p-4 bg-red-50 border border-red-300 rounded-lg">
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">⚠️</span>
-              <p className="text-sm text-red-900">
-                <strong>Problém:</strong> Illéšová obdržela plnou odměnu 30.000 Kč za vedení účetnictví roku 2021,
-                avšak účetnictví neuzavřela, nepředala účetní závěrku a dokumenty předala neoprávněně třetí straně.
-                Spolek tedy zaplatil za službu, která nebyla řádně dokončena.
-              </p>
+                <div className="text-sm text-purple-600 mt-1">
+                  6 plateb × 5.000 Kč
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Dopady na spolek */}
+        {/* Klíčové události */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Dopady na spolek
+            📅 Klíčové události
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {actor.impacts.map((impact, index) => (
-              <div
-                key={index}
-                className="p-4 md:p-6 bg-white rounded-xl shadow transition hover:shadow-lg"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl">{impact.icon}</span>
-                  <h3 className="text-lg font-bold text-slate-900">{impact.title}</h3>
-                </div>
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  {impact.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Klíčové kroky */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Časová osa klíčových kroků
-          </h2>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              {actor.keyActions.map((action, index) => (
+              {actor.keyEvents.map((event, index) => (
                 <div
                   key={index}
-                  className={`flex items-start gap-4 p-4 rounded-lg shadow ${
-                    action.type === 'payment'
-                      ? 'bg-purple-50 border-purple-300'
-                      : action.type === 'consequence'
-                      ? 'bg-blue-50 border-blue-300'
-                      : 'bg-red-50 border-red-300'
-                  }`}
+                  className="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border-2 border-slate-200"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow flex items-center justify-center font-bold text-sm text-slate-600">
-                    {index + 1}
-                  </div>
                   <div className="flex-1">
-                    <div className="font-bold text-slate-900">{action.text}</div>
-                    {action.amount && (
-                      <div className="text-lg font-bold text-purple-700 mt-1">
-                        {action.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
-                    )}
-                    {action.detail && (
-                      <div className="text-sm text-slate-600 mt-1">
-                        {action.detail}
-                      </div>
-                    )}
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-bold text-slate-900">{event.event}</div>
+                      <ClassificationBadge type={event.classification} />
+                    </div>
+                    <p className="text-sm text-slate-700 mb-2">{event.description}</p>
                   </div>
                   <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
-                    {action.date}
+                    {event.date}
                   </div>
                 </div>
               ))}
@@ -305,40 +231,66 @@ export default function JitkaIllesovaPage() {
           </div>
         </section>
 
-        {/* Právní aspekty */}
+        {/* Právní pozice spolku */}
         <section className="mb-12">
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
-              <span>⚖️</span>
-              <span>Právní aspekty</span>
-            </h2>
-            <div className="space-y-4 text-slate-700">
-              <div className="p-4 bg-white/70 rounded-lg border border-amber-200">
-                <h3 className="font-bold text-amber-900 mb-2">📋 Povinnost účetního</h3>
-                <p className="text-sm leading-relaxed">
-                  Účetní má smluvní povinnost vést účetnictví, uzavřít účetní období a předat
-                  dokumentaci klientovi (spolku). Neuzavření účetnictví po obdržení odměny může
-                  představovat porušení smlouvy.
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            ⚖️ Právní pozice spolku
+          </h2>
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-300 p-4 md:p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <span className="text-4xl">⚖️</span>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <h3 className="text-xl font-bold text-slate-900">{actor.spolekPosition.title}</h3>
+                  <ClassificationBadge type={actor.spolekPosition.classification} />
+                </div>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {actor.spolekPosition.description}
                 </p>
               </div>
+            </div>
 
-              <div className="p-4 bg-white/70 rounded-lg border border-amber-200">
-                <h3 className="font-bold text-amber-900 mb-2">🔒 Povinnost mlčenlivosti</h3>
-                <p className="text-sm leading-relaxed">
-                  Účetní má povinnost mlčenlivosti ohledně finančních informací klienta.
-                  Předání dokumentů třetí straně (městu Krupka) bez souhlasu klienta může
-                  představovat porušení této povinnosti.
-                </p>
-              </div>
+            <div className="space-y-4">
+              {actor.spolekPosition.points.map((point, index) => (
+                <div key={index} className="p-4 bg-white rounded-lg border-2 border-orange-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h4 className="font-bold text-slate-900">{point.title}</h4>
+                    <ClassificationBadge type={point.classification} />
+                  </div>
+                  <p className="text-sm text-slate-700">{point.description}</p>
+                </div>
+              ))}
+            </div>
 
-              <div className="p-4 bg-white/70 rounded-lg border border-amber-200">
-                <h3 className="font-bold text-amber-900 mb-2">📄 Vlastnictví dokumentů</h3>
-                <p className="text-sm leading-relaxed">
-                  Účetní dokumenty patří spolku, nikoli účetnímu. Zadržování dokumentů
-                  a odmítnutí jejich předání legitimnímu vedení spolku může být považováno
-                  za neoprávněné zadržení cizí věci.
-                </p>
-              </div>
+            <div className="mt-6 p-4 bg-orange-100 border-l-4 border-orange-600 rounded">
+              <p className="text-sm text-orange-900">
+                <strong>Upozornění:</strong> Výše uvedené body představují právní argumentaci spolku
+                ve sporu s poskytovatelem účetních služeb. Jedná se o spor mezi klientem a dodavatelem služeb.
+                Nejde o pravomocné soudní rozhodnutí. Obě strany mají právo na odlišný právní názor.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Právní kontext */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            📚 {actor.legalContext.title}
+          </h2>
+          <div className="bg-slate-50 rounded-xl p-4 md:p-8 border-2 border-slate-200">
+            <p className="text-sm text-slate-700 mb-6">
+              Právní rámec vztahu mezi účetním a klientem:
+            </p>
+            <div className="space-y-4">
+              {actor.legalContext.points.map((item, index) => (
+                <div key={index} className="p-5 bg-white rounded-lg border-2 border-slate-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-bold text-slate-900">{item.title}</h3>
+                    <ClassificationBadge type={item.classification} />
+                  </div>
+                  <p className="text-sm text-slate-700">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -353,7 +305,7 @@ export default function JitkaIllesovaPage() {
               <a
                 key={index}
                 href={link.href}
-                className="block p-5 bg-white rounded-xl shadow hover:border-blue-500 hover:shadow-lg transition"
+                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{link.icon}</span>
@@ -364,21 +316,37 @@ export default function JitkaIllesovaPage() {
           </div>
         </section>
 
+        {/* CTA for corrections */}
+        <section className="mb-12">
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-4 md:p-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">
+              Máte námitku k uvedeným údajům?
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás
+              prostřednictvím stránky{' '}
+              <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+                Právní rámec a kontakt
+              </a>
+              . Respektujeme právo všech zúčastněných osob na vyjádření a opravu nepřesných informací.
+            </p>
+            <a
+              href="/oprava-nepravd"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              → Jak funguje proces opravy nepravd
+            </a>
+          </div>
+        </section>
+
         {/* Navigace */}
-        <div className="flex items-center justify-between pt-8 border-t-2 border-slate-200">
+        <div className="flex items-center justify-center pt-8 border-t-2 border-slate-200">
           <a
-            href="/akteri/martin-kulik"
+            href="/akteri"
             className="flex items-center gap-2 px-6 py-3 bg-slate-200 hover:bg-slate-300 rounded-lg font-bold text-slate-900 transition"
           >
             <span>←</span>
-            <span>Martin Kulík</span>
-          </a>
-          <a
-            href="/akteri"
-            className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold text-white transition"
-          >
-            <span>Všichni aktéři</span>
-            <span>→</span>
+            <span>Přehled aktérů</span>
           </a>
         </div>
       </div>

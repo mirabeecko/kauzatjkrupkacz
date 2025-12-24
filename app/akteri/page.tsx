@@ -7,32 +7,27 @@ export default function AkteriPage() {
       name: 'Miroslav Brožek',
       role: 'Předseda spolku TJ Krupka',
       category: 'Představitel spolku',
-      status: 'positive' as const,
-      summary: 'Legitimně zvolený předseda (24.8.2021) na 5 let. Snaha o nápravu, transparentnost a dodržování zákonů.',
+      status: 'spolek' as const,
+      summary: 'Zvolen na funkci předsedy spolku dne 24.8.2021 na období 5 let. Spolek eviduje jeho kroky v souvislosti se spory o členství a hospodaření oddílů.',
       keyActions: [
-        'Svolal shromáždění delegátů 24.8.2021',
-        'Opakovaně vyzýval k předání seznamů členů',
-        'Vyloučil problémové členy po předžalobních výzvách',
-        'Podal trestní oznámení',
-        'Řádně platil příspěvky (2.400 Kč/rok)',
+        'Zvolení na shromáždění 24.8.2021',
+        'Výzvy k předání seznamů členů oddílů',
+        'Vyloučení členů podle § 239 NOZ',
+        'Trestní oznámení podáno',
       ],
       relatedEvents: 12,
     },
     {
       slug: 'marek-vanis',
       name: 'Marek Vaniš',
-      role: 'Údajný předseda oddílu stolního tenisu',
+      role: 'Činnost v oddílu stolního tenisu',
       category: 'Vyloučení členové',
-      status: 'negative' as const,
-      summary: 'Celková škoda oddílu stolního tenisu: 653.659 Kč. Nedodal seznamy členů, vybíral příspěvky ale neodváděl je.',
+      status: 'vylousen' as const,
+      summary: 'Spolek eviduje nesoulady ve finančním hospodaření oddílu stolního tenisu (evidovaná škoda 653.659 Kč). Vyloučen dne 28.11.2023 podle § 239 NOZ.',
       keyActions: [
-        'Nedodal seznamy členů (3+ roky)',
-        'Neuhradil členské příspěvky (48.000 Kč)',
-        'Zapíral oddílové příspěvky (518.400 Kč)',
-        'Neplatil energie (43.466 Kč)',
-        'Pokladna oddílu 43.793 Kč nepředána',
-        'Vybíral příspěvky jménem spolku (přiznal při výslechu)',
-        'Neoprávněně svolával schůze',
+        'K datu neeviduje doložení seznamů členů',
+        'Evidované nesoulady: členské příspěvky 48.000 Kč',
+        'Evidované nesoulady: oddílové příspěvky 518.400 Kč',
         'Vyloučen 28.11.2023',
       ],
       relatedEvents: 15,
@@ -40,15 +35,13 @@ export default function AkteriPage() {
     {
       slug: 'jaromir-pivonka',
       name: 'Jaromír Pivoňka',
-      role: 'Člen/funkcionář oddílu stolního tenisu',
+      role: 'Činnost v oddílu stolního tenisu',
       category: 'Vyloučení členové',
-      status: 'negative' as const,
-      summary: 'Spolupracovník Vaniše. Spolupodílel se na škodě oddílu stolního tenisu (653.659 Kč).',
+      status: 'vylousen' as const,
+      summary: 'Spolek eviduje jeho činnost v oddílu stolního tenisu v souvislosti s evidovanými nesoulady. Vyloučen dne 28.11.2023 podle § 239 NOZ.',
       keyActions: [
-        'Spolupráce s Vanišem na porušování povinností',
-        'Spoluúčast na zapírání příspěvků (518.400 Kč)',
-        'Spolupodíl na neplacení energií (43.466 Kč)',
-        'Nedostatečná iniciativa k nápravě',
+        'Činnost v oddílu stolního tenisu',
+        'Souvislost s evidovanými nesoulady oddílu',
         'Vyloučen 28.11.2023',
       ],
       relatedEvents: 8,
@@ -58,46 +51,42 @@ export default function AkteriPage() {
       name: 'Gustav Vlach',
       role: 'Předseda lyžařského oddílu',
       category: 'Zánik členství',
-      status: 'negative' as const,
-      summary: 'Celková škoda lyžařského oddílu: 1.041.378 Kč. Přiznal hotovost 132.523 Kč v pokladně, kterou nepředal.',
+      status: 'zanik' as const,
+      summary: 'Spolek eviduje nesoulady ve finančním hospodaření lyžařského oddílu (evidovaná škoda 1.041.378 Kč). Zánik členství neplacením členských příspěvků.',
       keyActions: [
-        'Nedodal seznamy členů',
-        'Neuhradil členské příspěvky (63.200 Kč)',
-        'Zapíral oddílové příspěvky (379.200 Kč)',
-        'Neplatil energie (256.455 Kč)',
-        'Přiznal pokladnu 132.523 Kč, kterou nepředal',
-        'Zánik členství neplacením příspěvků',
+        'K datu neeviduje doložení seznamů členů',
+        'Evidované nesoulady: členské příspěvky 63.200 Kč',
+        'Evidované nesoulady: oddílové příspěvky 379.200 Kč',
+        'Zánik členství neplacením',
       ],
       relatedEvents: 5,
     },
     {
       slug: 'martin-kulik',
       name: 'Martin Kulík',
-      role: 'Údajný předseda oddílu karate',
+      role: 'Činnost v oddílu karate',
       category: 'Zánik členství',
-      status: 'negative' as const,
-      summary: 'Celková škoda oddílu karate: 350.598 Kč. Nikdy nebyl předsedou oddílu karate (dle zápisu byl předsedou Jiří Kulík).',
+      status: 'zanik' as const,
+      summary: 'Spolek eviduje nesoulady ve finančním hospodaření oddílu karate (evidovaná škoda 350.598 Kč). Spor o legitimitu funkce předsedy oddílu. Zánik členství neplacením.',
       keyActions: [
-        'Nedodal seznamy členů',
-        'Neuhradil členské příspěvky (32.000 Kč)',
-        'Zapíral oddílové příspěvky (316.800 Kč)',
-        'Pokladna oddílu 1.798 Kč nepředána',
-        'Zánik členství neplacením příspěvků',
+        'Spor o funkci předsedy oddílu karate',
+        'Evidované nesoulady: členské příspěvky 32.000 Kč',
+        'Evidované nesoulady: oddílové příspěvky 316.800 Kč',
+        'Zánik členství neplacením',
       ],
       relatedEvents: 3,
     },
     {
       slug: 'jitka-illesova',
       name: 'Jitka Illéšová',
-      role: 'Účetní spolku',
+      role: 'Poskytovatel účetních služeb',
       category: 'Další aktéři',
-      status: 'negative' as const,
-      summary: 'Obdržela 30.000 Kč za účetnictví 2021. Odmítla uzavřít rok 2021, předala dokumenty městu.',
+      status: 'poskytovatel' as const,
+      summary: 'Poskytovala účetní služby spolku (30.000 Kč za rok 2021). Spolek eviduje spor týkající se dokončení účetnictví a předání dokumentace.',
       keyActions: [
-        'Obdržela 30.000 Kč (6 × 5.000 Kč)',
-        'Odmítla ukončit účetnictví 2021',
-        'Předala dokumenty městu Krupka (neoprávněně)',
-        'Zadržovala účetní dokumentaci',
+        'Platba 30.000 Kč za účetnictví 2021',
+        'Spor o dokončení účetnictví',
+        'Spor o předání dokumentace',
       ],
       relatedEvents: 4,
     },
@@ -106,14 +95,13 @@ export default function AkteriPage() {
       name: 'Jan Kuzma',
       role: 'Starosta města Krupka a jednatel SPORT Krupka s.r.o.',
       category: 'Zástupci města',
-      status: 'negative' as const,
-      summary: 'Starosta města a jednatel SPORT Krupka s.r.o. - střet zájmů. Koordinoval pokus o převzetí kontroly nad spolkem. SPORT Krupka pod jeho vedením vyměnila zámky a umožnila přístup vyloučeným členům.',
+      status: 'verejny_cinitele' as const,
+      summary: 'Starosta města a jednatel městské společnosti SPORT Krupka s.r.o. Spolek eviduje situace související s omezeným přístupem k prostorám a spory o autonomii spolku.',
       keyActions: [
         'Dvojrole: starosta + jednatel městské společnosti',
-        'SPORT Krupka vyměnila zámky (19.12.2023, 19.1.2024)',
-        'Ignoroval oficiální notifikaci o vyloučení členů',
-        'Koordinoval pokus o "zvolení" Syryčanského',
-        'Tlak na svolání shromáždění do konce ledna 2024',
+        'Výměny zámků na objektech (19.12.2023, 19.1.2024)',
+        'Město obdrželo notifikaci o vyloučení 26.1.2024',
+        'Spolek eviduje spory o přístup k prostorám',
       ],
       relatedEvents: 9,
     },
@@ -122,14 +110,12 @@ export default function AkteriPage() {
       name: 'Jan Bokoč',
       role: 'Místostarosta města Krupka',
       category: 'Zástupci města',
-      status: 'negative' as const,
-      summary: 'Místostarosta města, který se aktivně podílel na pokusu o převzetí kontroly nad spolkem. Účastnil se nelegálních schůzí a koordinoval kroky s vedením SPORT Krupka s.r.o.',
+      status: 'verejny_cinitele' as const,
+      summary: 'Místostarosta města Krupka v období sporů spolku. Spolek zastává právní názor o potřebě respektování autonomie spolku ze strany města.',
       keyActions: [
-        'Účast na nelegálních schůzích',
-        'Koordinace s SPORT Krupka a Syryčanským',
-        'Zásah do autonomie spolku',
-        'Ignorování oficiálních notifikací',
-        'Politická podpora pokusu o převrat',
+        'Výkon funkce místostarosty během sporů',
+        'Město obdrželo notifikaci o vyloučení 26.1.2024',
+        'Spolek eviduje spory o autonomii spolku',
       ],
       relatedEvents: 8,
     },
@@ -138,14 +124,13 @@ export default function AkteriPage() {
       name: 'Tomáš Syryčanský',
       role: 'Sportovní manažer SPORT Krupka s.r.o.',
       category: 'Zástupci města',
-      status: 'negative' as const,
-      summary: 'Koordinoval pokus o převzetí kontroly nad spolkem. Měl být zvolen jako nový předseda na nelegálních schůzích. Vyměnil zámky na Pinčesárně 2 dny po zaslání nové nájemní smlouvy.',
+      status: 'zamestnanec' as const,
+      summary: 'Zaměstnanec městské společnosti SPORT Krupka s.r.o. Spolek eviduje jeho účast na jednáních souvisejících se spory o přístup k prostorám.',
       keyActions: [
-        'Koordinoval nelegální schůze s vyloučenými členy',
-        'Vyměnil zámky na Pinčesárně (19.1.2024)',
-        'Umožnil přístup vyloučeným členům, zablokoval legitimního předsedu',
-        'Měl být "zvolen" jako nový předseda na nelegálních schůzích',
-        'Tlačil na Miroslava Brožka na schůzce s Kuzmou a Vítůem',
+        'Výkon funkce sportovního manažera',
+        'Výměny zámků na objektu (19.1.2024)',
+        'Spolek eviduje spory o přístup k prostorám',
+        'Účast na jednáních týkajících se sporů',
       ],
       relatedEvents: 8,
     },
@@ -159,75 +144,107 @@ export default function AkteriPage() {
   const categories = Array.from(new Set(actors.map(a => a.category)));
 
   return (
-    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          Aktéři
-        </h1>
-        <p className="text-xl text-slate-600">
-          Osoby a jejich role v kauze. Faktické karty bez emocí a hodnocení.
-        </p>
-      </div>
-
-      <div className="mb-8 p-4 md:p-6 bg-amber-50 rounded-lg border border-amber-200">
-        <h3 className="text-lg font-bold text-amber-900 mb-2">
-          ⚖️ Zásady zobrazení aktérů
-        </h3>
-        <div className="text-sm text-amber-900 space-y-2">
-          <p>Karty aktérů obsahují <strong>pouze prokázatelná fakta</strong>:</p>
-          <ul className="list-disc list-inside ml-4 space-y-1">
-            <li>Oficiální role</li>
-            <li>Prokazatelné kroky a jednání</li>
-            <li>Vazby na události a dokumenty</li>
-          </ul>
-          <p className="mt-2">
-            <strong>Bez hodnocení, bez emocí, bez soudů.</strong> Pouze to, co lze doložit.
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-6xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Uvedené informace představují právní pozici spolku TJ Krupka z.s. ve sporech týkajících se členství, hospodaření oddílů a autonomie spolku. Nejde o pravomocná soudní rozhodnutí. Všechny zúčastněné osoby mají právo na vyjádření a odlišný právní názor.
+            {' '}
+            <a href="/pravni-ramec" className="underline hover:text-blue-200 font-semibold">
+              Více o právním rámci →
+            </a>
           </p>
         </div>
       </div>
 
-      {categories.map(category => (
-        <section key={category} className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-            {category}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-3 md:gap-6">
-            {actors.filter(a => a.category === category).map(actor => (
-              <ActorCard key={actor.slug} actor={actor} />
-            ))}
-          </div>
-        </section>
-      ))}
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">
+            Aktéři
+          </h1>
+          <p className="text-xl text-slate-600">
+            Osoby a jejich role ve sporech spolku TJ Krupka z.s. prezentované z právní pozice spolku.
+          </p>
+        </div>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-3 md:gap-6">
-        <div className="p-4 md:p-6 bg-blue-50 rounded-lg border border-blue-200">
+        <div className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
           <h3 className="text-lg font-bold text-blue-900 mb-2">
-            📊 Statistiky
+            ℹ️ O této sekci
           </h3>
-          <div className="text-sm text-blue-800 space-y-2">
-            <p><strong>Celkem osob:</strong> {actors.length}</p>
-            <p><strong>Vyloučení členové:</strong> 2 (Vaniš, Pivoňka)</p>
-            <p><strong>Zánik členství:</strong> 2 (Vlach, Kulík)</p>
-            {showCityContent() && (
-              <p><strong>Zástupci města:</strong> 3 (Kuzma, Bokoč, Syryčanský)</p>
-            )}
+          <div className="text-sm text-blue-900 space-y-2">
+            <p>Karty aktérů obsahují <strong>právní pozici spolku</strong> ve sporech:</p>
+            <ul className="list-disc list-inside ml-4 space-y-1">
+              <li>Oficiální role a funkce</li>
+              <li>Evidované události a situace</li>
+              <li>Vazby na spory a právní řízení</li>
+            </ul>
+            <p className="mt-2">
+              <strong>Všechny informace představují právní argumentaci spolku</strong> a nejsou pravomocnými soudními rozhodnutími. Všechny zúčastněné osoby mají právo na vyjádření k uvedeným skutečnostem.
+            </p>
           </div>
         </div>
-        <div className="p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
-          <h3 className="text-lg font-bold text-slate-900 mb-2">
-            🔗 Související sekce
-          </h3>
-          <div className="space-y-2">
-            <a href="/udalosti" className="block text-sm text-blue-600 hover:underline">
-              → Události s účastí aktérů
-            </a>
-            <a href="/otazky/kdo-koho-poskodil" className="block text-sm text-blue-600 hover:underline">
-              → Otázka: Kdo koho poškodil?
-            </a>
-            <a href="/temata/akteri-a-jejich-role" className="block text-sm text-blue-600 hover:underline">
-              → Téma: Aktéři a jejich role
-            </a>
+
+        {categories.map(category => (
+          <section key={category} className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+              {category}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-3 md:gap-6">
+              {actors.filter(a => a.category === category).map(actor => (
+                <ActorCard key={actor.slug} actor={actor} />
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <div className="mt-12 grid md:grid-cols-2 gap-3 md:gap-6">
+          <div className="p-4 md:p-6 bg-slate-50 rounded-lg border-2 border-slate-200">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
+              📊 Přehled
+            </h3>
+            <div className="text-sm text-slate-700 space-y-2">
+              <p><strong>Celkem osob:</strong> {actors.length}</p>
+              <p><strong>Vyloučení členové:</strong> 2 (Vaniš, Pivoňka)</p>
+              <p><strong>Zánik členství:</strong> 2 (Vlach, Kulík)</p>
+              {showCityContent() && (
+                <p><strong>Zástupci města:</strong> 3 (Kuzma, Bokoč, Syryčanský)</p>
+              )}
+            </div>
           </div>
+          <div className="p-4 md:p-6 bg-slate-50 rounded-lg border-2 border-slate-200">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
+              🔗 Související sekce
+            </h3>
+            <div className="space-y-2">
+              <a href="/pravni-ramec" className="block text-sm text-blue-600 hover:underline font-semibold">
+                → Právní rámec a kontakt
+              </a>
+              <a href="/metodika" className="block text-sm text-blue-600 hover:underline">
+                → Metodika a klasifikace důkazů
+              </a>
+              <a href="/udalosti" className="block text-sm text-blue-600 hover:underline">
+                → Události s účastí aktérů
+              </a>
+              <a href="/otazky/kdo-koho-poskodil" className="block text-sm text-blue-600 hover:underline">
+                → Otázka: Kdo koho poškodil?
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 p-4 md:p-6 bg-orange-50 border-2 border-orange-200 rounded-lg">
+          <h3 className="text-lg font-bold text-orange-900 mb-2">
+            ⚖️ Námitky k uvedeným údajům
+          </h3>
+          <p className="text-sm text-orange-900">
+            Pokud máte podloženou námitku k jakémukoli údaji na této stránce nebo na stránkách jednotlivých aktérů,
+            kontaktujte nás prostřednictvím stránky{' '}
+            <a href="/pravni-ramec" className="underline hover:text-orange-700 font-semibold">
+              Právní rámec a kontakt
+            </a>
+            . Respektujeme právo všech zúčastněných osob na vyjádření a opravu nepřesných informací.
+          </p>
         </div>
       </div>
     </div>
@@ -239,36 +256,59 @@ interface Actor {
   name: string;
   role: string;
   category: string;
-  status: 'positive' | 'negative' | 'neutral';
+  status: 'spolek' | 'vylousen' | 'zanik' | 'poskytovatel' | 'verejny_cinitele' | 'zamestnanec';
   summary: string;
   keyActions: string[];
   relatedEvents: number;
 }
 
 function ActorCard({ actor }: { actor: Actor }) {
-  const statusColors = {
-    positive: 'border-green-300 bg-green-50',
-    negative: 'border-red-300 bg-red-50',
-    neutral: 'border-slate-300 bg-slate-50',
+  const statusConfig = {
+    spolek: {
+      color: 'border-green-300 bg-green-50',
+      icon: '⚖️',
+      label: 'Představitel spolku',
+    },
+    vylousen: {
+      color: 'border-orange-300 bg-orange-50',
+      icon: '❗',
+      label: 'Vyloučen',
+    },
+    zanik: {
+      color: 'border-amber-300 bg-amber-50',
+      icon: '📋',
+      label: 'Zánik členství',
+    },
+    poskytovatel: {
+      color: 'border-purple-300 bg-purple-50',
+      icon: '💼',
+      label: 'Poskytovatel služeb',
+    },
+    verejny_cinitele: {
+      color: 'border-blue-300 bg-blue-50',
+      icon: '🏛️',
+      label: 'Veřejný činitel',
+    },
+    zamestnanec: {
+      color: 'border-indigo-300 bg-indigo-50',
+      icon: '👤',
+      label: 'Zaměstnanec městské společnosti',
+    },
   };
 
-  const statusIcons = {
-    positive: '✅',
-    negative: '❌',
-    neutral: '➖',
-  };
+  const config = statusConfig[actor.status];
 
   return (
     <a
       href={`/akteri/${actor.slug}`}
-      className={`block p-4 md:p-6 rounded-lg border-2 hover:shadow-md transition ${statusColors[actor.status]} hover:border-blue-500`}
+      className={`block p-4 md:p-6 rounded-lg border-2 hover:shadow-md transition ${config.color} hover:border-blue-500`}
     >
       <div className="flex items-start justify-between mb-3">
         <div>
           <h3 className="text-xl font-bold text-slate-900">{actor.name}</h3>
           <div className="text-sm text-slate-600">{actor.role}</div>
         </div>
-        <span className="text-2xl">{statusIcons[actor.status]}</span>
+        <span className="text-2xl" title={config.label}>{config.icon}</span>
       </div>
 
       <p className="text-sm text-slate-700 mb-4">
@@ -276,7 +316,7 @@ function ActorCard({ actor }: { actor: Actor }) {
       </p>
 
       <div className="mb-4">
-        <div className="text-xs font-semibold text-slate-600 mb-2">Klíčové kroky:</div>
+        <div className="text-xs font-semibold text-slate-600 mb-2">Klíčové body:</div>
         <ul className="space-y-1">
           {actor.keyActions.slice(0, 3).map((action, i) => (
             <li key={i} className="text-xs text-slate-700 flex items-start">
@@ -286,7 +326,7 @@ function ActorCard({ actor }: { actor: Actor }) {
           ))}
           {actor.keyActions.length > 3 && (
             <li className="text-xs text-blue-600 font-medium">
-              + dalších {actor.keyActions.length - 3} kroků
+              + dalších {actor.keyActions.length - 3} bodů
             </li>
           )}
         </ul>

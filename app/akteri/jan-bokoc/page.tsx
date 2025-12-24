@@ -1,156 +1,109 @@
+import ClassificationBadge from '@/components/ClassificationBadge';
+
 export default function JanBokocPage() {
   const actor = {
     name: 'Jan Bokoč',
     role: 'Místostarosta města Krupka',
     organization: 'Město Krupka',
     organizationIcon: '🏛️',
-    status: 'negative' as const,
-    summary: 'Místostarosta města Krupka, který se aktivně podílel na pokusu o převzetí kontroly nad TJ Krupka z.s. Účastnil se nelegálních schůzí a koordinoval kroky s vedením městské společnosti SPORT Krupka s.r.o.',
+    status: 'city_official' as const,
 
-    keyViolations: [
-      {
-        title: 'Účast na nelegálních schůzích',
-        description: 'Jako místostarosta města se osobně účastnil nelegálních shromáždění organizovaných vyloučenými členy. Měl zajistit politickou podporu pro převzetí kontroly nad spolkem.',
-        severity: 'critical' as const,
-        evidence: 'Dokumenty od advokáta Rouska o nelegálních shromážděních, zápisy z jednání',
-      },
-      {
-        title: 'Koordinace s městskou společností',
-        description: 'Koordinoval postup s SPORT Krupka s.r.o. (jednatel Jan Kuzma) a sportovním manažerem Tomášem Syryčanským při pokusu o převrat.',
-        severity: 'critical' as const,
-        evidence: 'Dokumentace o schůzkách a koordinačních jednáních',
-      },
-      {
-        title: 'Zásah do autonomie spolku',
-        description: 'Jako zástupce města zasahoval do vnitřních záležitostí nezávislého spolku v rozporu s § 214-302 NOZ (spolkový zákon).',
-        severity: 'critical' as const,
-        evidence: '§ 214-302 NOZ - autonomie spolku',
-      },
-      {
-        title: 'Ignorování oficiálních notifikací',
-        description: 'Po přijetí oficiální notifikace o vyloučení Vaniše a Pivoňky (26.1.2024) město nadále podporovalo tyto vyloučené členy a umožňovalo jim přístup do prostor.',
-        severity: 'high' as const,
-        evidence: 'Notifikace městu 26.1.2024, pokračující podpora vyloučených členů',
-      },
-      {
-        title: 'Střet zájmů',
-        description: 'Jako místostarosta města měl prosazovat zájem veřejnosti, místo toho se zapojil do pokusu o převzetí kontroly nad nezávislým spolkem pro prospěch města.',
-        severity: 'critical' as const,
-        evidence: 'Zákon o obcích § 83-84 - povinnosti zastupitele',
-      },
-    ],
+    context: {
+      description: 'Jan Bokoč působil jako místostarosta města Krupka v období, kdy probíhaly spory mezi spolkem TJ Krupka z.s. a některými jeho bývalými členy. Město Krupka vlastní společnost SPORT Krupka s.r.o., která spravuje sportovní prostory využívané spolkem.',
+      classification: 'dolozeno' as const,
+    },
 
-    timeline: [
+    keyEvents: [
       {
-        date: '19.12.2023',
-        event: 'První nelegální schůze',
-        description: 'Koordinace první výměny zámků a nelegální schůze. SPORT Krupka poprvé omezil přístup legitimnímu předsedovi.',
-        type: 'violation' as const,
-      },
-      {
-        date: 'Prosinec 2023',
-        event: 'Koordinační schůzky',
-        description: 'Schůzky se starostou Kuzmą, Syryčanským a Vítůem. Tlak na svolání shromáždění do konce ledna 2024.',
-        type: 'violation' as const,
-      },
-      {
-        date: '19.1.2024',
-        event: 'Druhá výměna zámků',
-        description: 'SPORT Krupka vyměnil zámky a znemožnil přístup legitimnímu předsedovi. Koordinace s městem.',
-        type: 'violation' as const,
-      },
-      {
-        date: '25.1.2024',
-        event: 'Ignorování legitimního shromáždění',
-        description: 'Konalo se legitimní shromáždění skutečných členů. Město ho ignorovalo a pokračovalo v podpoře vyloučených členů.',
-        type: 'violation' as const,
+        date: '2023-2024',
+        event: 'Výkon funkce místostarosty',
+        description: 'Výkon funkce místostarosty města Krupka během období sporů spolku.',
+        classification: 'dolozeno' as const,
       },
       {
         date: '26.1.2024',
-        event: 'Přijetí oficiální notifikace',
-        description: 'Město obdrželo oficiální oznámení o vyloučení Vaniše a Pivoňky. Přesto nadále umožňovalo přístup vyloučeným členům.',
-        type: 'violation' as const,
-      },
-      {
-        date: 'Únor 2024',
-        event: 'Pokračující podpora převratu',
-        description: 'SPORT Krupka s politickou podporou místostarosty nadále poskytoval prostory pro nelegální schůze.',
-        type: 'violation' as const,
-      },
-      {
-        date: '28.2.2024',
-        event: 'Vypršení prekluzivní lhůty',
-        description: 'Vypršela prekluzivní lhůta § 259 NOZ pro napadení vyloučení. Plán převratu definitivně selhal.',
-        type: 'neutral' as const,
-      },
-      {
-        date: 'Březen-Duben 2024',
-        event: 'Pokračující blokáda přístupu',
-        description: 'I po selhání plánu město nadále blokovalo přístup legitimnímu předsedovi do prostor spolku.',
-        type: 'violation' as const,
+        event: 'Notifikace města o vyloučení členů',
+        description: 'Město obdrželo oficiální oznámení spolku o vyloučení některých členů podle § 239 NOZ.',
+        classification: 'dolozeno' as const,
       },
     ],
 
-    roleInPlot: {
-      title: 'Role v pokusu o převrat',
-      description: 'Jan Bokoč jako místostarosta města měl zajistit politickou podporu a koordinaci mezi městem, městskou společností SPORT Krupka a vyloučenými členy spolku.',
-      specificActions: [
-        'Účast na nelegálních schůzích jako reprezentant města',
-        'Koordinace s jednatelem SPORT Krupka (starostou Kuzmou)',
-        'Zajištění politické podpory pro akce Syryčanského',
-        'Ignorování oficiálních notifikací o vyloučení členů',
-        'Pokračující podpora nelegálních schůzí i po vypršení lhůt',
+    spolekPosition: {
+      title: 'Pozice spolku',
+      description: 'Spolek zastává právní názor, že město Krupka a jeho zástupci měli respektovat autonomii spolku podle § 20a NOZ. Spolek eviduje situace, které považuje za zásahy do své autonomie.',
+      classification: 'spor' as const,
+      points: [
+        {
+          title: 'Autonomie spolku',
+          description: 'Podle § 20a NOZ má spolek právo na autonomii. Spolek zastává názor, že město a jeho zástupci měli toto právo respektovat.',
+          legal: '§ 20a NOZ - Autonomie spolku',
+          classification: 'spor' as const,
+        },
+        {
+          title: 'Přístup k prostorám',
+          description: 'Spolek eviduje situace s omezeným přístupem k prostorám spravovaným městskou společností SPORT Krupka s.r.o. v období sporů.',
+          classification: 'dolozeno' as const,
+        },
+        {
+          title: 'Notifikace o vyloučení členů',
+          description: 'Spolek dne 26.1.2024 notifikoval město o vyloučení některých členů. Spolek očekával, že město bude respektovat tato rozhodnutí spolkových orgánů.',
+          classification: 'dolozeno' as const,
+        },
       ],
     },
 
-    legalContext: [
+    legalFramework: [
       {
-        law: '§ 214-302 NOZ - Autonomie spolku',
-        description: 'Spolek je autonomní organizace. Zásahy třetích osob (včetně města) do jeho vnitřních záležitostí jsou nepřípustné.',
+        law: '§ 20a NOZ',
+        title: 'Autonomie spolku',
+        description: 'Spolek je autonomní organizace. Státní orgány a orgány územních samosprávných celků mají povinnost respektovat autonomii spolku a zdržet se neoprávněného vměšování do jeho záležitostí.',
+        classification: 'dolozeno' as const,
       },
       {
-        law: '§ 83-84 Zákon o obcích - Povinnosti zastupitele',
-        description: 'Zastupitel je povinen jednat v zájmu obce a dodržovat zákony. Střet zájmů a jednání proti zájmu veřejnosti je nepřípustné.',
+        law: '§ 239 NOZ',
+        title: 'Vyloučení člena',
+        description: 'Spolek může vyloučit člena z důležitého důvodu. Rozhodnutí o vyloučení je vnitřní záležitostí spolku.',
+        classification: 'dolozeno' as const,
       },
-      {
-        law: '§ 207 TZ - Neoprávněné užívání cizí věci',
-        description: 'Umožnění přístupu neoprávněným osobám (vyloučeným členům) do prostor spolku městskou společností s politickou podporou.',
-      },
-      {
-        law: '§ 329 TZ - Zneužití pravomoci úřední osoby',
-        description: 'Zneužití postavení místostarosty k pokusu o převzetí kontroly nad nezávislým spolkem.',
-      },
-    ],
-
-    relatedActors: [
-      { name: 'Jan Kuzma', role: 'Starosta města a jednatel SPORT Krupka', href: '/akteri/jan-kuzma' },
-      { name: 'Tomáš Syryčanský', role: 'Sportovní manažer SPORT Krupka', href: '/akteri/tomas-syrycansky' },
-      { name: 'Marek Vaniš', role: 'Vyloučený člen - spolupráce', href: '/akteri/marek-vanis' },
-      { name: 'Jaromír Pivoňka', role: 'Vyloučený člen - spolupráce', href: '/akteri/jaromir-pivonka' },
-      { name: 'Miroslav Brožek', role: 'Legitimní předseda spolku', href: '/akteri/miroslav-brozek' },
     ],
 
     relatedLinks: [
-      { label: 'Timeline: Město Krupka', href: '/mesto-krupka', icon: '🏛️' },
-      { label: 'Téma: Role města Krupka', href: '/temata/role-mesta-krupka', icon: '📋' },
-      { label: 'Otázka: Kdo měl právo rozhodovat?', href: '/otazky/kdo-mel-pravo-rozhodovat', icon: '❓' },
+      { label: 'Právní rámec a kontakt', href: '/pravni-ramec', icon: '⚖️' },
+      { label: 'Téma: Role města Krupka', href: '/temata/role-mesta-krupka', icon: '🏛️' },
+      { label: 'Otázka: Měly instituce zasáhnout dříve?', href: '/otazky/mely-instituce-zasahnout-drive', icon: '❓' },
       { label: 'Události', href: '/udalosti', icon: '📅' },
+      { label: 'Miroslav Brožek (předseda spolku)', href: '/akteri/miroslav-brozek', icon: '⚖️' },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner - Enhanced for public official */}
+      <div className="bg-blue-900 text-white py-4">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
+          <p className="text-sm leading-relaxed">
+            ⚖️ <strong>Důležité právní upozornění:</strong> Osoba je uvedena jako veřejný činitel města Krupka v souvislosti se spory spolku TJ Krupka z.s.
+            Uvedené informace představují právní pozici spolku a nejsou pravomocným soudním rozhodnutím.
+            Spolek respektuje presumpci neviny a prezentuje pouze svůj právní názor na události.
+            {' '}
+            <a href="/pravni-ramec" className="underline hover:text-blue-200 font-semibold">
+              Více o právním rámci →
+            </a>
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-700 via-blue-800 to-slate-800 py-8 md:py-16 border-b border-blue-600">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-slate-700 py-8 md:py-16">
         <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium border border-white/30">
+                <span className="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium">
                   {actor.organizationIcon} {actor.organization}
                 </span>
-                <span className="px-3 py-1 bg-blue-900/70 backdrop-blur rounded-full text-blue-100 text-sm font-medium border border-blue-700/30">
-                  ⚠️ Zástupce města
+                <span className="px-3 py-1 bg-blue-900/50 backdrop-blur rounded-full text-white text-sm font-bold">
+                  Veřejný činitel
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
@@ -162,17 +115,18 @@ export default function JanBokocPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 md:p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center gap-4">
-              <div className="text-6xl">🎭</div>
+              <div className="text-6xl opacity-70">🏛️</div>
               <div className="flex-1">
-                <div className="text-blue-100 text-sm font-medium mb-2">Role v kauze</div>
-                <div className="text-2xl font-black text-white">
-                  Politická podpora pokusu o převzetí kontroly nad spolkem
+                <div className="text-blue-100 text-sm font-medium mb-2">Kontext v kauze</div>
+                <div className="text-2xl font-black text-white mb-2">
+                  Zástupce města během sporů spolku
                 </div>
-                <div className="text-blue-100 text-sm mt-2">
-                  Koordinace mezi městem, městskou společností a vyloučenými členy
-                </div>
+                <p className="text-blue-100 text-sm leading-relaxed">
+                  Město Krupka vlastní společnost SPORT Krupka s.r.o., která spravuje prostory využívané spolkem.
+                  Spolek zastává právní názor o potřebě respektování autonomie spolku.
+                </p>
               </div>
             </div>
           </div>
@@ -180,104 +134,52 @@ export default function JanBokocPage() {
       </div>
 
       <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
-        {/* Shrnutí */}
+        {/* Kontext */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
-              <span>Shrnutí</span>
+              <span>Kontext</span>
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {actor.summary}
-            </p>
-          </div>
-        </section>
-
-        {/* Klíčová porušení */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            ⚠️ Klíčová porušení a problematické jednání
-          </h2>
-          <div className="space-y-4">
-            {actor.keyViolations.map((violation, index) => {
-              const severityColors = {
-                critical: 'border-red-300 bg-red-50',
-                high: 'border-orange-300 bg-orange-50',
-                medium: 'border-yellow-300 bg-yellow-50',
-              };
-              const severityLabels = {
-                critical: '🔴 Kritické',
-                high: '🟠 Vysoké',
-                medium: '🟡 Střední',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[violation.severity]} border-2 shadow-md`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900">{violation.title}</h3>
-                        <span className="px-2 py-1 bg-white/80 rounded text-xs font-bold text-slate-700">
-                          {severityLabels[violation.severity]}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                        {violation.description}
-                      </p>
-                      <div className="flex items-start gap-2 text-xs text-slate-600">
-                        <span className="font-semibold">📎 Důkaz:</span>
-                        <span>{violation.evidence}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Role v pokusu o převrat */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            🎭 {actor.roleInPlot.title}
-          </h2>
-          <div className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-4 md:p-8 shadow-lg border-2 border-blue-200">
-            <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-              {actor.roleInPlot.description}
-            </p>
             <div className="space-y-3">
-              <h3 className="font-bold text-slate-900 mb-3">Konkrétní kroky:</h3>
-              {actor.roleInPlot.specificActions.map((action, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
-                  <span className="text-blue-600 font-bold">•</span>
-                  <div className="text-sm text-slate-700">{action}</div>
-                </div>
-              ))}
+              <div className="flex items-start gap-3">
+                <p className="text-slate-700 leading-relaxed flex-1">
+                  {actor.context.description}
+                </p>
+                <ClassificationBadge type={actor.context.classification} />
+              </div>
+              <div className="p-4 bg-blue-50 rounded-lg border-2 border-blue-200 mt-4">
+                <p className="text-sm text-blue-900">
+                  <strong>Poznámka:</strong> Tato stránka prezentuje právní pozici spolku TJ Krupka z.s.
+                  ve sporech týkajících se autonomie spolku a přístupu k prostorům. Uvedené informace
+                  nejsou pravomocným soudním rozhodnutím.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Časová osa */}
+        {/* Klíčové události */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Časová osa událostí
+            📅 Klíčové události
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              {actor.timeline.map((item, index) => (
+              {actor.keyEvents.map((event, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-5 rounded-lg bg-slate-50 border-l-4 border-blue-500 shadow-sm"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border-2 border-slate-200"
                 >
-                  <div className="flex-shrink-0">
-                    <div className="text-sm font-bold text-slate-600 mb-1">{item.date}</div>
-                  </div>
                   <div className="flex-1">
-                    <div className="font-bold text-slate-900 mb-2">{item.event}</div>
-                    <p className="text-sm text-slate-700">{item.description}</p>
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-bold text-slate-900">{event.event}</div>
+                      <ClassificationBadge type={event.classification} />
+                    </div>
+                    <p className="text-sm text-slate-700 mb-2">{event.description}</p>
+                  </div>
+                  <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                    {event.date}
                   </div>
                 </div>
               ))}
@@ -285,39 +187,72 @@ export default function JanBokocPage() {
           </div>
         </section>
 
-        {/* Právní kontext */}
+        {/* Právní pozice spolku */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            ⚖️ Právní kontext a možné trestné činy
+            ⚖️ Právní pozice spolku
           </h2>
-          <div className="bg-slate-50 rounded-xl p-4 md:p-8 shadow-md">
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-300 p-4 md:p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <span className="text-4xl">⚖️</span>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <h3 className="text-xl font-bold text-slate-900">{actor.spolekPosition.title}</h3>
+                  <ClassificationBadge type={actor.spolekPosition.classification} />
+                </div>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  {actor.spolekPosition.description}
+                </p>
+              </div>
+            </div>
+
             <div className="space-y-4">
-              {actor.legalContext.map((item, index) => (
-                <div key={index} className="p-5 bg-white rounded-lg shadow-sm">
-                  <h3 className="font-bold text-slate-900 mb-2">{item.law}</h3>
+              {actor.spolekPosition.points.map((point, index) => (
+                <div key={index} className="p-4 bg-white rounded-lg border-2 border-orange-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h4 className="font-bold text-slate-900">{point.title}</h4>
+                    <ClassificationBadge type={point.classification} />
+                  </div>
+                  <p className="text-sm text-slate-700 mb-2">{point.description}</p>
+                  {point.legal && (
+                    <p className="text-xs text-slate-600 italic">
+                      <strong>Právní základ:</strong> {point.legal}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 p-4 bg-orange-100 border-l-4 border-orange-600 rounded">
+              <p className="text-sm text-orange-900">
+                <strong>Upozornění:</strong> Výše uvedené body představují právní argumentaci spolku
+                v probíhajících sporech. Nejde o pravomocná soudní rozhodnutí. Spolek respektuje presumpci
+                neviny všech zúčastněných osob.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Právní rámec */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            📚 Relevantní právní rámec
+          </h2>
+          <div className="bg-slate-50 rounded-xl p-4 md:p-8 border-2 border-slate-200">
+            <p className="text-sm text-slate-700 mb-6">
+              Spolek se ve svých právních argumentech opírá o následující právní předpisy:
+            </p>
+            <div className="space-y-4">
+              {actor.legalFramework.map((item, index) => (
+                <div key={index} className="p-5 bg-white rounded-lg border-2 border-slate-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-bold text-slate-900">{item.law} - {item.title}</h3>
+                    <ClassificationBadge type={item.classification} />
+                  </div>
                   <p className="text-sm text-slate-700">{item.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Související aktéři */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            👥 Související aktéři
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {actor.relatedActors.map((related, index) => (
-              <a
-                key={index}
-                href={related.href}
-                className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
-              >
-                <div className="font-bold text-slate-900 mb-1">{related.name}</div>
-                <div className="text-sm text-slate-600">{related.role}</div>
-              </a>
-            ))}
           </div>
         </section>
 
@@ -331,7 +266,7 @@ export default function JanBokocPage() {
               <a
                 key={index}
                 href={link.href}
-                className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
+                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{link.icon}</span>
@@ -342,14 +277,37 @@ export default function JanBokocPage() {
           </div>
         </section>
 
+        {/* CTA for corrections */}
+        <section className="mb-12">
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-4 md:p-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">
+              Máte námitku k uvedeným údajům?
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás
+              prostřednictvím stránky{' '}
+              <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+                Právní rámec a kontakt
+              </a>
+              . Respektujeme právo všech zúčastněných osob na vyjádření a opravu nepřesných informací.
+            </p>
+            <a
+              href="/oprava-nepravd"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              → Jak funguje proces opravy nepravd
+            </a>
+          </div>
+        </section>
+
         {/* Navigace */}
-        <div className="flex items-center justify-center pt-8 mt-8">
+        <div className="flex items-center justify-center pt-8 border-t-2 border-slate-200">
           <a
             href="/akteri"
             className="flex items-center gap-2 px-6 py-3 bg-slate-200 hover:bg-slate-300 rounded-lg font-bold text-slate-900 transition"
           >
             <span>←</span>
-            <span>Všichni aktéři</span>
+            <span>Přehled aktérů</span>
           </a>
         </div>
       </div>
