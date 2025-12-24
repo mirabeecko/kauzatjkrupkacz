@@ -1,70 +1,19 @@
-export default function MarekVanisPage() {
-  const actor = {
-    name: 'Marek Vaniš',
-    role: 'Údajný předseda oddílu stolního tenisu',
-    department: 'Stolní tenis',
-    departmentIcon: '🏓',
-    status: 'negative' as const,
-    totalDamage: 653659,
-    summary: 'Celková škoda oddílu stolního tenisu: 653.659 Kč. Nedodal seznamy členů, vybíral příspěvky ale neodváděl je.',
-    breakdown: [
-      {
-        label: 'Zapřené oddílové příspěvky',
-        amount: 518400,
-        description: '60 členů × 2.400 Kč/rok × 3,6 roku (2020-2023). Vybíral příspěvky jménem spolku (přiznal při výslechu), ale spolku je neodvedl.',
-        severity: 'critical' as const,
-      },
-      {
-        label: 'Nezaplacené členské příspěvky',
-        amount: 48000,
-        description: '60 členů × 200 Kč/rok × 4 roky (2021-2024). Úhrada svazům ČSTV, Ústeckému kraji, obci.',
-        severity: 'high' as const,
-      },
-      {
-        label: 'Nezaplacené energie',
-        amount: 43466,
-        description: 'Elektřina 10.415 Kč + plyn 33.051 Kč (2020-2023). Oddíl používal prostory, ale energie neplatil.',
-        severity: 'high' as const,
-      },
-      {
-        label: 'Pokladna oddílu k 31.12.2020',
-        amount: 43793,
-        description: 'Hotovost v pokladně oddílu k 31.12.2020 nebyla předána ani vyúčtována.',
-        severity: 'medium' as const,
-      },
-    ],
-    keyActions: [
-      { text: 'Nedodal seznamy členů', date: '2021-2024', type: 'violation' },
-      { text: 'Vybíral příspěvky jménem spolku (přiznal při výslechu)', date: '2020-2024', type: 'violation' },
-      { text: 'Neuhradil členské příspěvky', amount: 48000, date: '2021-2024', type: 'violation' },
-      { text: 'Zapíral oddílové příspěvky', amount: 518400, date: '2020-2024', type: 'violation' },
-      { text: 'Neplatil energie', amount: 43466, date: '2020-2023', type: 'violation' },
-      { text: 'Pokladna oddílu nebyla předána', amount: 43793, date: '31.12.2020', type: 'violation' },
-      { text: 'Neoprávněně svolával schůze', date: '2023', type: 'violation' },
-      { text: 'Vyloučen z členství', date: '28.11.2023', type: 'consequence' },
-    ],
-    predzalobniVyzva: {
-      date: '6.11.2023',
-      recipient: 'Marek Vaniš',
-      totalDemanded: 387460,
-      items: [
-        { label: 'Energie 2020-2023', amount: 41860, detail: 'Plyn 31.960 Kč + elektřina 9.900 Kč' },
-        { label: 'Oddílové příspěvky 2020-2024', amount: 345600, detail: 'Vybírané příspěvky členů oddílu' },
-      ],
-      deadline: '8 dnů od doručení',
-      note: 'Toto byla první předžalobní výzva. Celková škoda byla později vyčíslena na 653.659 Kč po kompletním auditu.',
-    },
-    relatedLinks: [
-      { label: 'Události s účastí Vaniše', href: '/udalosti?actor=marek-vanis', icon: '📅' },
-      { label: 'Finanční přehled', href: '/cisla', icon: '💰' },
-      { label: 'Téma: Finance a majetek', href: '/temata/finance-a-majetek', icon: '📚' },
-      { label: 'Téma: Členství a evidence', href: '/temata/clenstvi-a-evidence', icon: '📋' },
-      { label: 'Otázka: Kdo koho poškodil?', href: '/otazky/kdo-koho-poskodil', icon: '❓' },
-    ],
-  };
+import ClassificationBadge from '@/components/ClassificationBadge';
 
+export default function MarekVanisPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-3">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
+          <p className="text-sm">
+            ⚖️ <strong>Právní upozornění:</strong> Osoba je uvedena výhradně v souvislosti s výkonem funkce ve spolku TJ Krupka z.s., nikoliv soukromě.
+            Uvedené informace vycházejí z dokumentů, které spolek eviduje. Nejde o pravomocné soudní rozhodnutí.
+            {' '}<a href="/pravni-ramec" className="underline font-semibold">Více informací</a>
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 py-8 md:py-16 border-b border-slate-600">
         <div className="container mx-auto px-3 md:px-8 max-w-5xl">
@@ -72,17 +21,17 @@ export default function MarekVanisPage() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="px-3 py-1 bg-slate-600/50 backdrop-blur rounded-full text-slate-200 text-sm font-medium border border-slate-500/30">
-                  {actor.departmentIcon} {actor.department}
+                  🏓 Stolní tenis
                 </span>
                 <span className="px-3 py-1 bg-slate-800/70 backdrop-blur rounded-full text-slate-300 text-sm font-medium border border-slate-600/30">
-                  ❌ Vyloučen z členství
+                  Funkce: Předseda oddílu
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
-                {actor.name}
+                Marek Vaniš
               </h1>
               <p className="text-xl text-slate-300 font-medium">
-                {actor.role}
+                Předseda oddílu stolního tenisu (do 28.11.2023)
               </p>
             </div>
           </div>
@@ -90,13 +39,16 @@ export default function MarekVanisPage() {
           <div className="bg-slate-800/40 backdrop-blur border border-slate-600/50 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-slate-300 text-sm font-medium mb-2">Celková způsobená škoda</div>
+                <div className="text-slate-300 text-sm font-medium mb-2">Evidovaná škoda oddílu</div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
-                  {actor.totalDamage.toLocaleString('cs-CZ')} Kč
+                  653.659 Kč
+                </div>
+                <div className="mt-2">
+                  <ClassificationBadge type="evidovano" />
                 </div>
               </div>
               <div className="text-8xl opacity-10 text-slate-400">
-                💸
+                📊
               </div>
             </div>
           </div>
@@ -104,169 +56,215 @@ export default function MarekVanisPage() {
       </div>
 
       <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
-        {/* Porušení povinností a podvodné jednání */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            ⚠️ Porušení povinností a podvodné jednání
-          </h2>
-          <div className="bg-slate-50 rounded-xl p-4 md:p-8 shadow-md">
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">📋</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Odmítl předat seznam členů</h3>
-                  <p className="text-sm text-slate-700">
-                    Marek Vaniš opakovaně <strong>odmítl předat seznam členů oddílu stolního tenisu</strong>.
-                    Tento seznam je klíčový pro kontrolu finančního hospodaření a ověření odvodu členských
-                    příspěvků. Bez něj nelze zjistit, kolik členů oddíl skutečně měl a kolik příspěvků mělo
-                    být odvedeno do spolkové pokladny.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">💰</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Odmítl zaplatit prokazatelně vzniklé náklady oddílu</h3>
-                  <p className="text-sm text-slate-700">
-                    Vaniš <strong>odmítl zaplatit náklady oddílu, které prokazatelně vznikly činností jeho oddílu</strong>.
-                    Jedná se zejména o energie (elektřina a plyn) za používání sportovních prostor, které jeho
-                    oddíl využíval, ale náklady odmítl uhradit. Celková výše nezaplacených energií činí 43.466 Kč.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">🧾</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Žádal proplácení dokladů bez skutečné platby</h3>
-                  <p className="text-sm text-slate-700">
-                    Vaniš <strong>požadoval proplacení dokladů, u kterých bylo zjištěno, že platby ve skutečnosti neproběhly</strong>.
-                    Tímto způsobem se pokoušel získat finanční prostředky ze spolkové pokladny za výdaje,
-                    které ve skutečnosti neuskutečnil. Šlo o podvodný pokus o získání peněz.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">🎯</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">V rámci dotací chtěl proplácet nesprávné náklady</h3>
-                  <p className="text-sm text-slate-700">
-                    V rámci dotačního financování <strong>požadoval proplácení nákladů, které neodpovídaly
-                    podmínkám dotace nebo byly nesprávné</strong>. Porušoval tak pravidla pro čerpání
-                    dotačních prostředků a vystavoval spolek riziku vrácení dotace včetně sankcí.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">📝</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Sám vytvářel a proplácet požadoval falešné doklady</h3>
-                  <p className="text-sm text-slate-700">
-                    Marek Vaniš <strong>sám vytvářel doklady, které následně požadoval proplatit</strong>.
-                    Jednalo se o falšování dokumentů za účelem získání finančních prostředků ze spolkové
-                    pokladny. Toto jednání naplňuje znaky trestného činu podvodu a zneužití pravomoci.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                <span className="text-2xl flex-shrink-0">👩</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Požadoval dohody pro svou manželku za více než 70.000 Kč</h3>
-                  <p className="text-sm text-slate-700">
-                    Vaniš <strong>na svou manželku Denisu Vanišovou žádal proplatit dohody o provedení práce
-                    za více než 70.000 Kč</strong>. Šlo o další pokus o neoprávněné získání finančních prostředků
-                    ze spolkové pokladny prostřednictvím fingovaných pracovních dohod pro osobu blízkou,
-                    což představuje konflikt zájmů a zneužití funkce.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <div className="bg-blue-50 rounded-xl border-2 border-blue-200 p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-2">
               <span>📋</span>
-              <span>Shrnutí</span>
+              <span>Shrnutí z dokumentů</span>
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {actor.summary}
+            <p className="text-lg text-blue-900 leading-relaxed mb-3">
+              Spolek eviduje nesoulad ve výši 653.659 Kč u oddílu stolního tenisu za období 2020-2024.
+              K datu zveřejnění nebyl doložen převod členských a oddílových příspěvků, úhrada energií ani předání pokladny oddílu.
+            </p>
+            <p className="text-sm text-blue-800">
+              <strong>Právní kontext:</strong> Vyloučení z členství rozhodnutím ze dne 28.11.2023.
+              Věc je předmětem trestního řízení.
             </p>
           </div>
         </section>
 
-        {/* Rozpad škody */}
+        {/* Evidovaná nesouladná plnění */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            💰 Detailní rozpad škody
+            📋 Evidovaná nesouladná plnění
           </h2>
-          <div className="space-y-4">
-            {actor.breakdown.map((item, index) => {
-              const severityColors = {
-                critical: 'border-red-300 bg-red-50',
-                high: 'border-amber-300 bg-amber-50',
-                medium: 'border-slate-300 bg-slate-50',
-              };
-              const severityLabels = {
-                critical: '🔴 Kritické',
-                high: '🟠 Vysoké',
-                medium: '⚪ Střední',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg shadow`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
-                        <span className="px-2 py-1 bg-white/60 rounded text-xs font-bold text-slate-700">
-                          {severityLabels[item.severity]}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="text-right ml-6">
-                      <div className="text-2xl font-black text-slate-900">
-                        {item.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
-                    <div
-                      className={`h-full transition-all duration-500 ${
-                        item.severity === 'critical'
-                          ? 'bg-gradient-to-r from-red-500 to-red-600'
-                          : item.severity === 'high'
-                          ? 'bg-gradient-to-r from-amber-500 to-amber-600'
-                          : 'bg-gradient-to-r from-slate-500 to-slate-600'
-                      }`}
-                      style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
-                    />
-                  </div>
-                  <div className="text-xs text-slate-600 mt-1 text-right">
-                    {((item.amount / actor.totalDamage) * 100).toFixed(1)}% z celkové škody
+          <div className="bg-slate-50 rounded-xl p-4 md:p-8 shadow-md">
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border-l-4 border-blue-500">
+                <span className="text-2xl flex-shrink-0">📋</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 mb-2">Seznamy členů nebyly doloženy</h3>
+                  <p className="text-sm text-slate-700 mb-2">
+                    K datu zveřejnění spolek neeviduje doložení seznamů členů oddílu stolního tenisu,
+                    přestože byly zaslány opakované výzvy (2021-2024).
+                  </p>
+                  <div className="flex gap-2">
+                    <ClassificationBadge type="dolozeno" />
+                    <span className="text-xs text-slate-600">Podklad: výzvy ze dne 13.9.2021, 10.12.2021, 11/2023</span>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border-l-4 border-orange-500">
+                <span className="text-2xl flex-shrink-0">💰</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 mb-2">Náklady za energie nebyly uhrazeny</h3>
+                  <p className="text-sm text-slate-700 mb-2">
+                    Z faktur vyplývá, že náklady za energie (elektřina a plyn) ve výši 43.466 Kč
+                    za období 2020-2023 nebyly uhrazeny. Prostory byly oddílem využívány.
+                  </p>
+                  <div className="flex gap-2">
+                    <ClassificationBadge type="dolozeno" />
+                    <span className="text-xs text-slate-600">Podklad: faktury dodavatelů energií, výzvy k úhradě</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border-l-4 border-orange-500">
+                <span className="text-2xl flex-shrink-0">🧾</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 mb-2">Doklady s nesrovnalostmi</h3>
+                  <p className="text-sm text-slate-700 mb-2">
+                    Z evidence vyplývá, že u některých předložených dokladů byla zjištěna nesrovnalost
+                    mezi údaji v dokladu a skutečným stavem (datum platby, částka, dodavatel).
+                  </p>
+                  <div className="flex gap-2">
+                    <ClassificationBadge type="evidovano" />
+                    <span className="text-xs text-slate-600">Podklad: interní kontrola dokladů, účetní evidence</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border-l-4 border-slate-400">
+                <span className="text-2xl flex-shrink-0">📝</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 mb-2">Požadavky na úhrady osobám blízkým</h3>
+                  <p className="text-sm text-slate-700 mb-2">
+                    Z dokumentů vyplývá, že byly předloženy požadavky na úhradu dohod o provedení práce
+                    pro osobu blízkou předsedovi oddílu ve výši přes 70.000 Kč.
+                  </p>
+                  <div className="flex gap-2">
+                    <ClassificationBadge type="evidovano" />
+                    <span className="text-xs text-slate-600">Podklad: předložené dohody o provedení práce</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-slate-100 rounded-lg">
+              <p className="text-sm text-slate-700">
+                <strong>Poznámka:</strong> Uvedené události jsou evidovány na základě dokumentů, které spolek má k dispozici.
+                V případě rozdílného tvrzení je situace označena jako spor. Podrobnosti viz{' '}
+                <a href="/metodika" className="text-blue-600 hover:underline">Metodika a zdroje</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Rozpad evidované škody */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            💰 Rozpad evidované škody
+          </h2>
+          <div className="space-y-4">
+            <div className="p-4 md:p-6 rounded-xl bg-blue-50 border-2 border-blue-300 transition hover:shadow-lg shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">Neodvedené oddílové příspěvky</h3>
+                    <ClassificationBadge type="evidovano" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                    Výpočet: 60 členů × 2.400 Kč/rok × 3,6 roku (2020-2023).
+                    <br />
+                    <strong>Metoda:</strong> Odhad počtu členů (seznamy nebyly doloženy) × sazba dle stanov × období.
+                    <br />
+                    <strong>Výhrada:</strong> Skutečná částka může být jiná bez doložených seznamů členů.
+                  </p>
+                </div>
+                <div className="text-right ml-6">
+                  <div className="text-2xl font-black text-slate-900">
+                    518.400 Kč
+                  </div>
+                  <div className="text-xs text-slate-600 mt-1">
+                    79,3% celkové škody
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 rounded-xl bg-orange-50 border-2 border-orange-300 transition hover:shadow-lg shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">Nezaplacené členské příspěvky</h3>
+                    <ClassificationBadge type="evidovano" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                    Výpočet: 60 členů × 200 Kč/rok × 4 roky (2021-2024).
+                    <br />
+                    <strong>Účel:</strong> Úhrada svazům ČSTV, Ústeckému kraji, obci.
+                  </p>
+                </div>
+                <div className="text-right ml-6">
+                  <div className="text-2xl font-black text-slate-900">
+                    48.000 Kč
+                  </div>
+                  <div className="text-xs text-slate-600 mt-1">
+                    7,3% celkové škody
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 rounded-xl bg-orange-50 border-2 border-orange-300 transition hover:shadow-lg shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">Nezaplacené energie</h3>
+                    <ClassificationBadge type="dolozeno" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                    Elektřina 10.415 Kč + plyn 33.051 Kč (2020-2023).
+                    <br />
+                    <strong>Podklad:</strong> Faktury dodavatelů energií.
+                  </p>
+                </div>
+                <div className="text-right ml-6">
+                  <div className="text-2xl font-black text-slate-900">
+                    43.466 Kč
+                  </div>
+                  <div className="text-xs text-slate-600 mt-1">
+                    6,7% celkové škody
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 rounded-xl bg-slate-50 border-2 border-slate-300 transition hover:shadow-lg shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">Pokladna oddílu k 31.12.2020</h3>
+                    <ClassificationBadge type="evidovano" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                    Hotovost v pokladně oddílu k 31.12.2020.
+                    <br />
+                    <strong>Status:</strong> K datu zveřejnění spolek neeviduje doložení předání.
+                  </p>
+                </div>
+                <div className="text-right ml-6">
+                  <div className="text-2xl font-black text-slate-900">
+                    43.793 Kč
+                  </div>
+                  <div className="text-xs text-slate-600 mt-1">
+                    6,7% celkové škody
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
-              <span className="text-lg font-bold">CELKOVÁ ŠKODA</span>
-              <span className="text-3xl font-black">{actor.totalDamage.toLocaleString('cs-CZ')} Kč</span>
+              <span className="text-lg font-bold">CELKOVÁ EVIDOVANÁ ŠKODA</span>
+              <span className="text-3xl font-black">653.659 Kč</span>
             </div>
+            <p className="text-sm text-slate-300 mt-2">
+              Podrobná metodika výpočtu: <a href="/rozpad-skody" className="underline">Rozpad škody</a>
+            </p>
           </div>
         </section>
 
@@ -275,35 +273,44 @@ export default function MarekVanisPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ⚖️ Předžalobní výzva
           </h2>
-          <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-4 md:p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-4 md:p-8 shadow-lg border-2 border-slate-200">
             <div className="flex items-center gap-3 mb-6">
               <span className="text-4xl">📨</span>
               <div>
                 <div className="text-sm text-slate-700 font-medium">Dokument ze dne</div>
-                <div className="text-2xl font-bold text-slate-900">{actor.predzalobniVyzva.date}</div>
+                <div className="text-2xl font-bold text-slate-900">6.11.2023</div>
+                <ClassificationBadge type="dolozeno" className="mt-1" />
               </div>
             </div>
 
             <div className="bg-white/70 rounded-lg p-4 md:p-6 mb-6">
               <h3 className="text-lg font-bold text-slate-900 mb-4">Požadované plnění</h3>
               <div className="space-y-3">
-                {actor.predzalobniVyzva.items.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg shadow-sm">
-                    <div>
-                      <div className="font-bold text-slate-900">{item.label}</div>
-                      <div className="text-sm text-slate-600">{item.detail}</div>
-                    </div>
-                    <div className="text-2xl font-black text-slate-900">
-                      {item.amount.toLocaleString('cs-CZ')} Kč
-                    </div>
+                <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg shadow-sm">
+                  <div>
+                    <div className="font-bold text-slate-900">Energie 2020-2023</div>
+                    <div className="text-sm text-slate-600">Plyn 31.960 Kč + elektřina 9.900 Kč</div>
                   </div>
-                ))}
+                  <div className="text-2xl font-black text-slate-900">
+                    41.860 Kč
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg shadow-sm">
+                  <div>
+                    <div className="font-bold text-slate-900">Oddílové příspěvky 2020-2024</div>
+                    <div className="text-sm text-slate-600">Příspěvky členů oddílu</div>
+                  </div>
+                  <div className="text-2xl font-black text-slate-900">
+                    345.600 Kč
+                  </div>
+                </div>
               </div>
 
               <div className="mt-4 pt-4 border-t border-slate-200 flex items-center justify-between">
                 <span className="text-lg font-bold text-slate-900">Celkem požadováno</span>
                 <span className="text-3xl font-black text-slate-900">
-                  {actor.predzalobniVyzva.totalDemanded.toLocaleString('cs-CZ')} Kč
+                  387.460 Kč
                 </span>
               </div>
             </div>
@@ -313,142 +320,83 @@ export default function MarekVanisPage() {
                 <span className="text-2xl">⏱️</span>
                 <div>
                   <div className="font-bold text-slate-900 mb-1">Lhůta k plnění</div>
-                  <div className="text-sm text-slate-800">{actor.predzalobniVyzva.deadline}</div>
+                  <div className="text-sm text-slate-800">8 dnů od doručení</div>
                 </div>
               </div>
             </div>
 
-            {actor.predzalobniVyzva.note && (
-              <div className="mt-6 p-4 bg-slate-50 rounded-lg shadow-sm">
-                <div className="flex items-start gap-2">
-                  <span className="text-lg">ℹ️</span>
-                  <p className="text-sm text-blue-900">
-                    <strong>Poznámka:</strong> {actor.predzalobniVyzva.note}
-                  </p>
-                </div>
+            <div className="mt-6 p-4 bg-blue-50 rounded-lg border-2 border-blue-200">
+              <div className="flex items-start gap-2">
+                <span className="text-lg">ℹ️</span>
+                <p className="text-sm text-blue-900">
+                  <strong>Poznámka:</strong> Toto byla první předžalobní výzva. Celková škoda byla později
+                  vyčíslena na 653.659 Kč po kompletním auditu účetnictví.
+                </p>
               </div>
-            )}
+            </div>
           </div>
         </section>
 
-        {/* Klíčové kroky */}
+        {/* Časová osa */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Časová osa klíčových kroků
+            📊 Časová osa relevantních událostí
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-slate-200">
             <div className="space-y-4">
-              {actor.keyActions.map((action, index) => (
-                <div
-                  key={index}
-                  className={`flex items-start gap-4 p-4 rounded-lg shadow-sm ${
-                    action.type === 'consequence'
-                      ? 'bg-slate-50'
-                      : 'bg-slate-50'
-                  }`}
-                >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-sm text-slate-600">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-bold text-slate-900">{action.text}</div>
-                    {action.amount && (
-                      <div className="text-lg font-bold text-red-700 mt-1">
-                        {action.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
-                    )}
-                  </div>
-                  <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
-                    {action.date}
-                  </div>
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-slate-50">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-sm text-slate-600">
+                  1
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Dokumenty a důkazy */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📄 Dokumenty a důkazy
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">📨</span>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Předžalobní výzva</h3>
-                  <p className="text-sm text-slate-800 mb-3">Dokument ze dne 6.11.2023</p>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <div>• Požadováno: 387.460 Kč</div>
-                    <div>• Energie + oddílové příspěvky</div>
-                    <div>• Lhůta: 8 dnů</div>
-                  </div>
-                  <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
-                      📥 Stáhnout PDF
-                    </span>
-                  </div>
+                <div className="flex-1">
+                  <div className="font-bold text-slate-900">K datu zveřejnění neevidováno doložení seznamů členů</div>
+                  <div className="text-sm text-slate-600 mt-1">Opakované výzvy: 13.9.2021, 10.12.2021, 11/2023</div>
+                  <ClassificationBadge type="dolozeno" className="mt-2" />
+                </div>
+                <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                  2021-2024
                 </div>
               </div>
-            </div>
 
-            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">⚖️</span>
-                <div>
-                  <h3 className="text-lg font-bold text-blue-900 mb-2">Rozhodnutí o vyloučení</h3>
-                  <p className="text-sm text-blue-800 mb-3">Dokument ze dne 28.11.2023</p>
-                  <div className="text-sm text-blue-700 space-y-1">
-                    <div>• Právní základ: § 239 NOZ</div>
-                    <div>• Doručeno datovou schránkou</div>
-                    <div>• Okamžitá platnost</div>
-                  </div>
-                  <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition cursor-pointer">
-                      📥 Stáhnout PDF
-                    </span>
-                  </div>
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-slate-50">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-sm text-slate-600">
+                  2
+                </div>
+                <div className="flex-1">
+                  <div className="font-bold text-slate-900">Výpověď při výslechu</div>
+                  <div className="text-sm text-slate-600 mt-1">Výpověď potvrzující vybírání příspěvků jménem spolku</div>
+                  <ClassificationBadge type="dolozeno" className="mt-2" />
+                </div>
+                <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                  2024
                 </div>
               </div>
-            </div>
 
-            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">📊</span>
-                <div>
-                  <h3 className="text-lg font-bold text-green-900 mb-2">Finanční výkaz oddílu</h3>
-                  <p className="text-sm text-green-800 mb-3">TJ ODDÍLY 2021-2023</p>
-                  <div className="text-sm text-green-700 space-y-1">
-                    <div>• Kompletní rozpis škody</div>
-                    <div>• Celkem: 653.659 Kč</div>
-                    <div>• Všechny položky detailně</div>
-                  </div>
-                  <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
-                      📥 Stáhnout PDF
-                    </span>
-                  </div>
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-slate-50">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-sm text-slate-600">
+                  3
+                </div>
+                <div className="flex-1">
+                  <div className="font-bold text-slate-900">Předžalobní výzva</div>
+                  <div className="text-sm text-slate-600 mt-1">Požadováno 387.460 Kč (energie + příspěvky)</div>
+                  <ClassificationBadge type="dolozeno" className="mt-2" />
+                </div>
+                <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                  6.11.2023
                 </div>
               </div>
-            </div>
 
-            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">📧</span>
-                <div>
-                  <h3 className="text-lg font-bold text-purple-900 mb-2">Emailová korespondence</h3>
-                  <p className="text-sm text-purple-800 mb-3">Výzvy 2021-2023</p>
-                  <div className="text-sm text-purple-700 space-y-1">
-                    <div>• Opakované výzvy k předání seznamů</div>
-                    <div>• Výzvy k úhradě příspěvků</div>
-                    <div>• Žádné odpovědi</div>
-                  </div>
-                  <div className="mt-4">
-                    <span className="inline-block px-4 py-2 bg-slate-600 text-white rounded-lg text-sm font-bold hover:bg-slate-700 transition cursor-pointer">
-                      📥 Zobrazit všechny
-                    </span>
-                  </div>
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-blue-50">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white shadow-md flex items-center justify-center font-bold text-sm">
+                  4
+                </div>
+                <div className="flex-1">
+                  <div className="font-bold text-slate-900">Vyloučení z členství</div>
+                  <div className="text-sm text-slate-600 mt-1">Rozhodnutí o vyloučení podle § 239 NOZ</div>
+                  <ClassificationBadge type="dolozeno" className="mt-2" />
+                </div>
+                <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                  28.11.2023
                 </div>
               </div>
             </div>
@@ -458,39 +406,44 @@ export default function MarekVanisPage() {
         {/* Související stránky */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            🔗 Související stránky
+            🔗 Související informace
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {actor.relatedLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{link.icon}</span>
-                  <span className="font-bold text-slate-900">{link.label}</span>
-                </div>
-              </a>
-            ))}
+            <a href="/rozpad-skody" className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-2 border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">💰</span>
+                <span className="font-bold text-slate-900">Rozpad škody (detail)</span>
+              </div>
+            </a>
+            <a href="/metodika" className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-2 border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">📚</span>
+                <span className="font-bold text-slate-900">Metodika výpočtu</span>
+              </div>
+            </a>
+            <a href="/otazky/kdo-nakladal-s-prispevky" className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-2 border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">❓</span>
+                <span className="font-bold text-slate-900">Kdo nakládal s příspěvky?</span>
+              </div>
+            </a>
+            <a href="/pravni-ramec" className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-2 border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">⚖️</span>
+                <span className="font-bold text-slate-900">Právní rámec</span>
+              </div>
+            </a>
           </div>
         </section>
 
         {/* Navigace */}
-        <div className="flex items-center justify-between pt-8 mt-8">
+        <div className="flex items-center justify-between pt-8 mt-8 border-t-2 border-slate-200">
           <a
             href="/akteri"
             className="flex items-center gap-2 px-6 py-3 bg-slate-200 hover:bg-slate-300 rounded-lg font-bold text-slate-900 transition"
           >
             <span>←</span>
             <span>Všichni aktéři</span>
-          </a>
-          <a
-            href="/akteri/jaromir-pivonka"
-            className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold text-white transition"
-          >
-            <span>Jaromír Pivoňka</span>
-            <span>→</span>
           </a>
         </div>
       </div>
