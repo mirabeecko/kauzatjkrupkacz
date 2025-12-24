@@ -1,5 +1,7 @@
+import { showCityContent } from '@/lib/config';
+
 export default function DetailniAnalyzaPage() {
-  const analyses = [
+  const allAnalyses = [
     {
       title: 'Právní analýza: Prekluzivní lhůta § 259 NOZ',
       category: 'Právní analýza',
@@ -157,7 +159,13 @@ export default function DetailniAnalyzaPage() {
     },
   ];
 
-  const keyFindings = [
+  // Filter out city-related analyses
+  const cityRelatedAnalysisIndexes = [3, 4]; // Koordinace převratu, Střet zájmů Kuzma
+  const analyses = showCityContent()
+    ? allAnalyses
+    : allAnalyses.filter((_, index) => !cityRelatedAnalysisIndexes.includes(index));
+
+  const allKeyFindings = [
     {
       finding: 'Koordinovaný pokus o převrat',
       description: 'Město Krupka + SPORT Krupka + vyloučení členové = koordinovaný pokus o převzetí kontroly nad spolkem',
@@ -189,6 +197,12 @@ export default function DetailniAnalyzaPage() {
       actors: 6,
     },
   ];
+
+  // Filter out city-related key findings
+  const cityRelatedFindingIndexes = [0, 3]; // Koordinovaný pokus, Střet zájmů Kuzma
+  const keyFindings = showCityContent()
+    ? allKeyFindings
+    : allKeyFindings.filter((_, index) => !cityRelatedFindingIndexes.includes(index));
 
   return (
     <div className="min-h-screen bg-gray-50">

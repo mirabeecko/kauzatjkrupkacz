@@ -1,5 +1,7 @@
+import { showCityContent } from '@/lib/config';
+
 export default function SouvislostiPage() {
-  const connections = [
+  const allConnections = [
     {
       title: 'Koordinovaný pokus o převrat',
       category: 'Hlavní souvislost',
@@ -115,7 +117,13 @@ export default function SouvislostiPage() {
     },
   ];
 
-  const actorNetwork = [
+  // Filter out city-related connections when showCityContent is false
+  const cityRelatedConnectionIndexes = [0, 4, 5]; // Koordinovaný pokus, Střet zájmů Kuzma, Výměna zámků
+  const connections = showCityContent()
+    ? allConnections
+    : allConnections.filter((_, index) => !cityRelatedConnectionIndexes.includes(index));
+
+  const allActorNetwork = [
     {
       group: 'Město Krupka',
       color: 'red',
@@ -150,7 +158,12 @@ export default function SouvislostiPage() {
     },
   ];
 
-  const timelineConnections = [
+  // Filter out město Krupka group from actor network
+  const actorNetwork = showCityContent()
+    ? allActorNetwork
+    : allActorNetwork.filter(group => group.group !== 'Město Krupka');
+
+  const allTimelineConnections = [
     {
       period: '2021',
       title: 'Přípravná fáze',
@@ -199,6 +212,12 @@ export default function SouvislostiPage() {
       ],
     },
   ];
+
+  // Filter out city-related timeline periods
+  const cityRelatedPeriods = ['Prosinec 2023', 'Leden 2024']; // Koordinace and Realizace převratu
+  const timelineConnections = showCityContent()
+    ? allTimelineConnections
+    : allTimelineConnections.filter(period => !cityRelatedPeriods.includes(period.period));
 
   return (
     <div className="min-h-screen bg-gray-50">
