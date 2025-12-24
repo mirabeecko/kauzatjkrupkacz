@@ -135,7 +135,7 @@ export default function MiroslavBrozekPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -163,7 +163,7 @@ export default function MiroslavBrozekPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-green-100 text-sm font-medium mb-2">Statutární orgán spolku</div>
@@ -183,10 +183,10 @@ export default function MiroslavBrozekPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
               <span>Shrnutí</span>
@@ -206,7 +206,7 @@ export default function MiroslavBrozekPage() {
             {actor.responsibilities.map((resp, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow transition hover:shadow-lg"
+                className="p-4 md:p-6 bg-white rounded-xl shadow transition hover:shadow-lg"
               >
                 <div className="flex items-start gap-3 mb-3">
                   <span className="text-3xl">{resp.icon}</span>
@@ -225,7 +225,7 @@ export default function MiroslavBrozekPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ✅ Klíčové kroky a aktivity
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <div className="space-y-4">
               {actor.keyActions.map((action, index) => (
                 <div
@@ -273,7 +273,7 @@ export default function MiroslavBrozekPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl shadow ${statusColors[effort.status]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl shadow ${statusColors[effort.status]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-xl font-bold text-slate-900">{effort.title}</h3>
@@ -299,7 +299,7 @@ export default function MiroslavBrozekPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             🚧 Výzvy a překážky
           </h2>
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
               Přestože Miroslav Brožek byl legitimně zvolen a snažil se o nápravu situace,
               čelil mnoha překážkám:
@@ -331,7 +331,7 @@ export default function MiroslavBrozekPage() {
             ⚖️ Srovnání přístupu
           </h2>
           <div className="grid md:grid-cols-2 gap-3 md:gap-6">
-            <div className="p-6 bg-green-50 rounded-xl shadow">
+            <div className="p-4 md:p-6 bg-green-50 rounded-xl shadow">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">✅</span>
                 <h3 className="text-xl font-bold text-green-900">Miroslav Brožek</h3>
@@ -360,7 +360,7 @@ export default function MiroslavBrozekPage() {
               </ul>
             </div>
 
-            <div className="p-6 bg-red-50 rounded-xl shadow">
+            <div className="p-4 md:p-6 bg-red-50 rounded-xl shadow">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">❌</span>
                 <h3 className="text-xl font-bold text-red-900">Vaniš, Vlach, Kulík</h3>

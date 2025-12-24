@@ -130,7 +130,7 @@ export default function TomasSyrycanskyPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-orange-700 via-red-700 to-red-800 py-8 md:py-16 border-b border-red-600">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -150,7 +150,7 @@ export default function TomasSyrycanskyPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center gap-4">
               <div className="text-6xl">🎯</div>
               <div className="flex-1">
@@ -167,7 +167,7 @@ export default function TomasSyrycanskyPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
           <div className="bg-white rounded-xl shadow-lg p-8">
@@ -202,7 +202,7 @@ export default function TomasSyrycanskyPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[violation.severity]} border-2 shadow-md`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[violation.severity]} border-2 shadow-md`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -232,7 +232,7 @@ export default function TomasSyrycanskyPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             🎯 Plánovaný scénář převratu
           </h2>
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-8 shadow-lg border-2 border-red-200">
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-4 md:p-8 shadow-lg border-2 border-red-200">
             <div className="mb-8">
               <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span>📋</span>
@@ -297,7 +297,7 @@ export default function TomasSyrycanskyPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ⚖️ Právní kontext a možné trestné činy
           </h2>
-          <div className="bg-slate-50 rounded-xl p-8 shadow-md">
+          <div className="bg-slate-50 rounded-xl p-4 md:p-8 shadow-md">
             <div className="space-y-4">
               {actor.legalContext.map((item, index) => (
                 <div key={index} className="p-5 bg-white rounded-lg shadow-sm">

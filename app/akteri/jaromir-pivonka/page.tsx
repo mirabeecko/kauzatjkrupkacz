@@ -69,7 +69,7 @@ export default function JaromirPivonkaPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-orange-600 via-orange-700 to-red-800 py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -89,7 +89,7 @@ export default function JaromirPivonkaPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-orange-100 text-sm font-medium mb-2">Spolupodíl na škodě oddílu</div>
@@ -108,10 +108,10 @@ export default function JaromirPivonkaPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
               <span>Shrnutí</span>
@@ -124,7 +124,7 @@ export default function JaromirPivonkaPage() {
 
         {/* Info box o kolektivní odpovědnosti */}
         <section className="mb-12">
-          <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg">
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 md:p-6 rounded-lg">
             <div className="flex items-start gap-4">
               <span className="text-3xl">⚠️</span>
               <div>
@@ -165,7 +165,7 @@ export default function JaromirPivonkaPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -202,7 +202,7 @@ export default function JaromirPivonkaPage() {
             })}
           </div>
 
-          <div className="mt-6 p-6 bg-slate-900 text-white rounded-xl">
+          <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
               <span className="text-lg font-bold">CELKOVÁ ŠKODA ODDÍLU</span>
               <span className="text-3xl font-black">{actor.collectiveDamage.toLocaleString('cs-CZ')} Kč</span>
@@ -215,7 +215,7 @@ export default function JaromirPivonkaPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ⚖️ Předžalobní výzva
           </h2>
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <span className="text-4xl">📨</span>
               <div>
@@ -224,7 +224,7 @@ export default function JaromirPivonkaPage() {
               </div>
             </div>
 
-            <div className="bg-white/70 rounded-lg p-6 mb-6">
+            <div className="bg-white/70 rounded-lg p-4 md:p-6 mb-6">
               <h3 className="text-lg font-bold text-slate-900 mb-4">Požadované plnění</h3>
               <div className="space-y-3">
                 {actor.predzalobniVyzva.items.map((item, index) => (
@@ -276,7 +276,7 @@ export default function JaromirPivonkaPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             📊 Časová osa klíčových kroků
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <div className="space-y-4">
               {actor.keyActions.map((action, index) => (
                 <div
@@ -313,7 +313,7 @@ export default function JaromirPivonkaPage() {
             📄 Dokumenty a důkazy
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-6 bg-amber-50 rounded-xl shadow hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-amber-50 rounded-xl shadow hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📨</span>
                 <div>
@@ -333,7 +333,7 @@ export default function JaromirPivonkaPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-blue-50 rounded-xl shadow hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-blue-50 rounded-xl shadow hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">⚖️</span>
                 <div>
@@ -353,7 +353,7 @@ export default function JaromirPivonkaPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📊</span>
                 <div>
@@ -373,7 +373,7 @@ export default function JaromirPivonkaPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-purple-50 rounded-xl shadow hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-purple-50 rounded-xl shadow hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">🏛️</span>
                 <div>

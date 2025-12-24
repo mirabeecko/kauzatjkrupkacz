@@ -30,7 +30,7 @@ export default function MarekVanisPage() {
   };
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-6xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-4xl font-bold text-slate-900">{actor.name}</h1>
         <span className={`text-sm font-semibold px-3 py-1 rounded-full ${actor.status === 'negative' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`}>
@@ -42,7 +42,7 @@ export default function MarekVanisPage() {
         {actor.role}
       </p>
 
-      <div className={`p-6 rounded-lg border-2 ${statusColors[actor.status]} mb-8`}>
+      <div className={`p-4 md:p-6 rounded-lg border-2 ${statusColors[actor.status]} mb-8`}>
         <div className="flex items-center mb-3">
           <span className="text-2xl mr-3">{statusIcons[actor.status]}</span>
           <h3 className="text-2xl font-semibold text-slate-900">Přehled</h3>

@@ -106,7 +106,7 @@ export default function TemataPage() {
   const categories = Array.from(new Set(topics.map(t => t.category)));
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-6xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
       {/* Hero Header */}
       <div className="mb-12 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 rounded-2xl shadow-lg p-10 text-white">
         <h1 className="text-4xl font-bold mb-4 text-center">
@@ -154,7 +154,7 @@ export default function TemataPage() {
         </div>
       ))}
 
-      <div className="mt-12 p-6 bg-slate-50 rounded-lg shadow">
+      <div className="mt-12 p-4 md:p-6 bg-slate-50 rounded-lg shadow">
         <h3 className="text-lg font-bold text-slate-900 mb-2">
           💡 Jak pracovat s tématy
         </h3>
@@ -186,7 +186,7 @@ function TopicCard({ topic, featured }: { topic: Topic; featured?: boolean }) {
     <a
       href={`/temata/${topic.slug}`}
       className={`
-        block p-6 rounded-xl transition-all duration-200 hover:shadow-lg
+        block p-4 md:p-6 rounded-xl transition-all duration-200 hover:shadow-lg
         ${featured
           ? 'bg-red-50 shadow-md hover:shadow-xl'
           : 'bg-white shadow hover:shadow-md'

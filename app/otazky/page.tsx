@@ -41,7 +41,7 @@ export default function OtazkyPage() {
   const categories = Array.from(new Set(questions.map(q => q.category)));
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-5xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
           Otázky, které si musí položit každý
@@ -51,7 +51,7 @@ export default function OtazkyPage() {
         </p>
       </div>
 
-      <div className="mb-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border border-blue-200">
         <h3 className="text-lg font-bold text-blue-900 mb-2">
           Jak číst otázky
         </h3>
@@ -82,7 +82,7 @@ export default function OtazkyPage() {
         </section>
       ))}
 
-      <div className="mt-12 p-6 bg-slate-50 rounded-lg border border-slate-200">
+      <div className="mt-12 p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
         <h3 className="text-lg font-bold text-slate-900 mb-2">
           Máte další otázku?
         </h3>
@@ -111,7 +111,7 @@ function QuestionCard({ question }: { question: Question }) {
   return (
     <Link href={`/otazky/${question.slug}`}>
       <div className={`
-        p-6 rounded-lg border-2 hover:shadow-md transition
+        p-4 md:p-6 rounded-lg border-2 hover:shadow-md transition
         ${importanceColors[question.importance]}
         hover:border-blue-500
       `}>

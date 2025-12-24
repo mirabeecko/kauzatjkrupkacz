@@ -223,7 +223,7 @@ export default function SouvislostiPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900 py-8 md:py-16 border-b border-purple-600">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-6xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
             🔗 Souvislosti
           </h1>
@@ -234,7 +234,7 @@ export default function SouvislostiPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-6xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
         {/* Síť aktérů */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
@@ -250,7 +250,7 @@ export default function SouvislostiPage() {
               };
 
               return (
-                <div key={index} className={`p-6 rounded-xl ${colorClasses[group.color as keyof typeof colorClasses]} border-2 shadow-md`}>
+                <div key={index} className={`p-4 md:p-6 rounded-xl ${colorClasses[group.color as keyof typeof colorClasses]} border-2 shadow-md`}>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">{group.group}</h3>
                   <div className="space-y-3">
                     {group.members.map((member, idx) => (
@@ -293,7 +293,7 @@ export default function SouvislostiPage() {
               };
 
               return (
-                <div key={index} className={`p-6 rounded-xl ${severityColors[connection.severity]} border-2 shadow-lg`}>
+                <div key={index} className={`p-4 md:p-6 rounded-xl ${severityColors[connection.severity]} border-2 shadow-lg`}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -392,7 +392,7 @@ export default function SouvislostiPage() {
             🎯 Identifikované vzorce a systémové problémy
           </h2>
           <div className="grid md:grid-cols-2 gap-3 md:gap-6">
-            <div className="p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow-lg border-2 border-red-200">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow-lg border-2 border-red-200">
               <h3 className="text-xl font-bold text-red-900 mb-4">🔴 Vzorec 1: Koordinovaný postup</h3>
               <p className="text-sm text-slate-700 mb-3">
                 Město Krupka (politická moc) + SPORT Krupka (kontrola prostor) + vyloučení členové (formální legitimita)
@@ -404,7 +404,7 @@ export default function SouvislostiPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl shadow-lg border-2 border-orange-200">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl shadow-lg border-2 border-orange-200">
               <h3 className="text-xl font-bold text-orange-900 mb-4">🟠 Vzorec 2: Systematické ignorování</h3>
               <p className="text-sm text-slate-700 mb-3">
                 3+ roky opakovaného ignorování výzev, dohod a právních povinností → vytvoření prostoru pro další porušení.
@@ -415,7 +415,7 @@ export default function SouvislostiPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl shadow-lg border-2 border-yellow-200">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl shadow-lg border-2 border-yellow-200">
               <h3 className="text-xl font-bold text-yellow-900 mb-4">🟡 Vzorec 3: Dvojí metr</h3>
               <p className="text-sm text-slate-700 mb-3">
                 Aktéři požadují dodržování pravidel od druhých, sami je systematicky porušují.
@@ -426,7 +426,7 @@ export default function SouvislostiPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg border-2 border-purple-200">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg border-2 border-purple-200">
               <h3 className="text-xl font-bold text-purple-900 mb-4">🟣 Systémový problém: Střet zájmů</h3>
               <p className="text-sm text-slate-700 mb-3">
                 Jan Kuzma jako starosta + jednatel městské společnosti = nebezpečná koncentrace moci umožňující zneužití.

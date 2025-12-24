@@ -159,7 +159,7 @@ export default function AkteriPage() {
   const categories = Array.from(new Set(actors.map(a => a.category)));
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-6xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
           Aktéři
@@ -169,7 +169,7 @@ export default function AkteriPage() {
         </p>
       </div>
 
-      <div className="mb-8 p-6 bg-amber-50 rounded-lg border border-amber-200">
+      <div className="mb-8 p-4 md:p-6 bg-amber-50 rounded-lg border border-amber-200">
         <h3 className="text-lg font-bold text-amber-900 mb-2">
           ⚖️ Zásady zobrazení aktérů
         </h3>
@@ -200,7 +200,7 @@ export default function AkteriPage() {
       ))}
 
       <div className="mt-12 grid md:grid-cols-2 gap-3 md:gap-6">
-        <div className="p-6 bg-blue-50 rounded-lg border border-blue-200">
+        <div className="p-4 md:p-6 bg-blue-50 rounded-lg border border-blue-200">
           <h3 className="text-lg font-bold text-blue-900 mb-2">
             📊 Statistiky
           </h3>
@@ -213,7 +213,7 @@ export default function AkteriPage() {
             )}
           </div>
         </div>
-        <div className="p-6 bg-slate-50 rounded-lg border border-slate-200">
+        <div className="p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
           <h3 className="text-lg font-bold text-slate-900 mb-2">
             🔗 Související sekce
           </h3>
@@ -261,7 +261,7 @@ function ActorCard({ actor }: { actor: Actor }) {
   return (
     <a
       href={`/akteri/${actor.slug}`}
-      className={`block p-6 rounded-lg border-2 hover:shadow-md transition ${statusColors[actor.status]} hover:border-blue-500`}
+      className={`block p-4 md:p-6 rounded-lg border-2 hover:shadow-md transition ${statusColors[actor.status]} hover:border-blue-500`}
     >
       <div className="flex items-start justify-between mb-3">
         <div>

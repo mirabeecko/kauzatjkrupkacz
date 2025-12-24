@@ -43,7 +43,7 @@ function FinancialCard({ name, role, totalAmount, breakdown, evidence, actorSlug
   };
 
   return (
-    <div className={`p-6 rounded-xl border-2 ${severityColors[severity]} mb-6`}>
+    <div className={`p-4 md:p-6 rounded-xl border-2 ${severityColors[severity]} mb-6`}>
       <div className="flex items-start justify-between mb-4">
         <div>
           <Link href={`/akteri/${actorSlug}`} className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition">
@@ -110,7 +110,7 @@ function SummaryStat({ label, value, icon, color }: SummaryStatProps) {
   };
 
   return (
-    <div className={`${colors[color]} text-white rounded-2xl p-6 text-center`}>
+    <div className={`${colors[color]} text-white rounded-2xl p-4 md:p-6 text-center`}>
       <div className="text-5xl mb-3">{icon}</div>
       <div className="text-3xl font-black mb-2">{value}</div>
       <div className="text-sm font-medium opacity-90">{label}</div>
@@ -276,7 +276,7 @@ export default function CislaPage() {
   const highSeverity = financialData.filter(d => d.severity === 'high').reduce((s, d) => s + d.totalAmount, 0);
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-6xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
       {/* Hlavička */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
@@ -288,7 +288,7 @@ export default function CislaPage() {
       </div>
 
       {/* Infoblok */}
-      <div className="mb-12 p-6 bg-blue-50 rounded-xl border border-blue-200">
+      <div className="mb-12 p-4 md:p-6 bg-blue-50 rounded-xl border border-blue-200">
         <h3 className="text-lg font-bold text-blue-900 mb-3">
           📊 Jak číst tuto stránku
         </h3>
@@ -346,7 +346,7 @@ export default function CislaPage() {
       </div>
 
       {/* Celkový součet */}
-      <div className="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-2xl p-8 mb-12">
+      <div className="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-2xl p-4 md:p-8 mb-12">
         <h2 className="text-3xl font-black mb-6 text-center">
           📊 Celkový přehled škody
         </h2>
@@ -383,7 +383,7 @@ export default function CislaPage() {
 
       {/* Souvislející sekce */}
       <div className="grid md:grid-cols-2 gap-3 md:gap-6">
-        <div className="p-6 bg-slate-50 rounded-lg border border-slate-200">
+        <div className="p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
           <h3 className="text-lg font-bold text-slate-900 mb-4">
             🔗 Související sekce
           </h3>
@@ -403,7 +403,7 @@ export default function CislaPage() {
           </div>
         </div>
 
-        <div className="p-6 bg-red-100 rounded-lg border-2 border-red-400 shadow-lg">
+        <div className="p-4 md:p-6 bg-red-100 rounded-lg border-2 border-red-400 shadow-lg">
           <h3 className="text-2xl font-bold text-red-900 mb-4 flex items-center gap-2">
             <span>🔥</span>
             <span>Klíčový fakt</span>
@@ -435,7 +435,7 @@ export default function CislaPage() {
 
         <div className="grid md:grid-cols-3 gap-3 md:gap-6">
           {/* Judikát 1 */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 md:p-6 border-2 border-blue-300 shadow-lg">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 md:p-4 md:p-6 border-2 border-blue-300 shadow-lg">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-4xl">⚖️</span>
               <div>
@@ -455,7 +455,7 @@ export default function CislaPage() {
           </div>
 
           {/* Judikát 2 */}
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 md:p-6 border-2 border-orange-300 shadow-lg">
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 md:p-4 md:p-6 border-2 border-orange-300 shadow-lg">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-4xl">⚖️</span>
               <div>
@@ -475,7 +475,7 @@ export default function CislaPage() {
           </div>
 
           {/* Judikát 3 */}
-          <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4 md:p-6 border-2 border-red-300 shadow-lg">
+          <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4 md:p-4 md:p-6 border-2 border-red-300 shadow-lg">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-4xl">⚖️</span>
               <div>
@@ -495,7 +495,7 @@ export default function CislaPage() {
           </div>
         </div>
 
-        <div className="mt-6 p-6 bg-slate-50 rounded-xl border-2 border-slate-300">
+        <div className="mt-6 p-4 md:p-6 bg-slate-50 rounded-xl border-2 border-slate-300">
           <h4 className="font-bold text-slate-900 mb-3">📋 Další relevantní právní předpisy:</h4>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div className="p-3 bg-white rounded-lg">

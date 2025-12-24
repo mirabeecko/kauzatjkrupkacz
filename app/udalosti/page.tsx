@@ -211,7 +211,7 @@ export default function UdalostiPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-20">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl text-center">
+        <div className="container mx-auto px-3 md:px-8 max-w-6xl text-center">
           <div className="inline-block px-4 py-2 bg-blue-600 rounded-full text-sm font-bold mb-6">
             📅 ČASOVÁ OSA KAUZY
           </div>
@@ -240,7 +240,7 @@ export default function UdalostiPage() {
 
       {/* Phase Navigation */}
       <div className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b-2 border-slate-200 shadow-lg">
-        <div className="container mx-auto px-8 py-4 max-w-6xl">
+        <div className="container mx-auto px-3 md:px-8 py-4 max-w-6xl">
           <div className="grid md:grid-cols-3 gap-4">
             {phases.map((phase) => (
               <div
@@ -257,11 +257,11 @@ export default function UdalostiPage() {
       </div>
 
       {/* Timeline */}
-      <div className="container mx-auto px-8 py-8 md:py-16 max-w-6xl">
+      <div className="container mx-auto px-3 md:px-8 py-8 md:py-16 max-w-6xl">
         {phases.map((phase) => (
           <div key={phase.id} className="mb-20">
             {/* Phase Header */}
-            <div className={`bg-gradient-to-r ${phase.color} rounded-2xl p-8 text-white shadow-2xl mb-12`}>
+            <div className={`bg-gradient-to-r ${phase.color} rounded-2xl p-4 md:p-8 text-white shadow-2xl mb-12`}>
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-sm font-semibold mb-2 opacity-90">FÁZE {phase.id}</div>
@@ -292,8 +292,8 @@ export default function UdalostiPage() {
       </div>
 
       {/* ČAST Callout */}
-      <div className="container mx-auto px-4 md:px-8 max-w-6xl mb-16">
-        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-white shadow-2xl">
+      <div className="container mx-auto px-3 md:px-8 max-w-6xl mb-16">
+        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-4 md:p-8 text-white shadow-2xl">
           <div className="flex items-start gap-3 md:gap-6">
             <div className="text-7xl">🏓</div>
             <div className="flex-1">
@@ -307,7 +307,7 @@ export default function UdalostiPage() {
               <div className="flex gap-4">
                 <a
                   href="/cast"
-                  className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105 inline-block"
+                  className="px-3 md:px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105 inline-block"
                 >
                   🏓 Zobrazit timeline ČAST
                 </a>
@@ -323,7 +323,7 @@ export default function UdalostiPage() {
 
       {/* Bottom CTA */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center text-white">
+        <div className="container mx-auto px-3 md:px-8 max-w-4xl text-center text-white">
           <h2 className="text-3xl font-black mb-4">
             Prozkoumejte další detaily kauzy
           </h2>
@@ -333,19 +333,19 @@ export default function UdalostiPage() {
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="/akteri"
-              className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105"
+              className="px-3 md:px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl transition transform hover:scale-105"
             >
               👥 Aktéři kauzy
             </a>
             <a
               href="/cisla"
-              className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
+              className="px-3 md:px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
             >
               💰 Finanční přehled
             </a>
             <a
               href="/cast"
-              className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
+              className="px-3 md:px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition"
             >
               🏓 Timeline ČAST
             </a>
@@ -414,7 +414,7 @@ function TimelineEvent({ event, index }: { event: Event; index: number }) {
         >
           <div className="bg-white rounded-2xl shadow-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-300 overflow-hidden transform hover:scale-105 hover:shadow-2xl">
             {/* Card Header */}
-            <div className={`${style.bg} p-6 text-white`}>
+            <div className={`${style.bg} p-4 md:p-6 text-white`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="text-6xl">{event.icon}</div>
                 <div className="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold">

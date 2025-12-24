@@ -67,7 +67,7 @@ export default function MarekVanisPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 py-8 md:py-16 border-b border-slate-600">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -87,7 +87,7 @@ export default function MarekVanisPage() {
             </div>
           </div>
 
-          <div className="bg-slate-800/40 backdrop-blur border border-slate-600/50 rounded-2xl p-8 mt-8">
+          <div className="bg-slate-800/40 backdrop-blur border border-slate-600/50 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-slate-300 text-sm font-medium mb-2">Celková způsobená škoda</div>
@@ -103,13 +103,13 @@ export default function MarekVanisPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Porušení povinností a podvodné jednání */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ⚠️ Porušení povinností a podvodné jednání
           </h2>
-          <div className="bg-slate-50 rounded-xl p-8 shadow-md">
+          <div className="bg-slate-50 rounded-xl p-4 md:p-8 shadow-md">
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
                 <span className="text-2xl flex-shrink-0">📋</span>
@@ -222,7 +222,7 @@ export default function MarekVanisPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg shadow`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg shadow`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -262,7 +262,7 @@ export default function MarekVanisPage() {
             })}
           </div>
 
-          <div className="mt-6 p-6 bg-slate-900 text-white rounded-xl">
+          <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
               <span className="text-lg font-bold">CELKOVÁ ŠKODA</span>
               <span className="text-3xl font-black">{actor.totalDamage.toLocaleString('cs-CZ')} Kč</span>
@@ -275,7 +275,7 @@ export default function MarekVanisPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             ⚖️ Předžalobní výzva
           </h2>
-          <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-4 md:p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <span className="text-4xl">📨</span>
               <div>
@@ -284,7 +284,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="bg-white/70 rounded-lg p-6 mb-6">
+            <div className="bg-white/70 rounded-lg p-4 md:p-6 mb-6">
               <h3 className="text-lg font-bold text-slate-900 mb-4">Požadované plnění</h3>
               <div className="space-y-3">
                 {actor.predzalobniVyzva.items.map((item, index) => (
@@ -373,7 +373,7 @@ export default function MarekVanisPage() {
             📄 Dokumenty a důkazy
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📨</span>
                 <div>
@@ -393,7 +393,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">⚖️</span>
                 <div>
@@ -413,7 +413,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📊</span>
                 <div>
@@ -433,7 +433,7 @@ export default function MarekVanisPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="p-4 md:p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition">
               <div className="flex items-start gap-4">
                 <span className="text-4xl">📧</span>
                 <div>

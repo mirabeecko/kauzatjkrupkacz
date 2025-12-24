@@ -1,6 +1,6 @@
 export default function PrehledPage() {
   return (
-    <div className="container mx-auto px-8 py-12 max-w-4xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
       <div className="mb-8">
         <div className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
           ⚡ 5 minut čtení
@@ -15,7 +15,7 @@ export default function PrehledPage() {
 
       <div className="space-y-8">
         {/* Co se stalo */}
-        <section className="bg-white p-6 rounded-lg border border-slate-200">
+        <section className="bg-white p-4 md:p-6 rounded-lg border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
             <span className="text-3xl mr-3">📋</span>
             Co se stalo?
@@ -45,7 +45,7 @@ export default function PrehledPage() {
         </section>
 
         {/* Kdo je kdo */}
-        <section className="bg-white p-6 rounded-lg border border-slate-200">
+        <section className="bg-white p-4 md:p-6 rounded-lg border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
             <span className="text-3xl mr-3">👥</span>
             Kdo je kdo?
@@ -91,7 +91,7 @@ export default function PrehledPage() {
         </section>
 
         {/* Číselné údaje */}
-        <section className="bg-white p-6 rounded-lg border border-slate-200">
+        <section className="bg-white p-4 md:p-6 rounded-lg border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
             <span className="text-3xl mr-3">💰</span>
             Číselné údaje
@@ -119,7 +119,7 @@ export default function PrehledPage() {
         </section>
 
         {/* Časová osa */}
-        <section className="bg-white p-6 rounded-lg border border-slate-200">
+        <section className="bg-white p-4 md:p-6 rounded-lg border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
             <span className="text-3xl mr-3">📅</span>
             Časová osa
@@ -165,7 +165,7 @@ export default function PrehledPage() {
         </section>
 
         {/* Proč je to důležité */}
-        <section className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+        <section className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
           <h2 className="text-2xl font-bold text-blue-900 mb-4 flex items-center">
             <span className="text-3xl mr-3">⚠️</span>
             Proč je to důležité?
@@ -191,7 +191,7 @@ export default function PrehledPage() {
         </section>
 
         {/* Další kroky */}
-        <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <section className="bg-slate-50 p-4 md:p-6 rounded-lg border border-slate-200">
           <h3 className="text-xl font-bold text-slate-900 mb-4">
             Chcete se dozvědět více?
           </h3>

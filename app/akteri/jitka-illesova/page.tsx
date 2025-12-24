@@ -76,7 +76,7 @@ export default function JitkaIllesovaPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-purple-600 via-violet-700 to-indigo-800 py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -96,7 +96,7 @@ export default function JitkaIllesovaPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-purple-100 text-sm font-medium mb-2">Obdržená odměna za neuzavřené účetnictví</div>
@@ -115,10 +115,10 @@ export default function JitkaIllesovaPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
               <span>Shrnutí</span>
@@ -131,7 +131,7 @@ export default function JitkaIllesovaPage() {
 
         {/* Info box o roli účetního */}
         <section className="mb-12">
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 rounded-lg">
             <div className="flex items-start gap-4">
               <span className="text-3xl">ℹ️</span>
               <div>
@@ -165,7 +165,7 @@ export default function JitkaIllesovaPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">{fact.icon}</span>
@@ -199,7 +199,7 @@ export default function JitkaIllesovaPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${typeColors[item.type]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl ${typeColors[item.type]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -248,7 +248,7 @@ export default function JitkaIllesovaPage() {
             {actor.impacts.map((impact, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow transition hover:shadow-lg"
+                className="p-4 md:p-6 bg-white rounded-xl shadow transition hover:shadow-lg"
               >
                 <div className="flex items-start gap-3 mb-3">
                   <span className="text-3xl">{impact.icon}</span>
@@ -267,7 +267,7 @@ export default function JitkaIllesovaPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             📊 Časová osa klíčových kroků
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <div className="space-y-4">
               {actor.keyActions.map((action, index) => (
                 <div
@@ -307,7 +307,7 @@ export default function JitkaIllesovaPage() {
 
         {/* Právní aspekty */}
         <section className="mb-12">
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl shadow p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
               <span>⚖️</span>
               <span>Právní aspekty</span>

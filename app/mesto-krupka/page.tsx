@@ -179,7 +179,7 @@ export default function MestoKrupkaPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-slate-800 via-blue-800 to-slate-900 py-8 md:py-16 border-b border-slate-600">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-6xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -199,7 +199,7 @@ export default function MestoKrupkaPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center gap-4">
               <div className="text-6xl">🎯</div>
               <div className="flex-1">
@@ -216,7 +216,7 @@ export default function MestoKrupkaPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-6xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
         {/* Klíčové osoby */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
@@ -224,7 +224,7 @@ export default function MestoKrupkaPage() {
           </h2>
           <div className="grid gap-3 md:gap-6">
             {keyFigures.map((person, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-4 md:p-8 border-2 border-slate-200">
+              <div key={index} className="bg-white rounded-xl shadow-lg p-4 md:p-4 md:p-8 border-2 border-slate-200">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">{person.name}</h3>
@@ -273,7 +273,7 @@ export default function MestoKrupkaPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[violation.severity]} border-2 shadow-md`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[violation.severity]} border-2 shadow-md`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-xl font-bold text-slate-900 flex-1">{violation.title}</h3>
@@ -310,7 +310,7 @@ export default function MestoKrupkaPage() {
                 return (
                   <div
                     key={index}
-                    className={`p-6 rounded-lg ${style.bg} border-2 ${event.severity === 'critical' ? 'border-red-400' : event.severity === 'high' ? 'border-orange-400' : 'border-slate-200'}`}
+                    className={`p-4 md:p-6 rounded-lg ${style.bg} border-2 ${event.severity === 'critical' ? 'border-red-400' : event.severity === 'high' ? 'border-orange-400' : 'border-slate-200'}`}
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
@@ -346,7 +346,7 @@ export default function MestoKrupkaPage() {
 
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow-lg p-4 md:p-8 border-2 border-red-200">
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow-lg p-4 md:p-4 md:p-8 border-2 border-red-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📌</span>
               <span>Shrnutí postupu města a SPORT Krupka</span>

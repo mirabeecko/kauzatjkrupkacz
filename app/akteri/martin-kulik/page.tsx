@@ -68,7 +68,7 @@ export default function MartinKulikPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
           <div className="flex items-start justify-between mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -91,7 +91,7 @@ export default function MartinKulikPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-green-100 text-sm font-medium mb-2">Celková způsobená škoda</div>
@@ -107,10 +107,10 @@ export default function MartinKulikPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 py-12 max-w-5xl">
+      <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
         {/* Shrnutí */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
               <span>Shrnutí</span>
@@ -137,7 +137,7 @@ export default function MartinKulikPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">{fact.icon}</span>
@@ -156,7 +156,7 @@ export default function MartinKulikPage() {
 
         {/* Otázka legitimity */}
         <section className="mb-12">
-          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl shadow p-8 shadow-lg">
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl shadow p-4 md:p-8 shadow-lg">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-5xl">⚠️</span>
               <div>
@@ -213,7 +213,7 @@ export default function MartinKulikPage() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
+                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -247,7 +247,7 @@ export default function MartinKulikPage() {
             })}
           </div>
 
-          <div className="mt-6 p-6 bg-slate-900 text-white rounded-xl">
+          <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
               <span className="text-lg font-bold">CELKOVÁ ŠKODA</span>
               <span className="text-3xl font-black">{actor.totalDamage.toLocaleString('cs-CZ')} Kč</span>
@@ -260,7 +260,7 @@ export default function MartinKulikPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             📊 Srovnání ročních příspěvků oddílů
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-green-100 shadow rounded-lg">
                 <div className="flex items-center gap-3">
@@ -304,7 +304,7 @@ export default function MartinKulikPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
             📊 Časová osa klíčových kroků
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
             <div className="space-y-4">
               {actor.keyActions.map((action, index) => (
                 <div

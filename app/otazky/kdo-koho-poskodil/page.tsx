@@ -1,6 +1,6 @@
 export default function KdoKohoPoskodil() {
   return (
-    <div className="container mx-auto px-8 py-12 max-w-4xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-4xl">
       <nav className="text-sm text-slate-600 mb-6">
         <a href="/otazky" className="hover:text-blue-600">← Všechny otázky</a>
         <span className="mx-2">/</span>
@@ -16,7 +16,7 @@ export default function KdoKohoPoskodil() {
         </h1>
       </div>
 
-      <section className="mb-8 p-6 bg-blue-50 rounded-lg shadow">
+      <section className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg shadow">
         <h2 className="text-xl font-bold text-blue-900 mb-3 flex items-center">
           <span className="text-2xl mr-2">💡</span>
           Proč je otázka důležitá
@@ -108,7 +108,7 @@ odné verze:
         </div>
       </section>
 
-      <section className="mb-8 p-6 bg-slate-50 rounded-lg shadow">
+      <section className="mb-8 p-4 md:p-6 bg-slate-50 rounded-lg shadow">
         <h2 className="text-xl font-bold text-slate-900 mb-3">
           ⚖️ Právní kontext
         </h2>
@@ -140,7 +140,7 @@ odné verze:
         </div>
       </section>
 
-      <section className="p-6 bg-amber-50 rounded-lg shadow">
+      <section className="p-4 md:p-6 bg-amber-50 rounded-lg shadow">
         <h3 className="text-xl font-bold text-amber-900 mb-3">
           📌 Shrnutí
         </h3>

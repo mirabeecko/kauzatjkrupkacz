@@ -71,7 +71,7 @@ export default function PointyPage() {
   ];
 
   return (
-    <div className="container mx-auto px-8 py-12 max-w-6xl">
+    <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-6xl">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
           Pointy
@@ -81,7 +81,7 @@ export default function PointyPage() {
         </p>
       </div>
 
-      <div className="mb-8 p-6 bg-purple-50 rounded-lg border border-purple-200">
+      <div className="mb-8 p-4 md:p-6 bg-purple-50 rounded-lg border border-purple-200">
         <h3 className="text-lg font-bold text-purple-900 mb-2">
           💡 Co je Insight Card (Pointa)?
         </h3>
@@ -109,13 +109,13 @@ export default function PointyPage() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-3 md:gap-6 mb-12">
+      <div className="grid md:grid-cols-2 gap-3 md:gap-4 md:p-6 mb-12">
         {insights.map(insight => (
           <InsightCard key={insight.slug} {...insight} />
         ))}
       </div>
 
-      <div className="p-6 bg-slate-50 rounded-lg border border-slate-200">
+      <div className="p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
         <h3 className="text-lg font-bold text-slate-900 mb-2">
           🔗 Související sekce
         </h3>
