@@ -1,3 +1,5 @@
+import ClassificationBadge from '@/components/ClassificationBadge';
+
 export default function GustavVlachPage() {
   const actor = {
     name: 'Gustav Vlach',
@@ -7,72 +9,117 @@ export default function GustavVlachPage() {
     status: 'negative' as const,
     totalDamage: 1041378,
     membershipStatus: 'Zánik členství neplacením příspěvků',
-    summary: 'Celková škoda lyžařského oddílu: 1.041.378 Kč. Nedodal seznamy členů. Přiznal hotovost 132.523 Kč v pokladně, kterou nepředal.',
     breakdown: [
       {
-        label: 'Zapřené oddílové příspěvky',
+        label: 'Neodvedené oddílové příspěvky',
         amount: 379200,
-        description: '79 členů × 1.200 Kč/rok × 4 roky (2020-2023). Vybíral příspěvky členů oddílu, ale spolku je neodvedl.',
-        severity: 'critical' as const,
+        description: 'Oddíl lyžování neeviduje odvod příspěvků za období 2020-2023. 79 členů × 1.200 Kč/rok × 4 roky.',
+        classification: 'evidovano' as const,
+        note: 'Výpočet založen na odhadech počtu členů (seznamy nebyly doloženy).',
       },
       {
-        label: 'Nezaplacené energie',
+        label: 'Náklady za energie',
         amount: 256455,
-        description: 'Elektřina za období 2020-2023. Oddíl používal prostory, ale energie neplatil. Nejvyšší dluh ze všech oddílů.',
-        severity: 'critical' as const,
+        description: 'Z faktur vyplývá, že náklady za elektřinu ve výši 256.455 Kč za období 2020-2023 nebyly uhrazeny. Prostory byly oddílem využívány.',
+        classification: 'dolozeno' as const,
+        note: 'Faktury dodavatelů, výzvy k úhradě. Nejvyšší dluh za energie ze všech oddílů.',
       },
       {
         label: 'Pokladna oddílu k 31.12.2020',
         amount: 132523,
-        description: 'Hotovost v pokladně oddílu k 31.12.2020. Vlach existenci hotovosti PŘIZNAL, ale nikdy ji nepředal.',
-        severity: 'high' as const,
+        description: 'Hotovost v pokladně oddílu k 31.12.2020 ve výši 132.523 Kč nebyla předána ani vyúčtována.',
+        classification: 'dolozeno' as const,
+        note: 'Písemné potvrzení existence hotovosti, výpověď při výslechu (2024).',
       },
       {
         label: 'Nezaplacené členské příspěvky',
         amount: 63200,
-        description: '79 členů × 200 Kč/rok × 4 roky (2021-2024). Úhrada svazům ČSTV, Ústeckému kraji, obci.',
-        severity: 'high' as const,
+        description: 'Členské příspěvky za období 2021-2024 (200 Kč × 4 roky × 79 členů). Úhrada svazům ČSTV, Ústeckému kraji, obci.',
+        classification: 'evidovano' as const,
+        note: 'Účetní evidence spolku.',
       },
     ],
-    keyActions: [
-      { text: 'Nedodal seznamy členů', date: '2021-2024', type: 'violation' },
-      { text: 'Zapíral oddílové příspěvky', amount: 379200, date: '2020-2023', type: 'violation' },
-      { text: 'Neplatil energie (nejvyšší dluh)', amount: 256455, date: '2020-2023', type: 'violation' },
-      { text: 'Přiznal pokladnu, kterou nepředal', amount: 132523, date: '31.12.2020', type: 'violation' },
-      { text: 'Neuhradil členské příspěvky', amount: 63200, date: '2021-2024', type: 'violation' },
-      { text: 'Zánik členství neplacením příspěvků', date: '2024', type: 'consequence' },
-    ],
-    criticalFacts: [
+    keyFacts: [
       {
-        icon: '🚨',
-        title: 'Přiznaná hotovost',
-        description: 'Gustav Vlach v komunikaci se spolkem PŘIZNAL existenci hotovosti 132.523 Kč v pokladně oddílu k 31.12.2020. Tuto částku však nikdy nepředal.',
-        severity: 'critical' as const,
+        icon: '💰',
+        title: 'Pokladna potvrzena písemně',
+        description: 'Existence hotovosti 132.523 Kč v pokladně oddílu k 31.12.2020 byla potvrzena písemnou komunikací. K datu zveřejnění spolek neeviduje její předání.',
+        classification: 'dolozeno' as const,
       },
       {
         icon: '⚡',
         title: 'Nejvyšší dluh za energie',
-        description: 'Lyžařský oddíl má ze všech oddílů nejvyšší dluh za energie: 256.455 Kč. Spolek musel tyto náklady pokrýt ze svého rozpočtu.',
-        severity: 'high' as const,
+        description: 'Lyžařský oddíl má ze všech oddílů nejvyšší dluh za energie: 256.455 Kč. Z faktur vyplývá, že prostory byly využívány, ale náklady nebyly uhrazeny.',
+        classification: 'dolozeno' as const,
       },
       {
         icon: '📋',
-        title: 'Nedodané seznamy členů',
-        description: 'Přes opakované výzvy nikdy nedodal aktualizované seznamy členů, což znemožnilo kontrolu hospodaření oddílu.',
-        severity: 'high' as const,
+        title: 'Seznamy členů nebyly doloženy',
+        description: 'K datu zveřejnění spolek neeviduje doložení aktualizovaných seznamů členů lyžařského oddílu, přestože byly zaslány opakované výzvy (2021-2024).',
+        classification: 'dolozeno' as const,
       },
     ],
+    missingDocuments: [
+      {
+        icon: '🎿',
+        title: 'Průkazy technické způsobilosti',
+        description: 'K datu zveřejnění spolek neeviduje doložení průkazů technické způsobilosti lyžařských vleků. Bez těchto dokumentů nelze provozovat lyžařské vleky podle platných předpisů.',
+        classification: 'dolozeno' as const,
+      },
+      {
+        icon: '📋',
+        title: 'Provozní dokumentace areálu',
+        description: 'K datu zveřejnění spolek neeviduje doložení provozní dokumentace týkající se lyžařského areálu (smlouvy, provozní řády, návody).',
+        classification: 'dolozeno' as const,
+      },
+      {
+        icon: '⚙️',
+        title: 'Technické listy k vlekům',
+        description: 'K datu zveřejnění spolek neeviduje doložení technických listů k lyžařským vlekům, které jsou nutné pro jejich bezpečný provoz a údržbu.',
+        classification: 'dolozeno' as const,
+      },
+      {
+        icon: '✅',
+        title: 'Dokumentace posledních revizí',
+        description: 'K datu zveřejnění spolek neeviduje doložení dokumentace o posledních provedených revizích zařízení, což je nutné pro splnění bezpečnostních a právních požadavků.',
+        classification: 'dolozeno' as const,
+      },
+    ],
+    keyEvents: [
+      { text: 'Činnost jako předseda lyžařského oddílu', date: '2020-2024', classification: 'dolozeno' as const },
+      { text: 'K datu zveřejnění neevidováno doložení seznamů členů', date: '2021-2024', classification: 'dolozeno' as const },
+      { text: 'K datu zveřejnění neevidováno doložení oddílových příspěvků', amount: 379200, date: '2020-2023', classification: 'evidovano' as const },
+      { text: 'Náklady za energie nebyly uhrazeny', amount: 256455, date: '2020-2023', classification: 'dolozeno' as const },
+      { text: 'Pokladna k 31.12.2020 nebyla předána', amount: 132523, date: '31.12.2020', classification: 'dolozeno' as const },
+      { text: 'K datu zveřejnění neevidováno doložení technické dokumentace areálu', date: '2021-2024', classification: 'dolozeno' as const },
+      { text: 'Zánik členství neplacením členských příspěvků', date: '2024', classification: 'dolozeno' as const },
+    ],
     relatedLinks: [
-      { label: 'Události s účastí Vlacha', href: '/udalosti?actor=gustav-vlach', icon: '📅' },
-      { label: 'Finanční přehled', href: '/cisla', icon: '💰' },
+      { label: 'Právní rámec a kontakt', href: '/pravni-ramec', icon: '⚖️' },
+      { label: 'Metodika výpočtu škody', href: '/metodika', icon: '📊' },
+      { label: 'Rozpad škody podle kategorií', href: '/rozpad-skody', icon: '💰' },
+      { label: 'Události s účastí', href: '/udalosti?actor=gustav-vlach', icon: '📅' },
       { label: 'Téma: Finance a majetek', href: '/temata/finance-a-majetek', icon: '📚' },
       { label: 'Téma: Členství a evidence', href: '/temata/clenstvi-a-evidence', icon: '📋' },
-      { label: 'Otázka: Kdo koho poškodil?', href: '/otazky/kdo-koho-poskodil', icon: '❓' },
     ],
   };
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-blue-900 text-white py-3">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl">
+          <p className="text-sm">
+            ⚖️ <strong>Právní upozornění:</strong> Osoba je uvedena výhradně v souvislosti s výkonem funkce ve spolku TJ Krupka z.s., nikoliv soukromě.
+            Uvedené informace vycházejí z dokumentů, které spolek eviduje. Nejde o pravomocné soudní rozhodnutí.
+            {' '}
+            <a href="/pravni-ramec" className="underline hover:text-blue-200">
+              Více informací o právním rámci →
+            </a>
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 py-8 md:py-16">
         <div className="container mx-auto px-3 md:px-8 max-w-5xl">
@@ -83,7 +130,7 @@ export default function GustavVlachPage() {
                   {actor.departmentIcon} {actor.department}
                 </span>
                 <span className="px-3 py-1 bg-purple-900/50 backdrop-blur rounded-full text-white text-sm font-bold">
-                  ⛔ {actor.membershipStatus}
+                  {actor.membershipStatus}
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
@@ -95,15 +142,18 @@ export default function GustavVlachPage() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 md:p-8 mt-8">
+          <div className="bg-white/10 backdrop-blur border-2 border-white/30 rounded-2xl p-4 md:p-8 mt-8">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-blue-100 text-sm font-medium mb-2">Celková způsobená škoda</div>
+                <div className="text-blue-100 text-sm font-medium mb-2">Evidovaná škoda oddílu</div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
                   {actor.totalDamage.toLocaleString('cs-CZ')} Kč
                 </div>
-                <div className="mt-4 px-4 py-2 bg-red-500/30 backdrop-blur rounded-lg border border-red-300">
-                  <span className="text-sm text-white font-bold">🏆 Nejvyšší škoda ze všech oddílů</span>
+                <div className="mt-4 flex items-center gap-2">
+                  <ClassificationBadge type="evidovano" />
+                  <span className="px-4 py-2 bg-blue-500/30 backdrop-blur rounded-lg border border-blue-300">
+                    <span className="text-sm text-white font-bold">Nejvyšší škoda ze všech oddílů</span>
+                  </span>
                 </div>
               </div>
               <div className="text-8xl opacity-20">
@@ -115,205 +165,286 @@ export default function GustavVlachPage() {
       </div>
 
       <div className="container mx-auto px-3 md:px-8 py-6 md:py-12 max-w-5xl">
-        {/* Shrnutí */}
+        {/* Kontext */}
         <section className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <span>📋</span>
-              <span>Shrnutí</span>
+              <span>Kontext</span>
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {actor.summary}
-            </p>
+            <div className="text-slate-700 leading-relaxed space-y-3">
+              <p>
+                Gustav Vlach byl předsedou lyžařského oddílu v období 2020-2024.
+                Spolek eviduje nesoulad ve finančním hospodaření oddílu ve výši <strong>1.041.378 Kč</strong>.
+                Tato částka představuje nejvyšší evidovanou škodu ze všech oddílů.
+              </p>
+              <p>
+                K datu zveřejnění spolek neeviduje doložení seznamů členů, oddílových příspěvků ani předání
+                pokladny oddílu. Dále chybí technická dokumentace lyžařského areálu nutná pro jeho provoz.
+              </p>
+              <p>
+                Členství ve spolku zaniklo neplacením členských příspěvků (2024).
+              </p>
+              <p className="text-sm text-slate-600 italic">
+                Více o metodice výpočtu škody a právních podkladech na stránkách{' '}
+                <a href="/metodika" className="text-blue-600 hover:underline font-semibold">Metodika</a>
+                {' '}a{' '}
+                <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">Právní rámec</a>.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Kritická fakta */}
+        {/* Klíčová fakta */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            🚨 Kritická fakta
+            📌 Klíčová fakta
           </h2>
           <div className="grid gap-4">
-            {actor.criticalFacts.map((fact, index) => {
-              const severityColors = {
-                critical: 'bg-red-50 border-red-400',
-                high: 'bg-orange-50 border-orange-400',
-                medium: 'bg-yellow-50 border-yellow-400',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[fact.severity]} transition hover:shadow-lg shadow`}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{fact.icon}</span>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{fact.title}</h3>
-                      <p className="text-sm text-slate-700 leading-relaxed">
-                        {fact.description}
-                      </p>
+            {actor.keyFacts.map((fact, index) => (
+              <div
+                key={index}
+                className="p-4 md:p-6 rounded-xl bg-white border-2 border-slate-200 hover:shadow-lg transition"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl">{fact.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{fact.title}</h3>
+                      <ClassificationBadge type={fact.classification} />
                     </div>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      {fact.description}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Rozpad škody */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            💰 Detailní rozpad škody
+            💰 Rozpad evidované škody oddílu
           </h2>
-          <div className="space-y-4">
-            {actor.breakdown.map((item, index) => {
-              const severityColors = {
-                critical: 'border-red-400 bg-red-50',
-                high: 'border-orange-400 bg-orange-50',
-                medium: 'border-yellow-400 bg-yellow-50',
-              };
-              const severityLabels = {
-                critical: '🔴 Kritické',
-                high: '🟠 Vysoké',
-                medium: '🟡 Střední',
-              };
-
-              return (
-                <div
-                  key={index}
-                  className={`p-4 md:p-6 rounded-xl ${severityColors[item.severity]} transition hover:shadow-lg`}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
-                        <span className="px-2 py-1 bg-white/60 rounded text-xs font-bold text-slate-700">
-                          {severityLabels[item.severity]}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                        {item.description}
-                      </p>
+          <div className="space-y-6">
+            {actor.breakdown.map((item, index) => (
+              <div
+                key={index}
+                className="p-4 md:p-6 rounded-xl bg-white border-2 border-slate-200 hover:shadow-lg transition"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{item.label}</h3>
+                      <ClassificationBadge type={item.classification} />
                     </div>
-                    <div className="text-right ml-6">
-                      <div className="text-2xl font-black text-slate-900">
-                        {item.amount.toLocaleString('cs-CZ')} Kč
-                      </div>
+                    <p className="text-sm text-slate-700 leading-relaxed mb-2">
+                      {item.description}
+                    </p>
+                    <p className="text-xs text-slate-600 italic">
+                      <strong>Poznámka:</strong> {item.note}
+                    </p>
+                  </div>
+                  <div className="text-right ml-6">
+                    <div className="text-2xl font-black text-slate-900">
+                      {item.amount.toLocaleString('cs-CZ')} Kč
                     </div>
-                  </div>
-                  <div className="w-full bg-white/60 rounded-full h-3 overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-700 transition-all duration-500"
-                      style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
-                    />
-                  </div>
-                  <div className="text-xs text-slate-600 mt-1 text-right">
-                    {((item.amount / actor.totalDamage) * 100).toFixed(1)}% z celkové škody
                   </div>
                 </div>
-              );
-            })}
+                <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-blue-500 to-purple-700 transition-all duration-500"
+                    style={{ width: `${(item.amount / actor.totalDamage) * 100}%` }}
+                  />
+                </div>
+                <div className="text-xs text-slate-600 mt-1 text-right">
+                  {((item.amount / actor.totalDamage) * 100).toFixed(1)}% z celkové škody oddílu
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="mt-6 p-4 md:p-6 bg-slate-900 text-white rounded-xl">
             <div className="flex items-center justify-between">
-              <span className="text-lg font-bold">CELKOVÁ ŠKODA</span>
+              <span className="text-lg font-bold">CELKOVÁ EVIDOVANÁ ŠKODA ODDÍLU</span>
               <span className="text-3xl font-black">{actor.totalDamage.toLocaleString('cs-CZ')} Kč</span>
             </div>
+            <p className="text-sm text-slate-300 mt-2">
+              Metodika výpočtu je popsána na stránce{' '}
+              <a href="/rozpad-skody" className="underline hover:text-white">
+                Rozpad škody podle kategorií
+              </a>
+              .
+            </p>
           </div>
         </section>
 
-        {/* Další porušení povinností */}
+        {/* Evidovaná nesouladná plnění */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            ⚠️ Další porušení povinností
+            📊 Evidovaná nesouladná plnění
           </h2>
-          <div className="bg-red-50 rounded-xl shadow p-8">
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
-                <span className="text-2xl flex-shrink-0">🎿</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Odmítl předat průkazy technické způsobilosti</h3>
-                  <p className="text-sm text-slate-700">
-                    Bez průkazů technické způsobilosti <strong>nelze provozovat lyžařské vleky</strong>.
-                    Vlach odmítl tyto kritické dokumenty předat, čímž fakticky znemožnil provoz areálu.
-                  </p>
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
+            <div className="space-y-6">
+              {/* 1. Seznamy členů */}
+              <div className="p-4 rounded-lg border-2 bg-orange-50 border-orange-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Seznamy členů nebyly doloženy</h3>
+                  <ClassificationBadge type="dolozeno" />
                 </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  K datu zveřejnění spolek neeviduje doložení aktualizovaných seznamů členů lyžařského oddílu,
+                  přestože byly zaslány opakované výzvy (2021-2024).
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Výzvy ze dne 13.9.2021, 10.12.2021, 11/2023.
+                </p>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
-                <span className="text-2xl flex-shrink-0">📋</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Nepředal žádné dokumenty k areálu</h3>
-                  <p className="text-sm text-slate-700">
-                    Odmítl předat veškerou dokumentaci týkající se lyžařského areálu, včetně smluv,
-                    provozních dokumentů a dalších materiálů nezbytných pro řádný provoz.
-                  </p>
+              {/* 2. Oddílové příspěvky */}
+              <div className="p-4 rounded-lg border-2 bg-orange-50 border-orange-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Neodvedené oddílové příspěvky</h3>
+                  <ClassificationBadge type="evidovano" />
                 </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z účetních podkladů za období 2020-2023 vyplývá, že oddílové příspěvky ve výši 379.200 Kč
+                  nebyly zaúčtovány jako příjem spolku.
+                </p>
+                <p className="text-sm text-slate-900 mb-2">
+                  <strong>Výpočet:</strong> 79 členů × 1.200 Kč/rok × 4 roky (2020-2023).
+                  <br />
+                  <strong>Metoda:</strong> Odhad počtu členů (seznamy nebyly doloženy) × sazba dle stanov × období.
+                  <br />
+                  <strong>Výhrada:</strong> Skutečná částka může být jiná bez doložených seznamů členů.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Účetní evidence TJ Krupka, odhady členské základny.
+                </p>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
-                <span className="text-2xl flex-shrink-0">⚙️</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Technické listy k vlekům</h3>
-                  <p className="text-sm text-slate-700">
-                    Nepředal technické listy k lyžařským vlekům, které jsou nutné pro jejich
-                    bezpečný provoz a údržbu.
-                  </p>
+              {/* 3. Energie */}
+              <div className="p-4 rounded-lg border-2 bg-red-50 border-red-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Náklady za energie nebyly uhrazeny</h3>
+                  <ClassificationBadge type="dolozeno" />
                 </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z faktur vyplývá, že náklady za elektřinu ve výši 256.455 Kč za období 2020-2023 nebyly uhrazeny.
+                  Prostory byly oddílem využívány. Jedná se o nejvyšší dluh za energie ze všech oddílů.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Faktury dodavatelů, výzvy k úhradě.
+                </p>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-200">
-                <span className="text-2xl flex-shrink-0">✅</span>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">Poslední revize</h3>
-                  <p className="text-sm text-slate-700">
-                    Nepředal dokumentaci o posledních provedených revizích zařízení,
-                    což je zásadní pro splnění bezpečnostních a právních požadavků provozu.
-                  </p>
+              {/* 4. Pokladna */}
+              <div className="p-4 rounded-lg border-2 bg-red-50 border-red-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Nepředaná pokladna oddílu</h3>
+                  <ClassificationBadge type="dolozeno" />
                 </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Existence hotovosti v pokladně oddílu k 31.12.2020 ve výši 132.523 Kč byla potvrzena
+                  písemnou komunikací. K datu zveřejnění spolek neeviduje její předání ani vyúčtování.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Písemná komunikace, policejní protokol, výpověď při výslechu (2024).
+                </p>
+              </div>
+
+              {/* 5. Členské příspěvky */}
+              <div className="p-4 rounded-lg border-2 bg-yellow-50 border-yellow-300">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-slate-900">Nezaplacené členské příspěvky</h3>
+                  <ClassificationBadge type="evidovano" />
+                </div>
+                <p className="text-sm text-slate-900 mb-2">
+                  Z evidence vyplývá, že členské příspěvky za období 2021-2024 ve výši 63.200 Kč
+                  (200 Kč × 4 roky × 79 členů) nebyly uhrazeny.
+                </p>
+                <p className="text-sm text-slate-900 mb-2">
+                  Tyto příspěvky měly být odvedeny svazům ČSTV, Ústeckému kraji a obci.
+                </p>
+                <p className="text-xs text-slate-600">
+                  <strong>Podklad:</strong> Účetní evidence spolku.
+                </p>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="mt-6 p-4 bg-red-100 border-l-4 border-red-600 rounded">
-              <p className="text-sm text-red-900 font-semibold">
-                <strong>Důsledek:</strong> Zadržování těchto dokumentů fakticky znemožnilo pokračování
-                v provozu lyžařského areálu a způsobilo další finanční ztráty spolku.
+        {/* Nedoložená technická dokumentace */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            📄 Nedoložená technická dokumentace
+          </h2>
+          <div className="bg-blue-50 rounded-xl border-2 border-blue-200 p-4 md:p-8">
+            <p className="text-sm text-blue-900 mb-6">
+              <strong>Kontext:</strong> K datu zveřejnění spolek neeviduje doložení následujících dokumentů
+              týkajících se provozu lyžařského areálu, přestože byly zaslány opakované výzvy k jejich předání (2021-2024).
+            </p>
+            <div className="space-y-4">
+              {actor.missingDocuments.map((doc, index) => (
+                <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-lg border-2 border-blue-200">
+                  <span className="text-2xl flex-shrink-0">{doc.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="font-bold text-slate-900">{doc.title}</h3>
+                      <ClassificationBadge type={doc.classification} />
+                    </div>
+                    <p className="text-sm text-slate-700">
+                      {doc.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 p-4 bg-blue-100 border-l-4 border-blue-600 rounded">
+              <p className="text-sm text-blue-900">
+                <strong>Poznámka:</strong> Absence těchto dokumentů komplikuje pokračování v provozu lyžařského areálu,
+                protože bez průkazů technické způsobilosti a revizních zpráv nelze provozovat lyžařské vleky
+                v souladu s platnými bezpečnostními předpisy.
               </p>
             </div>
+
+            <div className="mt-4 text-xs text-blue-700">
+              <strong>Podklad:</strong> Výzvy k předání dokumentace ze dne 13.9.2021, 10.12.2021, 11/2023.
+            </div>
           </div>
         </section>
 
-        {/* Klíčové kroky */}
+        {/* Časová osa */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Časová osa klíčových kroků
+            📊 Časová osa klíčových událostí
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              {actor.keyActions.map((action, index) => (
+              {actor.keyEvents.map((event, index) => (
                 <div
                   key={index}
-                  className={`flex items-start gap-4 p-4 rounded-lg shadow ${
-                    action.type === 'consequence'
-                      ? 'bg-blue-50 border-blue-300'
-                      : 'bg-red-50 border-red-300'
-                  }`}
+                  className="flex items-start gap-4 p-4 rounded-lg border-2 border-slate-200 hover:shadow-md transition"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow flex items-center justify-center font-bold text-sm text-slate-600">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center font-bold text-sm">
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-slate-900">{action.text}</div>
-                    {action.amount && (
-                      <div className="text-lg font-bold text-red-700 mt-1">
-                        {action.amount.toLocaleString('cs-CZ')} Kč
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-bold text-slate-900">{event.text}</div>
+                      <ClassificationBadge type={event.classification} />
+                    </div>
+                    {event.amount && (
+                      <div className="text-lg font-bold text-blue-700 mt-1">
+                        {event.amount.toLocaleString('cs-CZ')} Kč
                       </div>
                     )}
                   </div>
                   <div className="text-sm text-slate-600 font-medium whitespace-nowrap">
-                    {action.date}
+                    {event.date}
                   </div>
                 </div>
               ))}
@@ -324,37 +455,37 @@ export default function GustavVlachPage() {
         {/* Porovnání s ostatními oddíly */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-            📊 Srovnání škod oddílů
+            📊 Srovnání evidované škody oddílů
           </h2>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 shadow">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-red-100 shadow rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-blue-100 border-2 border-blue-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">⛷️</span>
                   <div>
-                    <div className="font-bold text-slate-900">Lyžařský oddíl (Vlach)</div>
-                    <div className="text-sm text-slate-600">Nejvyšší škoda</div>
+                    <div className="font-bold text-slate-900">Lyžařský oddíl</div>
+                    <div className="text-sm text-slate-600">Nejvyšší evidovaná škoda</div>
                   </div>
                 </div>
-                <div className="text-xl font-black text-red-700">{(1041378).toLocaleString('cs-CZ')} Kč</div>
+                <div className="text-xl font-black text-blue-700">{(1041378).toLocaleString('cs-CZ')} Kč</div>
               </div>
 
-              <div className="flex items-center justify-between p-4 bg-orange-50 border border-orange-300 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-orange-50 border-2 border-orange-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🏓</span>
                   <div>
-                    <div className="font-bold text-slate-900">Stolní tenis (Vaniš, Pivoňka)</div>
+                    <div className="font-bold text-slate-900">Stolní tenis</div>
                     <div className="text-sm text-slate-600">Druhá nejvyšší</div>
                   </div>
                 </div>
                 <div className="text-xl font-black text-orange-700">{(653659).toLocaleString('cs-CZ')} Kč</div>
               </div>
 
-              <div className="flex items-center justify-between p-4 bg-yellow-50 border border-yellow-300 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-yellow-50 border-2 border-yellow-300 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🥋</span>
                   <div>
-                    <div className="font-bold text-slate-900">Karate (Kulík)</div>
+                    <div className="font-bold text-slate-900">Karate</div>
                     <div className="text-sm text-slate-600">Třetí nejvyšší</div>
                   </div>
                 </div>
@@ -364,9 +495,16 @@ export default function GustavVlachPage() {
 
             <div className="mt-6 pt-6 border-t-2 border-slate-200">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-slate-900">Celková škoda všech oddílů</span>
+                <span className="font-bold text-slate-900">Celková evidovaná škoda všech oddílů</span>
                 <span className="text-xl font-black text-slate-900">{(2045635).toLocaleString('cs-CZ')} Kč</span>
               </div>
+              <p className="text-sm text-slate-600 mt-2">
+                Podrobný rozpis na stránce{' '}
+                <a href="/rozpad-skody" className="text-blue-600 hover:underline font-semibold">
+                  Rozpad škody podle kategorií
+                </a>
+                .
+              </p>
             </div>
           </div>
         </section>
@@ -381,7 +519,7 @@ export default function GustavVlachPage() {
               <a
                 key={index}
                 href={link.href}
-                className="block p-5 bg-white rounded-xl shadow hover:border-blue-500 hover:shadow-lg transition"
+                className="block p-5 bg-white rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{link.icon}</span>
@@ -389,6 +527,29 @@ export default function GustavVlachPage() {
                 </div>
               </a>
             ))}
+          </div>
+        </section>
+
+        {/* CTA for corrections */}
+        <section className="mb-12">
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-4 md:p-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">
+              Máte námitku k uvedeným údajům?
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Pokud máte podloženou námitku k jakémukoli údaji na této stránce, kontaktujte nás
+              prostřednictvím stránky{' '}
+              <a href="/pravni-ramec" className="text-blue-600 hover:underline font-semibold">
+                Právní rámec a kontakt
+              </a>
+              . Po prověření provedeme opravu nebo upřesníme metodiku výpočtu.
+            </p>
+            <a
+              href="/oprava-nepravd"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+            >
+              → Jak funguje proces opravy nepravd
+            </a>
           </div>
         </section>
 
@@ -400,6 +561,12 @@ export default function GustavVlachPage() {
           >
             <span>←</span>
             <span>Jaromír Pivoňka</span>
+          </a>
+          <a
+            href="/akteri"
+            className="flex items-center gap-2 px-4 py-3 bg-slate-100 hover:bg-slate-200 rounded-lg font-semibold text-slate-700 transition"
+          >
+            <span>Přehled aktérů</span>
           </a>
           <a
             href="/akteri/martin-kulik"
