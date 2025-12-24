@@ -16,7 +16,7 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
         </h1>
       </div>
 
-      <section className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border border-blue-200">
+      <section className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
         <h2 className="text-xl font-bold text-blue-900 mb-3 flex items-center">
           <span className="text-2xl mr-2">💡</span>
           Proč je otázka důležitá
@@ -146,7 +146,7 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
         </div>
       </section>
 
-      <section className="mb-8 p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
+      <section className="mb-8 p-4 md:p-6 bg-slate-50 rounded-lg border-2 border-slate-200">
         <h2 className="text-xl font-bold text-slate-900 mb-3">
           ⚖️ Právní kontext
         </h2>
@@ -188,11 +188,11 @@ export default function JednalPredsedaVSouladuSeZakonemPage() {
         </div>
       </section>
 
-      <section className="p-4 md:p-6 bg-amber-50 rounded-lg border-2 border-amber-300">
-        <h3 className="text-xl font-bold text-amber-900 mb-3">
+      <section className="-mx-3 md:-mx-8 px-3 md:px-8 py-8 md:py-12 bg-gradient-to-r from-blue-600 to-blue-700">
+        <h3 className="text-xl font-bold text-white mb-4">
           📌 Shrnutí
         </h3>
-        <div className="text-amber-900 space-y-2">
+        <div className="text-white space-y-3">
           <p>
             <strong>ANO</strong> - Předseda Brožek jednal v souladu se zákonem a stanovami.
           </p>
@@ -286,7 +286,7 @@ function RelatedNode({ type, title, href }: RelatedNodeProps) {
   return (
     <a
       href={href}
-      className="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-sm transition"
+      className="block p-4 bg-white rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:shadow-sm transition"
     >
       <div className="text-xs text-slate-500 mb-1">{typeLabels[type] || type}</div>
       <div className="text-sm font-medium text-slate-900">{title}</div>

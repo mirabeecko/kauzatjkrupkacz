@@ -51,7 +51,7 @@ export default function OtazkyPage() {
         </p>
       </div>
 
-      <div className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mb-8 p-4 md:p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
         <h3 className="text-lg font-bold text-blue-900 mb-2">
           Jak číst otázky
         </h3>
@@ -82,7 +82,7 @@ export default function OtazkyPage() {
         </section>
       ))}
 
-      <div className="mt-12 p-4 md:p-6 bg-slate-50 rounded-lg border border-slate-200">
+      <div className="mt-12 p-4 md:p-6 bg-slate-50 rounded-lg border-2 border-slate-200">
         <h3 className="text-lg font-bold text-slate-900 mb-2">
           Máte další otázku?
         </h3>

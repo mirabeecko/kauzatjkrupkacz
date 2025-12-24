@@ -141,10 +141,10 @@ odné verze:
       </section>
 
       <section className="p-4 md:p-6 bg-amber-50 rounded-lg shadow">
-        <h3 className="text-xl font-bold text-amber-900 mb-3">
+        <h3 className="text-xl font-bold text-white mb-4">
           📌 Shrnutí
         </h3>
-        <div className="text-amber-900 space-y-2">
+        <div className="text-white space-y-3">
           <p>
             <strong>Prokázáno:</strong> Předsedové oddílů způsobili spolku škodu 2,48 mil. Kč.
             Předseda Brožek jednal v souladu se zákonem (potvrzeno soudem).

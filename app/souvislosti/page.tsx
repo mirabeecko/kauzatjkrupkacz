@@ -398,7 +398,7 @@ export default function SouvislostiPage() {
                 Město Krupka (politická moc) + SPORT Krupka (kontrola prostor) + vyloučení členové (formální legitimita)
                 = pokus o převzetí kontroly nad spolkem.
               </p>
-              <div className="text-xs text-red-800 bg-white/60 p-3 rounded">
+              <div className="text-xs text-red-800 bg-white/80 p-3 rounded">
                 <strong>Důkaz koordinace:</strong> Schůzky, synchronizované kroky (výměna zámků + nelegální schůze),
                 ignorování oficiálních notifikací.
               </div>
@@ -409,7 +409,7 @@ export default function SouvislostiPage() {
               <p className="text-sm text-slate-700 mb-3">
                 3+ roky opakovaného ignorování výzev, dohod a právních povinností → vytvoření prostoru pro další porušení.
               </p>
-              <div className="text-xs text-orange-800 bg-white/60 p-3 rounded">
+              <div className="text-xs text-orange-800 bg-white/80 p-3 rounded">
                 <strong>Příklady:</strong> Nepředání seznamů členů, neplacení energií, ignorování notifikací,
                 ignorování legitimního shromáždění.
               </div>
@@ -420,7 +420,7 @@ export default function SouvislostiPage() {
               <p className="text-sm text-slate-700 mb-3">
                 Aktéři požadují dodržování pravidel od druhých, sami je systematicky porušují.
               </p>
-              <div className="text-xs text-yellow-800 bg-white/60 p-3 rounded">
+              <div className="text-xs text-yellow-800 bg-white/80 p-3 rounded">
                 <strong>Příklad:</strong> Vaniš požaduje práva člena (žaloba), ale nikdy neplnil povinnosti člena
                 (seznamy, příspěvky, energie).
               </div>
@@ -431,7 +431,7 @@ export default function SouvislostiPage() {
               <p className="text-sm text-slate-700 mb-3">
                 Jan Kuzma jako starosta + jednatel městské společnosti = nebezpečná koncentrace moci umožňující zneužití.
               </p>
-              <div className="text-xs text-purple-800 bg-white/60 p-3 rounded">
+              <div className="text-xs text-purple-800 bg-white/80 p-3 rounded">
                 <strong>Riziko:</strong> Politická moc × obchodní zájmy × kontrola prostor = možnost zasahovat
                 do autonomie nezávislých spolků.
               </div>

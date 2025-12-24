@@ -374,7 +374,7 @@ export default function CislaPage() {
               <span className="text-2xl font-bold">CELKEM:</span>
               <span className="text-3xl md:text-4xl lg:text-5xl font-black">2.076 mil. Kč</span>
             </div>
-            <p className="text-center text-sm mt-4 text-white/80">
+            <p className="text-center text-sm mt-4 text-slate-100">
               Dle dokumentu "TJ ODDÍLY 2021-2023 - výsledek hospodaření"
             </p>
           </div>
